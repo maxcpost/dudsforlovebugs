@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── DFLB Design System (Gathre-inspired) ───
+     Warm, elevated, trustworthy. Not corporate, not childish. */
+
+  /* Primary: Warm Gold/Caramel */
+  --color-coral: #A7845B;
+  --color-coral-dark: #8C6E4A;
+  --color-coral-light: #C1B19A;
+
+  /* Accent: Muted Terracotta (sale badges, urgency, featured) */
+  --color-sage: #9C4D43;
+  --color-sage-dark: #833E35;
+  --color-sage-light: #E9D7CB;
+
+  /* Warm Neutrals */
+  --color-golden: #D5C1AA;
+  --color-golden-light: #F3EFE5;
+
+  /* Backgrounds */
+  --color-cream: #FFFFFF;
+  --color-cream-dark: #F3EFE5;
+
+  /* Text */
+  --color-charcoal: #262626;
+  --color-charcoal-light: #58595B;
+
+  /* Borders */
+  --color-border: #E2E2E2;
+  --color-border-subtle: rgba(38, 38, 38, 0.15);
+
+  /* Footer */
+  --color-footer: #F7F7F8;
+
+  /* Font families */
+  --font-heading: "Nunito", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: var(--color-charcoal);
+    background-color: var(--color-cream);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-charcoal);
+  }
+  a {
+    transition: color 0.3s ease;
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background: var(--color-charcoal);
+    color: white;
+    border-radius: 0 0 0.25rem 0.25rem;
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
+}
+
+/* Components */
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    background-color: var(--color-coral);
+    color: white;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1.5px solid var(--color-coral);
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-coral-dark);
+    border-color: var(--color-coral-dark);
+  }
+  .btn-primary:focus-visible {
+    outline: 2px solid var(--color-coral);
+    outline-offset: 2px;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    background-color: transparent;
+    color: var(--color-charcoal);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1.5px solid var(--color-border-subtle);
+    border-radius: 0.25rem;
+    transition: border-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn-secondary:hover {
+    border-color: var(--color-charcoal);
+    color: var(--color-charcoal);
+  }
+  .btn-secondary:focus-visible {
+    outline: 2px solid var(--color-charcoal);
+    outline-offset: 2px;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    background-color: transparent;
+    color: var(--color-coral);
+    border: 1.5px solid var(--color-coral);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn-outline:hover {
+    background-color: var(--color-coral);
+    color: white;
+  }
+  .btn-outline:focus-visible {
+    outline: 2px solid var(--color-coral);
+    outline-offset: 2px;
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 0.25rem;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease;
+  }
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+  }
+
+  .section-padding {
+    padding: 4rem 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding: 5rem 2rem;
+    }
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
