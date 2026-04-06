@@ -53,7 +53,7 @@
     <section class="section-padding section-cream text-center">
       <div class="container">
         <p class="text-eyebrow mb-3" data-aos="fade-up">Next Sale</p>
-        <h1 class="display-3 fw-bold mb-4" data-aos="fade-up" data-aos-delay="100">August 15&ndash;17, 2026</h1>
+        <h1 class="display-3 fw-bold mb-4" data-aos="fade-up" data-aos-delay="100" data-dflb="sale-dates">August 15&ndash;17, 2026</h1>
         <p class="text-muted-dflb mx-auto" style="max-width:36rem;font-size:1.0625rem;" data-aos="fade-up" data-aos-delay="200">
           <svg width="16" height="16" class="text-gold me-1" style="vertical-align:-2px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           Jewish Community Center (JCC) | 1200 Edgewood Ave, Rochester, NY 14618
@@ -65,7 +65,7 @@
     <section class="section-padding section-white" aria-labelledby="timeline-heading">
       <div class="container">
         <h2 id="timeline-heading" class="fw-bold mb-5 text-center" data-aos="fade-up">Full Event Schedule</h2>
-        <div class="row justify-content-center"><div class="col-lg-9">
+        <div class="row justify-content-center"><div class="col-lg-9" id="schedule-timeline">
 
           <div class="d-flex gap-3 gap-sm-4 mb-4" data-aos="fade-up">
             <div class="flex-shrink-0 text-center rounded-3 p-2 p-sm-3" style="background:var(--dflb-pop);color:white;min-width:5rem;">
@@ -162,7 +162,7 @@
       <div class="container text-center">
         <h2 id="flyer-heading" class="fw-bold mb-3" data-aos="fade-up">Spread the Word</h2>
         <p class="text-muted-dflb mb-4" data-aos="fade-up" data-aos-delay="100">Download our printable flyer and share it with friends, neighbors, and parent groups.</p>
-        <a href="/images/flyer.jpg" download class="btn btn-outline-gold d-inline-flex align-items-center gap-2" data-aos="fade-up" data-aos-delay="200">
+        <a href="/images/flyer.jpg" download class="btn btn-outline-gold d-inline-flex align-items-center gap-2" data-aos="fade-up" data-aos-delay="200" data-dflb="flyer-download">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
           Download Printable Flyer
         </a>
@@ -187,5 +187,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
   <script>document.addEventListener('DOMContentLoaded', function () { if (typeof AOS !== 'undefined') AOS.init({ duration: 700, easing: 'ease-out', once: true, offset: 80 }); });</script>
+  <script src="/js/sheets.js" defer></script>
 </body>
 </html>

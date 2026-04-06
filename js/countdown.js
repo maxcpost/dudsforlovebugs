@@ -1,4 +1,6 @@
-// Countdown to sale date: August 15, 2026 at 10:00 AM EDT
+// Countdown to next sale date
+// Default: August 15, 2026 at 10:00 AM EDT (hardcoded fallback)
+// If sheets.js is loaded, it will call dflbUpdateCountdown() with the live date.
 (function () {
   var saleDate = new Date('2026-08-15T10:00:00-04:00').getTime();
 
@@ -21,17 +23,18 @@
       return;
     }
 
-    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    daysEl.textContent = days;
-    hoursEl.textContent = hours;
-    minutesEl.textContent = minutes;
-    secondsEl.textContent = seconds;
+    daysEl.textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+    hoursEl.textContent = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    minutesEl.textContent = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    secondsEl.textContent = Math.floor((diff % (1000 * 60)) / 1000);
   }
 
   update();
   setInterval(update, 1000);
+
+  // Exposed for sheets.js to push a live date from the Google Sheet
+  window.dflbUpdateCountdown = function (timestamp) {
+    saleDate = timestamp;
+    update();
+  };
 })();
