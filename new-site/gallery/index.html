@@ -18,11 +18,18 @@
   <meta name="twitter:title" content="Photo Gallery | Duds for Love Bugs">
   <meta name="twitter:description" content="See photos from past Duds for Love Bugs consignment sales in Rochester, NY.">
   <meta name="twitter:image" content="https://dudsforlovebugs.com/images/og-image.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/images/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/images/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <link rel="stylesheet" href="/css/output.css">
+  <link rel="stylesheet" href="/css/brand.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"WebSite","@id":"https://dudsforlovebugs.com/#website","url":"https://dudsforlovebugs.com/","name":"Duds for Love Bugs"},
@@ -34,228 +41,69 @@
   ]}
   </script>
 </head>
-<body class="bg-cream text-charcoal font-body">
+<body>
   <a href="#main" class="skip-link">Skip to main content</a>
-
-  <!-- Header (same as homepage) -->
-  <header class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b border-cream-dark">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <a href="/" class="flex items-center gap-3 text-charcoal no-underline" aria-label="Duds for Love Bugs - Home">
-          <img src="/images/logo.png" alt="" width="48" height="48" class="w-12 h-12 rounded-full">
-          <span class="font-heading font-bold text-xl hidden sm:block">Duds for Love Bugs</span>
-        </a>
-        <nav class="hidden lg:flex items-center gap-1" aria-label="Main navigation">
-          <a href="/schedule/" class="px-4 py-2 rounded-lg text-charcoal-light font-semibold hover:bg-cream-dark hover:text-sage-dark transition-colors">Schedule</a>
-          <div class="relative">
-            <button id="consign-dropdown-btn" class="px-4 py-2 rounded-lg text-charcoal-light font-semibold hover:bg-golden-light hover:text-coral-dark flex items-center gap-1 transition-colors" aria-expanded="false" aria-haspopup="true">
-              Consign
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div id="consign-dropdown-menu" class="hidden absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-cream-dark py-2 z-50">
-              <a href="/consign/" class="block px-4 py-2.5 text-sm text-charcoal-light hover:bg-cream hover:text-coral font-medium transition-colors">Get Started</a>
-              <a href="/registration/" class="block px-4 py-2.5 text-sm text-charcoal-light hover:bg-cream hover:text-coral font-medium transition-colors">Registration</a>
-              <a href="/what-can-i-sell/" class="block px-4 py-2.5 text-sm text-charcoal-light hover:bg-cream hover:text-coral font-medium transition-colors">What Can I Sell?</a>
-              <a href="/tagging-merchandise/" class="block px-4 py-2.5 text-sm text-charcoal-light hover:bg-cream hover:text-coral font-medium transition-colors">Tagging Merchandise</a>
-              <a href="/vip-tagging/" class="block px-4 py-2.5 text-sm text-charcoal-light hover:bg-cream hover:text-coral font-medium transition-colors">VIP/Valet Tagging</a>
-              <a href="/purple-play-rack-ppr/" class="block px-4 py-2.5 text-sm text-charcoal-light hover:bg-cream hover:text-coral font-medium transition-colors">Purple Play Rack</a>
-            </div>
-          </div>
-          <a href="/volunteering/" class="px-4 py-2 rounded-lg text-charcoal-light font-semibold hover:bg-cream-dark hover:text-sage-dark transition-colors">Volunteer</a>
-          <a href="/donate/" class="px-4 py-2 rounded-lg text-charcoal-light font-semibold hover:bg-cream-dark hover:text-sage-dark transition-colors">Donate</a>
-          <a href="/vendors/" class="px-4 py-2 rounded-lg text-charcoal-light font-semibold hover:bg-cream-dark hover:text-sage-dark transition-colors">Vendors</a>
-          <a href="/gallery/" class="px-4 py-2 rounded-lg bg-cream-dark text-sage-dark font-semibold">Gallery</a>
-          <a href="/contact/" class="px-4 py-2 rounded-lg text-charcoal-light font-semibold hover:bg-cream-dark hover:text-sage-dark transition-colors">Contact</a>
-        </nav>
-        <div class="flex items-center gap-3">
-          <a href="https://www.mysalemanager.net/hom_start.aspx?partnercode=DFLB" class="btn-primary text-sm hidden sm:inline-flex" target="_blank" rel="noopener noreferrer">Consignor Login</a>
-          <button id="mobile-nav-toggle" class="lg:hidden p-2 rounded-lg hover:bg-cream-dark transition-colors" aria-expanded="false" aria-label="Open navigation menu">
-            <svg class="icon-open w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            <svg class="icon-close w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-cream-dark">
-      <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
-        <a href="/schedule/" class="px-4 py-3 rounded-lg text-charcoal font-semibold hover:bg-cream-dark transition-colors">Schedule</a>
-        <a href="/consign/" class="px-4 py-3 rounded-lg text-charcoal font-semibold hover:bg-golden-light transition-colors">Consign</a>
-        <a href="/registration/" class="px-4 py-3 rounded-lg text-charcoal-light pl-8 hover:bg-golden-light transition-colors">Registration</a>
-        <a href="/what-can-i-sell/" class="px-4 py-3 rounded-lg text-charcoal-light pl-8 hover:bg-golden-light transition-colors">What Can I Sell?</a>
-        <a href="/tagging-merchandise/" class="px-4 py-3 rounded-lg text-charcoal-light pl-8 hover:bg-golden-light transition-colors">Tagging Merchandise</a>
-        <a href="/vip-tagging/" class="px-4 py-3 rounded-lg text-charcoal-light pl-8 hover:bg-golden-light transition-colors">VIP/Valet Tagging</a>
-        <a href="/purple-play-rack-ppr/" class="px-4 py-3 rounded-lg text-charcoal-light pl-8 hover:bg-golden-light transition-colors">Purple Play Rack</a>
-        <a href="/volunteering/" class="px-4 py-3 rounded-lg text-charcoal font-semibold hover:bg-cream-dark transition-colors">Volunteer</a>
-        <a href="/donate/" class="px-4 py-3 rounded-lg text-charcoal font-semibold hover:bg-cream-dark transition-colors">Donate</a>
-        <a href="/vendors/" class="px-4 py-3 rounded-lg text-charcoal font-semibold hover:bg-cream-dark transition-colors">Vendors</a>
-        <a href="/gallery/" class="px-4 py-3 rounded-lg text-sage-dark font-semibold bg-cream-dark">Gallery</a>
-        <a href="/contact/" class="px-4 py-3 rounded-lg text-charcoal font-semibold hover:bg-cream-dark transition-colors">Contact</a>
-        <a href="https://www.mysalemanager.net/hom_start.aspx?partnercode=DFLB" class="btn-primary text-center mt-2" target="_blank" rel="noopener noreferrer">Consignor Login</a>
-      </nav>
-    </div>
-  </header>
+  <nav class="navbar navbar-expand-lg sticky-top"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2" href="/"><img src="/images/logo.png" alt="Duds for Love Bugs" width="120" height="50" style="height:2.5rem;width:auto;object-fit:contain;"></a><button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1"><li class="nav-item"><a class="nav-link" href="/schedule/">Schedule</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/consign/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Consign</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="/consign/">Get Started</a></li><li><a class="dropdown-item" href="/registration/">Registration</a></li><li><a class="dropdown-item" href="/what-can-i-sell/">What Can I Sell?</a></li><li><a class="dropdown-item" href="/tagging-merchandise/">Tagging Merchandise</a></li><li><a class="dropdown-item" href="/vip-tagging/">VIP/Valet Tagging</a></li><li><a class="dropdown-item" href="/purple-play-rack-ppr/">Purple Play Rack</a></li></ul></li><li class="nav-item"><a class="nav-link" href="/volunteering/">Volunteer</a></li><li class="nav-item"><a class="nav-link" href="/donate/">Donate</a></li><li class="nav-item"><a class="nav-link" href="/vendors/">Vendors</a></li><li class="nav-item"><a class="nav-link" href="/gallery/">Gallery</a></li><li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li><li class="nav-item ms-lg-2"><a class="btn btn-gold" href="https://www.mysalemanager.net/hom_start.aspx?partnercode=DFLB" target="_blank" rel="noopener noreferrer">Consignor Login</a></li></ul></div></div></nav>
 
   <main id="main">
-    <!-- Breadcrumb -->
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4" aria-label="Breadcrumb">
-      <ol class="flex items-center gap-2 text-sm text-charcoal-light">
-        <li><a href="/" class="hover:text-coral transition-colors">Home</a></li>
-        <li aria-hidden="true">/</li>
-        <li aria-current="page" class="text-charcoal font-semibold">Gallery</li>
-      </ol>
-    </nav>
+    <nav class="container py-3" aria-label="Breadcrumb"><ol class="breadcrumb mb-0 small"><li class="breadcrumb-item"><a href="/" class="link-gold">Home</a></li><li class="breadcrumb-item active fw-semibold" aria-current="page">Gallery</li></ol></nav>
 
-    <!-- Hero -->
-    <section class="bg-gradient-to-br from-sage-light via-cream to-cream">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div class="max-w-3xl">
-          <h1 class="font-heading font-bold text-4xl sm:text-5xl text-charcoal leading-tight mb-6" data-aos="fade-up">See What the Sale Looks Like</h1>
-          <p class="text-lg sm:text-xl text-charcoal-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">Browse photos from past Duds for Love Bugs sales. Racks of gently used kids' clothing, toys, baby gear, and families finding their next favorite things.</p>
-        </div>
-      </div>
+    <section class="section-padding section-cream">
+      <div class="container"><div class="row"><div class="col-lg-8">
+        <h1 class="display-5 fw-bold mb-4" data-aos="fade-up">See What the Sale Looks Like</h1>
+        <p class="text-muted-dflb" style="font-size:1.125rem;" data-aos="fade-up" data-aos-delay="100">Browse photos from past Duds for Love Bugs sales. Racks of gently used kids' clothing, toys, baby gear, and families finding their next favorite things.</p>
+      </div></div></div>
     </section>
 
     <!-- Photo Grid -->
-    <section class="section-padding bg-white" aria-labelledby="gallery-heading">
-      <div class="max-w-7xl mx-auto">
-        <h2 id="gallery-heading" class="sr-only">Sale Photos</h2>
-        <div class="grid gap-4" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
-          <div data-aos="fade-up">
-            <img src="/images/gallery/photo-1.jpg" alt="Shoppers browsing clothing racks at the sale" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="50">
-            <img src="/images/gallery/photo-2.jpg" alt="Children's clothing organized by size on sale racks" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="100">
-            <img src="/images/gallery/photo-3.jpg" alt="Toys and games section with puzzles and board games" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="150">
-            <img src="/images/gallery/photo-4.jpg" alt="Families shopping together at the consignment sale" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up">
-            <img src="/images/gallery/photo-5.jpg" alt="Baby gear and strollers lined up for sale" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="50">
-            <img src="/images/gallery/photo-6.jpg" alt="Sale floor overview showing rows of organized merchandise" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="100">
-            <img src="/images/gallery/photo-7.jpg" alt="Volunteers setting up racks before the sale opens" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="150">
-            <img src="/images/gallery/photo-8.jpg" alt="Children's shoes neatly displayed on tables" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up">
-            <img src="/images/gallery/photo-9.jpg" alt="Shopper holding up a children's outfit to check sizing" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="50">
-            <img src="/images/gallery/photo-10.jpg" alt="Books and educational materials section at the sale" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="100">
-            <img src="/images/gallery/photo-11.jpg" alt="Infant clothing hanging on the sale racks" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="150">
-            <img src="/images/gallery/photo-12.jpg" alt="Parents comparing prices on gently used kids' items" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up">
-            <img src="/images/gallery/photo-13.jpg" alt="Outdoor play equipment and ride-on toys at the sale" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="50">
-            <img src="/images/gallery/photo-14.jpg" alt="Winter coats and jackets organized by size" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="100">
-            <img src="/images/gallery/photo-15.jpg" alt="Shoppers waiting to enter the sale on opening day" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="150">
-            <img src="/images/gallery/photo-16.jpg" alt="Baby accessories and feeding supplies at the sale" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up">
-            <img src="/images/gallery/photo-17.jpg" alt="Toddler clothing section with colorful outfits" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="50">
-            <img src="/images/gallery/photo-18.jpg" alt="Sale checkout area with happy shoppers" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="100">
-            <img src="/images/gallery/photo-19.jpg" alt="Maternity clothing rack at the consignment sale" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="150">
-            <img src="/images/gallery/photo-20.jpg" alt="Stuffed animals and plush toys lined up on a table" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up">
-            <img src="/images/gallery/photo-21.jpg" alt="Cribs and nursery furniture available at the sale" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="50">
-            <img src="/images/gallery/photo-22.jpg" alt="Children's Halloween costumes and dress-up clothes" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="100">
-            <img src="/images/gallery/photo-23.jpg" alt="Close-up of tagged items with sale prices" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
-          <div data-aos="fade-up" data-aos-delay="150">
-            <img src="/images/gallery/photo-24.jpg" alt="Families leaving the sale with bags full of great finds" loading="lazy" decoding="async" width="600" height="400" class="w-full h-64 object-cover rounded-lg">
-          </div>
+    <section class="section-padding section-white" aria-labelledby="gallery-heading">
+      <div class="container">
+        <h2 id="gallery-heading" class="visually-hidden">Sale Photos</h2>
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up"><img src="/images/gallery/photo-1.jpg" alt="Shoppers browsing clothing racks at the sale" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50"><img src="/images/gallery/photo-2.jpg" alt="Children's clothing organized by size on sale racks" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100"><img src="/images/gallery/photo-3.jpg" alt="Toys and games section with puzzles and board games" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150"><img src="/images/gallery/photo-4.jpg" alt="Families shopping together at the consignment sale" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up"><img src="/images/gallery/photo-5.jpg" alt="Baby gear and strollers lined up for sale" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50"><img src="/images/gallery/photo-6.jpg" alt="Sale floor overview showing rows of organized merchandise" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100"><img src="/images/gallery/photo-7.jpg" alt="Volunteers setting up racks before the sale opens" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150"><img src="/images/gallery/photo-8.jpg" alt="Children's shoes neatly displayed on tables" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up"><img src="/images/gallery/photo-9.jpg" alt="Shopper holding up a children's outfit to check sizing" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50"><img src="/images/gallery/photo-10.jpg" alt="Books and educational materials section at the sale" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100"><img src="/images/gallery/photo-11.jpg" alt="Infant clothing hanging on the sale racks" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150"><img src="/images/gallery/photo-12.jpg" alt="Parents comparing prices on gently used kids' items" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up"><img src="/images/gallery/photo-13.jpg" alt="Outdoor play equipment and ride-on toys at the sale" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50"><img src="/images/gallery/photo-14.jpg" alt="Winter coats and jackets organized by size" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100"><img src="/images/gallery/photo-15.jpg" alt="Shoppers waiting to enter the sale on opening day" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150"><img src="/images/gallery/photo-16.jpg" alt="Baby accessories and feeding supplies at the sale" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up"><img src="/images/gallery/photo-17.jpg" alt="Toddler clothing section with colorful outfits" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50"><img src="/images/gallery/photo-18.jpg" alt="Sale checkout area with happy shoppers" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100"><img src="/images/gallery/photo-19.jpg" alt="Maternity clothing rack at the consignment sale" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150"><img src="/images/gallery/photo-20.jpg" alt="Stuffed animals and plush toys lined up on a table" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up"><img src="/images/gallery/photo-21.jpg" alt="Cribs and nursery furniture available at the sale" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50"><img src="/images/gallery/photo-22.jpg" alt="Children's Halloween costumes and dress-up clothes" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100"><img src="/images/gallery/photo-23.jpg" alt="Close-up of tagged items with sale prices" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150"><img src="/images/gallery/photo-24.jpg" alt="Families leaving the sale with bags full of great finds" loading="lazy" decoding="async" width="600" height="400" class="img-fluid rounded-3" style="object-fit:cover;height:12rem;width:100%;"></div>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section-padding bg-cream-dark" aria-labelledby="join-heading">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 id="join-heading" class="font-heading font-bold text-3xl text-charcoal mb-4" data-aos="fade-up">Want to Be Part of the Next Sale?</h2>
-        <p class="text-charcoal-light text-lg mb-10" data-aos="fade-up" data-aos-delay="100">Whether you have items to sell or time to give, there is a place for you at Duds for Love Bugs.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
-          <a href="/consign/" class="btn-primary">Register to Consign</a>
-          <a href="/volunteering/" class="btn-secondary">Become a Volunteer</a>
+    <section class="section-padding section-cream" aria-labelledby="join-heading">
+      <div class="container text-center">
+        <h2 id="join-heading" class="fw-bold mb-3" data-aos="fade-up">Want to Be Part of the Next Sale?</h2>
+        <p class="text-muted-dflb mb-4" data-aos="fade-up" data-aos-delay="100">Whether you have items to sell or time to give, there is a place for you at Duds for Love Bugs.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3" data-aos="fade-up" data-aos-delay="200">
+          <a href="/consign/" class="btn btn-gold">Register to Consign</a>
+          <a href="/volunteering/" class="btn btn-outline-gold">Become a Volunteer</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-footer text-charcoal-light py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-        <div>
-          <img src="/images/logo.png" alt="" width="48" height="48" class="w-12 h-12 rounded-full mb-4">
-          <p class="font-heading font-bold text-charcoal text-xl mb-2">Duds for Love Bugs</p>
-          <p class="text-sm leading-relaxed">Rochester's favorite children's consignment sale. Shop. Consign. Volunteer.</p>
-        </div>
-        <div>
-          <p class="font-heading font-bold text-charcoal text-sm uppercase tracking-wider mb-4">Quick Links</p>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/schedule/" class="hover:text-white transition-colors">Schedule</a></li>
-            <li><a href="/consign/" class="hover:text-white transition-colors">Consign</a></li>
-            <li><a href="/volunteering/" class="hover:text-white transition-colors">Volunteer</a></li>
-            <li><a href="/vendors/" class="hover:text-white transition-colors">Vendors</a></li>
-            <li><a href="/gallery/" class="hover:text-white transition-colors">Gallery</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="font-heading font-bold text-charcoal text-sm uppercase tracking-wider mb-4">Consignor Tools</p>
-          <ul class="space-y-2 text-sm">
-            <li><a href="https://www.mysalemanager.net/hom_start.aspx?partnercode=DFLB" class="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Consignor Login</a></li>
-            <li><a href="https://www.mysalemanager.net/reg_start.aspx?partnercode=DFLB&type=new" class="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">New Registration</a></li>
-            <li><a href="https://www.mysalemanager.net/itm_start.aspx?partnercode=DFLB" class="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Enter Items / Print Tags</a></li>
-            <li><a href="https://www.mysalemanager.net/drp_start.aspx?partnercode=DFLB" class="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Schedule Drop-Off</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="font-heading font-bold text-charcoal text-sm uppercase tracking-wider mb-4">Contact</p>
-          <address class="not-italic text-sm space-y-2">
-            <p><svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>1200 Edgewood Ave, Rochester, NY 14618</p>
-            <p><svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><a href="mailto:dudsforlovebugs@gmail.com" class="hover:text-white transition-colors">dudsforlovebugs@gmail.com</a></p>
-          </address>
-          <div class="flex gap-4 mt-4">
-            <a href="https://www.facebook.com/dudsforlovebugs" target="_blank" rel="noopener noreferrer" aria-label="Duds for Love Bugs on Facebook" class="w-10 h-10 bg-charcoal/10 rounded-lg flex items-center justify-center hover:bg-charcoal/20 transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a href="https://www.instagram.com/dudsforlovebugs/" target="_blank" rel="noopener noreferrer" aria-label="Duds for Love Bugs on Instagram" class="w-10 h-10 bg-charcoal/10 rounded-lg flex items-center justify-center hover:bg-charcoal/20 transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="border-t border-border pt-8 text-center text-sm text-charcoal-light">
-        <p>&copy; 2026 Duds for Love Bugs. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+  <footer class="footer-dflb py-5"><div class="container"><div class="row g-4 mb-4"><div class="col-sm-6 col-lg-3"><img src="/images/logo.png" alt="" width="120" height="50" class="mb-3" style="height:2.5rem;width:auto;object-fit:contain;filter:brightness(1.2);"><p class="fw-bold mb-1" style="color:white;font-family:var(--font-heading);">Duds for Love Bugs</p><p class="small mb-0">Rochester's favorite children's consignment sale.</p></div><div class="col-sm-6 col-lg-3"><p class="footer-heading">Quick Links</p><ul class="footer-links"><li><a href="/schedule/">Schedule</a></li><li><a href="/consign/">Consign</a></li><li><a href="/volunteering/">Volunteer</a></li><li><a href="/vendors/">Vendors</a></li><li><a href="/gallery/">Gallery</a></li></ul></div><div class="col-sm-6 col-lg-3"><p class="footer-heading">Consignor Tools</p><ul class="footer-links"><li><a href="https://www.mysalemanager.net/hom_start.aspx?partnercode=DFLB" target="_blank" rel="noopener noreferrer">Consignor Login</a></li><li><a href="https://www.mysalemanager.net/reg_start.aspx?partnercode=DFLB&type=new" target="_blank" rel="noopener noreferrer">New Registration</a></li><li><a href="https://www.mysalemanager.net/itm_start.aspx?partnercode=DFLB" target="_blank" rel="noopener noreferrer">Enter Items / Print Tags</a></li><li><a href="https://www.mysalemanager.net/drp_start.aspx?partnercode=DFLB" target="_blank" rel="noopener noreferrer">Schedule Drop-Off</a></li></ul></div><div class="col-sm-6 col-lg-3"><p class="footer-heading">Contact</p><address class="small" style="font-style:normal;"><p class="mb-2">1200 Edgewood Ave, Rochester, NY 14618</p><p class="mb-3"><a href="mailto:dudsforlovebugs@gmail.com">dudsforlovebugs@gmail.com</a></p></address><div class="d-flex gap-2"><a href="https://www.facebook.com/dudsforlovebugs" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://www.instagram.com/dudsforlovebugs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></div></div></div><hr style="border-color:rgba(255,255,255,0.1);"><p class="small text-center mb-0" style="color:rgba(255,255,255,0.4);">&copy; 2026 Duds for Love Bugs. All rights reserved.</p></div></footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
-  <script src="/js/main.js" defer></script>
+  <script>document.addEventListener('DOMContentLoaded', function () { if (typeof AOS !== 'undefined') AOS.init({ duration: 700, easing: 'ease-out', once: true, offset: 80 }); });</script>
 </body>
 </html>

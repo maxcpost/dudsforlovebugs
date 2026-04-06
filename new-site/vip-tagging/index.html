@@ -18,11 +18,18 @@
   <meta name="twitter:title" content="VIP/Valet Tagging Service | Duds for Love Bugs">
   <meta name="twitter:description" content="No time to tag? Our VIP Tagging Service handles everything. Drop off 25-500 items or we pick them up.">
   <meta name="twitter:image" content="https://dudsforlovebugs.com/images/og-image.jpg">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/images/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/images/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <link rel="stylesheet" href="/css/output.css">
+  <link rel="stylesheet" href="/css/brand.css">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"WebSite","@id":"https://dudsforlovebugs.com/#website","url":"https://dudsforlovebugs.com/","name":"Duds for Love Bugs"},
@@ -35,351 +42,166 @@
   ]}
   </script>
 </head>
-<body class="bg-cream text-charcoal font-body">
+<body>
   <a href="#main" class="skip-link">Skip to main content</a>
-
-  <!-- Header (same as homepage) -->
-  <header class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b border-cream-dark">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
-        <a href="/" class="flex items-center gap-3 text-charcoal no-underline" aria-label="Duds for Love Bugs - Home">
-          <img src="/images/logo.png" alt="" width="48" height="48" class="w-12 h-12 rounded-full">
-          <span class="font-heading font-bold text-xl hidden sm:block">Duds for Love Bugs</span>
-        </a>
-        <nav class="hidden lg:flex items-center gap-1" aria-label="Main navigation">
-          <a href="/schedule/" class="px-4 py-2 rounded-lg text-charcoal-light font-semibold hover:bg-cream-dark hover:text-sage-dark transition-colors">Schedule</a>
-          <div class="relative">
-            <button id="consign-dropdown-btn" class="px-4 py-2 rounded-lg bg-golden-light text-coral-dark font-semibold flex items-center gap-1" aria-expanded="false" aria-haspopup="true">
-              Consign
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div id="consign-dropdown-menu" class="hidden absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-cream-dark py-2 z-50">
-              <a href="/consign/" class="block px-4 py-2.5 text-sm text-charcoal-light hover:bg-cream hover:text-coral font-medium transition-colors">Get Started</a>
-              <a href="/registration/" class="block px-4 py-2.5 text-sm text-charcoal-light hover:bg-cream hover:text-coral font-medium transition-colors">Registration</a>
-              <a href="/what-can-i-sell/" class="block px-4 py-2.5 text-sm text-charcoal-light hover:bg-cream hover:text-coral font-medium transition-colors">What Can I Sell?</a>
-              <a href="/tagging-merchandise/" class="block px-4 py-2.5 text-sm text-charcoal-light hover:bg-cream hover:text-coral font-medium transition-colors">Tagging Merchandise</a>
-              <a href="/vip-tagging/" class="block px-4 py-2.5 text-sm text-coral font-semibold bg-golden-light transition-colors">VIP/Valet Tagging</a>
-              <a href="/purple-play-rack-ppr/" class="block px-4 py-2.5 text-sm text-charcoal-light hover:bg-cream hover:text-coral font-medium transition-colors">Purple Play Rack</a>
-            </div>
-          </div>
-          <a href="/volunteering/" class="px-4 py-2 rounded-lg text-charcoal-light font-semibold hover:bg-cream-dark hover:text-sage-dark transition-colors">Volunteer</a>
-          <a href="/donate/" class="px-4 py-2 rounded-lg text-charcoal-light font-semibold hover:bg-cream-dark hover:text-sage-dark transition-colors">Donate</a>
-          <a href="/vendors/" class="px-4 py-2 rounded-lg text-charcoal-light font-semibold hover:bg-cream-dark hover:text-sage-dark transition-colors">Vendors</a>
-          <a href="/gallery/" class="px-4 py-2 rounded-lg text-charcoal-light font-semibold hover:bg-cream-dark hover:text-sage-dark transition-colors">Gallery</a>
-          <a href="/contact/" class="px-4 py-2 rounded-lg text-charcoal-light font-semibold hover:bg-cream-dark hover:text-sage-dark transition-colors">Contact</a>
-        </nav>
-        <div class="flex items-center gap-3">
-          <a href="https://www.mysalemanager.net/hom_start.aspx?partnercode=DFLB" class="btn-primary text-sm hidden sm:inline-flex" target="_blank" rel="noopener noreferrer">Consignor Login</a>
-          <button id="mobile-nav-toggle" class="lg:hidden p-2 rounded-lg hover:bg-cream-dark transition-colors" aria-expanded="false" aria-label="Open navigation menu">
-            <svg class="icon-open w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            <svg class="icon-close w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-cream-dark">
-      <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
-        <a href="/schedule/" class="px-4 py-3 rounded-lg text-charcoal font-semibold hover:bg-cream-dark transition-colors">Schedule</a>
-        <a href="/consign/" class="px-4 py-3 rounded-lg text-charcoal font-semibold hover:bg-golden-light transition-colors">Consign</a>
-        <a href="/registration/" class="px-4 py-3 rounded-lg text-charcoal-light pl-8 hover:bg-golden-light transition-colors">Registration</a>
-        <a href="/what-can-i-sell/" class="px-4 py-3 rounded-lg text-charcoal-light pl-8 hover:bg-golden-light transition-colors">What Can I Sell?</a>
-        <a href="/tagging-merchandise/" class="px-4 py-3 rounded-lg text-charcoal-light pl-8 hover:bg-golden-light transition-colors">Tagging Merchandise</a>
-        <a href="/vip-tagging/" class="px-4 py-3 rounded-lg text-coral font-semibold bg-golden-light">VIP/Valet Tagging</a>
-        <a href="/purple-play-rack-ppr/" class="px-4 py-3 rounded-lg text-charcoal-light pl-8 hover:bg-golden-light transition-colors">Purple Play Rack</a>
-        <a href="/volunteering/" class="px-4 py-3 rounded-lg text-charcoal font-semibold hover:bg-cream-dark transition-colors">Volunteer</a>
-        <a href="/donate/" class="px-4 py-3 rounded-lg text-charcoal font-semibold hover:bg-cream-dark transition-colors">Donate</a>
-        <a href="/vendors/" class="px-4 py-3 rounded-lg text-charcoal font-semibold hover:bg-cream-dark transition-colors">Vendors</a>
-        <a href="/gallery/" class="px-4 py-3 rounded-lg text-charcoal font-semibold hover:bg-cream-dark transition-colors">Gallery</a>
-        <a href="/contact/" class="px-4 py-3 rounded-lg text-charcoal font-semibold hover:bg-cream-dark transition-colors">Contact</a>
-        <a href="https://www.mysalemanager.net/hom_start.aspx?partnercode=DFLB" class="btn-primary text-center mt-2" target="_blank" rel="noopener noreferrer">Consignor Login</a>
-      </nav>
-    </div>
-  </header>
+  <nav class="navbar navbar-expand-lg sticky-top"><div class="container"><a class="navbar-brand d-flex align-items-center gap-2" href="/"><img src="/images/logo.png" alt="Duds for Love Bugs" width="120" height="50" style="height:2.5rem;width:auto;object-fit:contain;"></a><button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="mainNav"><ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1"><li class="nav-item"><a class="nav-link" href="/schedule/">Schedule</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="/consign/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Consign</a><ul class="dropdown-menu"><li><a class="dropdown-item" href="/consign/">Get Started</a></li><li><a class="dropdown-item" href="/registration/">Registration</a></li><li><a class="dropdown-item" href="/what-can-i-sell/">What Can I Sell?</a></li><li><a class="dropdown-item" href="/tagging-merchandise/">Tagging Merchandise</a></li><li><a class="dropdown-item" href="/vip-tagging/">VIP/Valet Tagging</a></li><li><a class="dropdown-item" href="/purple-play-rack-ppr/">Purple Play Rack</a></li></ul></li><li class="nav-item"><a class="nav-link" href="/volunteering/">Volunteer</a></li><li class="nav-item"><a class="nav-link" href="/donate/">Donate</a></li><li class="nav-item"><a class="nav-link" href="/vendors/">Vendors</a></li><li class="nav-item"><a class="nav-link" href="/gallery/">Gallery</a></li><li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li><li class="nav-item ms-lg-2"><a class="btn btn-gold" href="https://www.mysalemanager.net/hom_start.aspx?partnercode=DFLB" target="_blank" rel="noopener noreferrer">Consignor Login</a></li></ul></div></div></nav>
 
   <main id="main">
-    <!-- Breadcrumb -->
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4" aria-label="Breadcrumb">
-      <ol class="flex items-center gap-2 text-sm text-charcoal-light">
-        <li><a href="/" class="hover:text-coral transition-colors">Home</a></li>
-        <li aria-hidden="true">/</li>
-        <li><a href="/consign/" class="hover:text-coral transition-colors">Consign</a></li>
-        <li aria-hidden="true">/</li>
-        <li aria-current="page" class="text-charcoal font-semibold">VIP/Valet Tagging</li>
-      </ol>
-    </nav>
+    <nav class="container py-3" aria-label="Breadcrumb"><ol class="breadcrumb mb-0 small"><li class="breadcrumb-item"><a href="/" class="link-gold">Home</a></li><li class="breadcrumb-item"><a href="/consign/" class="link-gold">Consign</a></li><li class="breadcrumb-item active fw-semibold" aria-current="page">VIP/Valet Tagging</li></ol></nav>
 
     <!-- Hero -->
-    <section class="bg-gradient-to-br from-coral via-coral-light to-cream">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-        <div class="max-w-3xl">
-          <h1 class="font-heading font-bold text-4xl sm:text-5xl text-charcoal leading-tight mb-6" data-aos="fade-up">No Time to Tag? We Do ALL the Work for You</h1>
-          <p class="text-lg sm:text-xl text-charcoal-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">Clean out those closets, garages, and playrooms &mdash; and cash in without lifting a finger. Our VIP Tagging Service is perfect for busy families who want to earn money, save time, and shop first.</p>
-        </div>
-      </div>
+    <section class="section-padding section-cream">
+      <div class="container"><div class="row"><div class="col-lg-8">
+        <h1 class="display-5 fw-bold mb-4" data-aos="fade-up">No Time to Tag? We Do ALL the Work for You</h1>
+        <p class="text-muted-dflb" style="font-size:1.125rem;" data-aos="fade-up" data-aos-delay="100">Clean out those closets, garages, and playrooms &mdash; and cash in without lifting a finger. Our VIP Tagging Service is perfect for busy families who want to earn money, save time, and shop first.</p>
+      </div></div></div>
     </section>
 
     <!-- Two Options -->
-    <section class="section-padding bg-white" aria-labelledby="options-heading">
-      <div class="max-w-5xl mx-auto">
-        <h2 id="options-heading" class="font-heading font-bold text-3xl text-charcoal mb-4 text-center" data-aos="fade-up">Two Ways to Use VIP Tagging</h2>
-        <p class="text-charcoal-light text-lg mb-12 text-center max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Choose the option that fits your schedule. Both include expert pricing, consignor pre-sale access, and a check within two weeks.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- VIP Card -->
-          <div class="card border-2 border-coral-light hover:border-coral transition-colors" data-aos="fade-up" data-aos-delay="150">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="flex-shrink-0 w-12 h-12 bg-golden-light text-coral rounded-full flex items-center justify-center">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
-              </span>
-              <h3 class="font-heading font-bold text-2xl text-charcoal">VIP</h3>
-            </div>
-            <p class="font-semibold text-coral text-lg mb-3">You Drop Off</p>
-            <ul class="space-y-2 text-charcoal-light mb-6">
-              <li class="flex items-start gap-2">
-                <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                Minimum 25 items, maximum 500 items
-              </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                Top quality items only
-              </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                $15 supply fee per 200 items (deducted from your check)
-              </li>
-            </ul>
-            <p class="text-sm text-charcoal-light bg-cream rounded-lg px-4 py-3">No pickup fee &mdash; you bring items to us</p>
+    <section class="section-padding section-white" aria-labelledby="options-heading">
+      <div class="container">
+        <h2 id="options-heading" class="fw-bold mb-3 text-center" data-aos="fade-up">Two Ways to Use VIP Tagging</h2>
+        <p class="text-muted-dflb text-center mb-5 mx-auto" style="max-width:36rem;" data-aos="fade-up" data-aos-delay="100">Choose the option that fits your schedule. Both include expert pricing, consignor pre-sale access, and a check within two weeks.</p>
+        <div class="row g-4">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="card card-dflb card-accent-top p-4 h-100"><div class="card-body">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-circle icon-circle-cream"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg></div>
+                <h3 class="h4 fw-bold mb-0">VIP</h3>
+              </div>
+              <p class="fw-semibold text-gold mb-3">You Drop Off</p>
+              <ul class="list-unstyled text-muted-dflb mb-3">
+                <li class="d-flex gap-2 mb-2"><svg width="16" height="16" class="text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Minimum 25 items, maximum 500 items</li>
+                <li class="d-flex gap-2 mb-2"><svg width="16" height="16" class="text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Top quality items only</li>
+                <li class="d-flex gap-2"><svg width="16" height="16" class="text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>$15 supply fee per 200 items (deducted from your check)</li>
+              </ul>
+              <p class="small text-muted-dflb section-cream rounded-3 px-3 py-2 mb-0">No pickup fee &mdash; you bring items to us</p>
+            </div></div>
           </div>
-          <!-- Valet VIP Card -->
-          <div class="card border-2 border-sage-light hover:border-sage transition-colors" data-aos="fade-up" data-aos-delay="250">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="flex-shrink-0 w-12 h-12 bg-cream-dark text-sage rounded-full flex items-center justify-center">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
-              </span>
-              <h3 class="font-heading font-bold text-2xl text-charcoal">Valet VIP</h3>
-            </div>
-            <p class="font-semibold text-sage text-lg mb-3">We Pick Up</p>
-            <ul class="space-y-2 text-charcoal-light mb-6">
-              <li class="flex items-start gap-2">
-                <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                Minimum 50 items, maximum 500 items
-              </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                Top quality items only
-              </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                $15 supply fee per 200 items (deducted from your check)
-              </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-5 h-5 text-sage flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-                $35 pickup service fee (due at pickup)
-              </li>
-            </ul>
-            <p class="text-sm text-charcoal-light bg-cream rounded-lg px-4 py-3">We come to you &mdash; zero effort on your part</p>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="card card-dflb card-accent-top p-4 h-100"><div class="card-body">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-circle icon-circle-cream"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div>
+                <h3 class="h4 fw-bold mb-0">Valet VIP</h3>
+              </div>
+              <p class="fw-semibold text-gold mb-3">We Pick Up</p>
+              <ul class="list-unstyled text-muted-dflb mb-3">
+                <li class="d-flex gap-2 mb-2"><svg width="16" height="16" class="text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Minimum 50 items, maximum 500 items</li>
+                <li class="d-flex gap-2 mb-2"><svg width="16" height="16" class="text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Top quality items only</li>
+                <li class="d-flex gap-2 mb-2"><svg width="16" height="16" class="text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>$15 supply fee per 200 items (deducted from your check)</li>
+                <li class="d-flex gap-2"><svg width="16" height="16" class="text-gold flex-shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>$35 pickup service fee (due at pickup)</li>
+              </ul>
+              <p class="small text-muted-dflb section-cream rounded-3 px-3 py-2 mb-0">We come to you &mdash; zero effort on your part</p>
+            </div></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 4 Steps -->
-    <section class="section-padding bg-cream" aria-labelledby="steps-heading">
-      <div class="max-w-4xl mx-auto">
-        <h2 id="steps-heading" class="font-heading font-bold text-3xl text-charcoal mb-12 text-center" data-aos="fade-up">How It Works</h2>
-        <ol class="space-y-8">
-          <li class="flex gap-5" data-aos="fade-up">
-            <span class="flex-shrink-0 w-12 h-12 bg-coral text-white rounded-lg flex items-center justify-center font-heading font-bold text-xl">1</span>
-            <div>
-              <p class="font-heading font-bold text-xl text-charcoal">Submit your application</p>
-              <p class="text-charcoal-light mt-1">Fill out and submit the VIP Application as soon as possible. Spots are limited and available on a first come, first served basis.</p>
-            </div>
-          </li>
-          <li class="flex gap-5" data-aos="fade-up" data-aos-delay="100">
-            <span class="flex-shrink-0 w-12 h-12 bg-coral text-white rounded-lg flex items-center justify-center font-heading font-bold text-xl">2</span>
-            <div>
-              <p class="font-heading font-bold text-xl text-charcoal">Register to consign ($12 fee)</p>
-              <p class="text-charcoal-light mt-1">Once approved, register as a consignor and pay the $12 non-refundable registration fee through MySaleManager.</p>
-            </div>
-          </li>
-          <li class="flex gap-5" data-aos="fade-up" data-aos-delay="200">
-            <span class="flex-shrink-0 w-12 h-12 bg-coral text-white rounded-lg flex items-center justify-center font-heading font-bold text-xl">3</span>
-            <div>
-              <p class="font-heading font-bold text-xl text-charcoal">Arrange drop-off or pickup within 7 days</p>
-              <p class="text-charcoal-light mt-1">You'll have 7 days to coordinate your item drop-off (VIP) or schedule a pickup at your home (Valet VIP).</p>
-            </div>
-          </li>
-          <li class="flex gap-5" data-aos="fade-up" data-aos-delay="300">
-            <span class="flex-shrink-0 w-12 h-12 bg-coral text-white rounded-lg flex items-center justify-center font-heading font-bold text-xl">4</span>
-            <div>
-              <p class="font-heading font-bold text-xl text-charcoal">Sit back and get paid</p>
-              <p class="text-charcoal-light mt-1">We handle the sorting, pricing, tagging, and displaying. Receive your check within two weeks after the sale.</p>
-            </div>
-          </li>
-        </ol>
+    <section class="section-padding section-cream" aria-labelledby="steps-heading">
+      <div class="container">
+        <h2 id="steps-heading" class="fw-bold mb-5 text-center" data-aos="fade-up">How It Works</h2>
+        <div class="row justify-content-center"><div class="col-lg-8">
+          <div class="d-flex gap-3 mb-4" data-aos="fade-up"><div class="step-number step-number-gold">1</div><div><p class="fw-bold mb-1">Submit your application</p><p class="text-muted-dflb small mb-0">Fill out and submit the VIP Application as soon as possible. Spots are limited and available on a first come, first served basis.</p></div></div>
+          <div class="d-flex gap-3 mb-4" data-aos="fade-up" data-aos-delay="100"><div class="step-number step-number-gold">2</div><div><p class="fw-bold mb-1">Register to consign ($12 fee)</p><p class="text-muted-dflb small mb-0">Once approved, register as a consignor and pay the $12 non-refundable registration fee through MySaleManager.</p></div></div>
+          <div class="d-flex gap-3 mb-4" data-aos="fade-up" data-aos-delay="200"><div class="step-number step-number-gold">3</div><div><p class="fw-bold mb-1">Arrange drop-off or pickup within 7 days</p><p class="text-muted-dflb small mb-0">You'll have 7 days to coordinate your item drop-off (VIP) or schedule a pickup at your home (Valet VIP).</p></div></div>
+          <div class="d-flex gap-3" data-aos="fade-up" data-aos-delay="300"><div class="step-number step-number-gold">4</div><div><p class="fw-bold mb-1">Sit back and get paid</p><p class="text-muted-dflb small mb-0">We handle the sorting, pricing, tagging, and displaying. Receive your check within two weeks after the sale.</p></div></div>
+        </div></div>
       </div>
     </section>
 
     <!-- Profit Split -->
-    <section class="section-padding bg-white" aria-labelledby="profit-heading">
-      <div class="max-w-4xl mx-auto">
-        <h2 id="profit-heading" class="font-heading font-bold text-3xl text-charcoal mb-4 text-center" data-aos="fade-up">How the Profit Splits</h2>
-        <p class="text-charcoal-light text-lg mb-10 text-center" data-aos="fade-up" data-aos-delay="100">VIP/Valet VIP uses a three-way split because our tagging experts do the work for you.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Standard Split -->
-          <div class="bg-cream rounded-lg p-8 text-center" data-aos="fade-up" data-aos-delay="150">
-            <p class="font-heading font-bold text-sm uppercase tracking-wider text-charcoal-light mb-4">Standard Consignor</p>
-            <div class="flex items-center justify-center gap-4 mb-4">
-              <div>
-                <p class="font-heading font-bold text-4xl text-coral">60%</p>
-                <p class="text-sm text-charcoal-light">You</p>
+    <section class="section-padding section-white" aria-labelledby="profit-heading">
+      <div class="container">
+        <h2 id="profit-heading" class="fw-bold mb-3 text-center" data-aos="fade-up">How the Profit Splits</h2>
+        <p class="text-muted-dflb text-center mb-5" data-aos="fade-up" data-aos-delay="100">VIP/Valet VIP uses a three-way split because our tagging experts do the work for you.</p>
+        <div class="row g-4">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="section-cream rounded-3 p-4 text-center">
+              <p class="text-eyebrow mb-3">Standard Consignor</p>
+              <div class="d-flex align-items-center justify-content-center gap-3 mb-3">
+                <div><p class="display-6 fw-bold text-gold mb-0">60%</p><p class="small text-muted-dflb mb-0">You</p></div>
+                <span class="text-muted-dflb h4">/</span>
+                <div><p class="display-6 fw-bold text-muted-dflb mb-0">40%</p><p class="small text-muted-dflb mb-0">DFLB</p></div>
               </div>
-              <span class="text-charcoal-light text-2xl">/</span>
-              <div>
-                <p class="font-heading font-bold text-4xl text-charcoal-light">40%</p>
-                <p class="text-sm text-charcoal-light">DFLB</p>
-              </div>
+              <p class="small text-muted-dflb mb-0">You tag, you price, you keep more</p>
             </div>
-            <p class="text-sm text-charcoal-light">You tag, you price, you keep more</p>
           </div>
-          <!-- VIP Split -->
-          <div class="bg-golden-light rounded-lg p-8 text-center border-2 border-coral" data-aos="fade-up" data-aos-delay="250">
-            <p class="font-heading font-bold text-sm uppercase tracking-wider text-coral-dark mb-4">VIP / Valet VIP</p>
-            <div class="flex items-center justify-center gap-3 mb-4">
-              <div>
-                <p class="font-heading font-bold text-4xl text-coral">30%</p>
-                <p class="text-sm text-charcoal-light">You</p>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="section-cream rounded-3 p-4 text-center" style="border: 2px solid var(--dflb-pop);">
+              <p class="text-eyebrow mb-3">VIP / Valet VIP</p>
+              <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
+                <div><p class="display-6 fw-bold text-gold mb-0">30%</p><p class="small text-muted-dflb mb-0">You</p></div>
+                <span class="text-muted-dflb h4">/</span>
+                <div><p class="display-6 fw-bold text-gold mb-0">30%</p><p class="small text-muted-dflb mb-0">Tagging Expert</p></div>
+                <span class="text-muted-dflb h4">/</span>
+                <div><p class="display-6 fw-bold text-muted-dflb mb-0">40%</p><p class="small text-muted-dflb mb-0">DFLB</p></div>
               </div>
-              <span class="text-charcoal-light text-2xl">/</span>
-              <div>
-                <p class="font-heading font-bold text-4xl text-sage">30%</p>
-                <p class="text-sm text-charcoal-light">Tagging Expert</p>
-              </div>
-              <span class="text-charcoal-light text-2xl">/</span>
-              <div>
-                <p class="font-heading font-bold text-4xl text-charcoal-light">40%</p>
-                <p class="text-sm text-charcoal-light">DFLB</p>
-              </div>
+              <p class="small text-muted-dflb mb-0">We do the work, you still earn</p>
             </div>
-            <p class="text-sm text-charcoal-light">We do the work, you still earn</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Pros -->
-    <section class="section-padding bg-cream-dark" aria-labelledby="pros-heading">
-      <div class="max-w-4xl mx-auto">
-        <h2 id="pros-heading" class="font-heading font-bold text-3xl text-charcoal mb-10 text-center" data-aos="fade-up">Why Families Love VIP Tagging</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-white rounded-lg p-6 shadow-md" data-aos="fade-up" data-aos-delay="50">
-            <svg class="w-8 h-8 text-coral mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <p class="font-heading font-bold text-charcoal">Make money</p>
-            <p class="text-sm text-charcoal-light mt-1">Turn outgrown items into cash without any tagging effort</p>
+    <section class="section-padding section-cream" aria-labelledby="pros-heading">
+      <div class="container">
+        <h2 id="pros-heading" class="fw-bold mb-5 text-center" data-aos="fade-up">Why Families Love VIP Tagging</h2>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+            <div class="card card-dflb p-4 h-100"><div class="card-body"><svg width="24" height="24" class="text-gold mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><p class="fw-bold mb-1">Make money</p><p class="small text-muted-dflb mb-0">Turn outgrown items into cash without any tagging effort</p></div></div>
           </div>
-          <div class="bg-white rounded-lg p-6 shadow-md" data-aos="fade-up" data-aos-delay="100">
-            <svg class="w-8 h-8 text-coral mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-            <p class="font-heading font-bold text-charcoal">Shop early</p>
-            <p class="text-sm text-charcoal-light mt-1">Get exclusive consignor access to the VIP Pre-Sale on Thursday evening</p>
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card card-dflb p-4 h-100"><div class="card-body"><svg width="24" height="24" class="text-gold mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg><p class="fw-bold mb-1">Shop early</p><p class="small text-muted-dflb mb-0">Get exclusive consignor access to the VIP Pre-Sale on Thursday evening</p></div></div>
           </div>
-          <div class="bg-white rounded-lg p-6 shadow-md" data-aos="fade-up" data-aos-delay="150">
-            <svg class="w-8 h-8 text-coral mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            <p class="font-heading font-bold text-charcoal">Expert pricing</p>
-            <p class="text-sm text-charcoal-light mt-1">Our tagging experts know what sells and price your items to move</p>
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="card card-dflb p-4 h-100"><div class="card-body"><svg width="24" height="24" class="text-gold mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg><p class="fw-bold mb-1">Expert pricing</p><p class="small text-muted-dflb mb-0">Our tagging experts know what sells and price your items to move</p></div></div>
           </div>
-          <div class="bg-white rounded-lg p-6 shadow-md" data-aos="fade-up" data-aos-delay="200">
-            <svg class="w-8 h-8 text-coral mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-            <p class="font-heading font-bold text-charcoal">Track your sales</p>
-            <p class="text-sm text-charcoal-light mt-1">View your running sales total each evening during the sale</p>
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card card-dflb p-4 h-100"><div class="card-body"><svg width="24" height="24" class="text-gold mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg><p class="fw-bold mb-1">Track your sales</p><p class="small text-muted-dflb mb-0">View your running sales total each evening during the sale</p></div></div>
           </div>
-          <div class="bg-white rounded-lg p-6 shadow-md" data-aos="fade-up" data-aos-delay="250">
-            <svg class="w-8 h-8 text-coral mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-            <p class="font-heading font-bold text-charcoal">Donate or pick up</p>
-            <p class="text-sm text-charcoal-light mt-1">Choose whether to donate unsold items or pick them up after the sale</p>
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+            <div class="card card-dflb p-4 h-100"><div class="card-body"><svg width="24" height="24" class="text-gold mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg><p class="fw-bold mb-1">Donate or pick up</p><p class="small text-muted-dflb mb-0">Choose whether to donate unsold items or pick them up after the sale</p></div></div>
           </div>
-          <div class="bg-white rounded-lg p-6 shadow-md" data-aos="fade-up" data-aos-delay="300">
-            <svg class="w-8 h-8 text-coral mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <p class="font-heading font-bold text-charcoal">Paid within 2 weeks</p>
-            <p class="text-sm text-charcoal-light mt-1">Receive your earnings check within two weeks after the sale ends</p>
+          <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="card card-dflb p-4 h-100"><div class="card-body"><svg width="24" height="24" class="text-gold mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><p class="fw-bold mb-1">Paid within 2 weeks</p><p class="small text-muted-dflb mb-0">Receive your earnings check within two weeks after the sale ends</p></div></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Exclusivity Note -->
-    <section class="section-padding bg-white" aria-labelledby="exclusive-heading">
-      <div class="max-w-3xl mx-auto text-center">
-        <div class="bg-accent/10 border-2 border-accent rounded-lg p-8 md:p-10" data-aos="fade-up">
-          <svg class="w-10 h-10 text-accent mx-auto mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
-          <h2 id="exclusive-heading" class="font-heading font-bold text-2xl sm:text-3xl text-charcoal mb-3">Only Accepting the Best of the Best</h2>
-          <p class="text-charcoal-light text-lg leading-relaxed">We offer a very limited number of VIP and Valet VIP spots each sale. This is an exclusive opportunity available on a first come, first served basis. Apply early to secure your spot.</p>
+    <section class="section-padding section-white" aria-labelledby="exclusive-heading">
+      <div class="container text-center">
+        <div class="section-cream rounded-3 p-5 d-inline-block" data-aos="fade-up" style="border: 2px solid var(--dflb-pop); max-width: 40rem;">
+          <svg width="24" height="24" class="text-gold mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+          <h2 id="exclusive-heading" class="h4 fw-bold mb-3">Only Accepting the Best of the Best</h2>
+          <p class="text-muted-dflb mb-0">We offer a very limited number of VIP and Valet VIP spots each sale. This is an exclusive opportunity available on a first come, first served basis. Apply early to secure your spot.</p>
         </div>
       </div>
     </section>
 
     <!-- Contact & CTA -->
-    <section class="section-padding bg-gradient-to-br from-coral-light via-cream to-sage-light" aria-labelledby="apply-heading">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 id="apply-heading" class="font-heading font-bold text-3xl text-charcoal mb-4" data-aos="fade-up">Ready to Let Us Do the Work?</h2>
-        <p class="text-charcoal-light text-lg mb-8" data-aos="fade-up" data-aos-delay="100">Submit your application today to be considered for the VIP Tagging Service. Questions? Email us directly.</p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8" data-aos="fade-up" data-aos-delay="200">
-          <a href="https://forms.gle/rv3MY1PFxXJtELih8" class="btn-primary" target="_blank" rel="noopener noreferrer">Apply for VIP Tagging</a>
-          <a href="/registration/" class="btn-secondary">Register to Consign</a>
+    <section class="section-padding section-tan" aria-labelledby="apply-heading">
+      <div class="container text-center">
+        <h2 id="apply-heading" class="fw-bold mb-3" data-aos="fade-up">Ready to Let Us Do the Work?</h2>
+        <p class="text-muted-dflb mb-4" data-aos="fade-up" data-aos-delay="100">Submit your application today to be considered for the VIP Tagging Service. Questions? Email us directly.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <a href="https://forms.gle/rv3MY1PFxXJtELih8" class="btn btn-gold" target="_blank" rel="noopener noreferrer">Apply for VIP Tagging</a>
+          <a href="/registration/" class="btn btn-outline-gold">Register to Consign</a>
         </div>
-        <p class="text-charcoal-light" data-aos="fade-up" data-aos-delay="300">
-          All VIP Tagging communications are handled directly by email at
-          <a href="mailto:vipconsignor@gmail.com" class="text-coral font-semibold hover:underline">vipconsignor@gmail.com</a>
-        </p>
+        <p class="text-muted-dflb" data-aos="fade-up" data-aos-delay="300">All VIP Tagging communications are handled directly by email at <a href="mailto:vipconsignor@gmail.com" class="link-gold fw-semibold">vipconsignor@gmail.com</a></p>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-footer text-charcoal-light py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-        <div>
-          <img src="/images/logo.png" alt="" width="48" height="48" class="w-12 h-12 rounded-full mb-4">
-          <p class="font-heading font-bold text-charcoal text-xl mb-2">Duds for Love Bugs</p>
-          <p class="text-sm leading-relaxed">Rochester's favorite children's consignment sale. Shop. Consign. Volunteer.</p>
-        </div>
-        <div>
-          <p class="font-heading font-bold text-charcoal text-sm uppercase tracking-wider mb-4">Quick Links</p>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/schedule/" class="hover:text-white transition-colors">Schedule</a></li>
-            <li><a href="/consign/" class="hover:text-white transition-colors">Consign</a></li>
-            <li><a href="/volunteering/" class="hover:text-white transition-colors">Volunteer</a></li>
-            <li><a href="/vendors/" class="hover:text-white transition-colors">Vendors</a></li>
-            <li><a href="/gallery/" class="hover:text-white transition-colors">Gallery</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="font-heading font-bold text-charcoal text-sm uppercase tracking-wider mb-4">Consignor Tools</p>
-          <ul class="space-y-2 text-sm">
-            <li><a href="https://www.mysalemanager.net/hom_start.aspx?partnercode=DFLB" class="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Consignor Login</a></li>
-            <li><a href="https://www.mysalemanager.net/reg_start.aspx?partnercode=DFLB&type=new" class="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">New Registration</a></li>
-            <li><a href="https://www.mysalemanager.net/itm_start.aspx?partnercode=DFLB" class="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Enter Items / Print Tags</a></li>
-            <li><a href="https://www.mysalemanager.net/drp_start.aspx?partnercode=DFLB" class="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">Schedule Drop-Off</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="font-heading font-bold text-charcoal text-sm uppercase tracking-wider mb-4">Contact</p>
-          <address class="not-italic text-sm space-y-2">
-            <p><svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>1200 Edgewood Ave, Rochester, NY 14618</p>
-            <p><svg class="w-4 h-4 inline-block mr-1.5 -mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><a href="mailto:dudsforlovebugs@gmail.com" class="hover:text-white transition-colors">dudsforlovebugs@gmail.com</a></p>
-          </address>
-          <div class="flex gap-4 mt-4">
-            <a href="https://www.facebook.com/dudsforlovebugs" target="_blank" rel="noopener noreferrer" aria-label="Duds for Love Bugs on Facebook" class="w-10 h-10 bg-charcoal/10 rounded-lg flex items-center justify-center hover:bg-charcoal/20 transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a href="https://www.instagram.com/dudsforlovebugs/" target="_blank" rel="noopener noreferrer" aria-label="Duds for Love Bugs on Instagram" class="w-10 h-10 bg-charcoal/10 rounded-lg flex items-center justify-center hover:bg-charcoal/20 transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="border-t border-border pt-8 text-center text-sm text-charcoal-light">
-        <p>&copy; 2026 Duds for Love Bugs. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+  <footer class="footer-dflb py-5"><div class="container"><div class="row g-4 mb-4"><div class="col-sm-6 col-lg-3"><img src="/images/logo.png" alt="" width="120" height="50" class="mb-3" style="height:2.5rem;width:auto;object-fit:contain;filter:brightness(1.2);"><p class="fw-bold mb-1" style="color:white;font-family:var(--font-heading);">Duds for Love Bugs</p><p class="small mb-0">Rochester's favorite children's consignment sale.</p></div><div class="col-sm-6 col-lg-3"><p class="footer-heading">Quick Links</p><ul class="footer-links"><li><a href="/schedule/">Schedule</a></li><li><a href="/consign/">Consign</a></li><li><a href="/volunteering/">Volunteer</a></li><li><a href="/vendors/">Vendors</a></li><li><a href="/gallery/">Gallery</a></li></ul></div><div class="col-sm-6 col-lg-3"><p class="footer-heading">Consignor Tools</p><ul class="footer-links"><li><a href="https://www.mysalemanager.net/hom_start.aspx?partnercode=DFLB" target="_blank" rel="noopener noreferrer">Consignor Login</a></li><li><a href="https://www.mysalemanager.net/reg_start.aspx?partnercode=DFLB&type=new" target="_blank" rel="noopener noreferrer">New Registration</a></li><li><a href="https://www.mysalemanager.net/itm_start.aspx?partnercode=DFLB" target="_blank" rel="noopener noreferrer">Enter Items / Print Tags</a></li><li><a href="https://www.mysalemanager.net/drp_start.aspx?partnercode=DFLB" target="_blank" rel="noopener noreferrer">Schedule Drop-Off</a></li></ul></div><div class="col-sm-6 col-lg-3"><p class="footer-heading">Contact</p><address class="small" style="font-style:normal;"><p class="mb-2">1200 Edgewood Ave, Rochester, NY 14618</p><p class="mb-3"><a href="mailto:dudsforlovebugs@gmail.com">dudsforlovebugs@gmail.com</a></p></address><div class="d-flex gap-2"><a href="https://www.facebook.com/dudsforlovebugs" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://www.instagram.com/dudsforlovebugs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></div></div></div><hr style="border-color:rgba(255,255,255,0.1);"><p class="small text-center mb-0" style="color:rgba(255,255,255,0.4);">&copy; 2026 Duds for Love Bugs. All rights reserved.</p></div></footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
-  <script src="/js/main.js" defer></script>
+  <script>document.addEventListener('DOMContentLoaded', function () { if (typeof AOS !== 'undefined') AOS.init({ duration: 700, easing: 'ease-out', once: true, offset: 80 }); });</script>
 </body>
 </html>
