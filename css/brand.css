@@ -29,6 +29,9 @@
 }
 
 /* Base */
+html, body {
+  overflow-x: hidden;
+}
 body {
   font-family: var(--font-body);
   color: var(--dflb-charcoal);
