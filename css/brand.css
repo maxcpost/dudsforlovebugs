@@ -203,34 +203,41 @@ h1, h2, h3, h4, h5, h6,
   background: var(--dflb-pop-light);
   border: 2px solid var(--dflb-pop);
   border-radius: 0.75rem;
-  padding: 1.25rem 1rem;
-  min-width: 5.5rem;
+  padding: 0.75rem 0.5rem;
+  flex: 1 1 0;
+  min-width: 0;
   text-align: center;
 }
 .countdown-box .number {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 1.75rem;
   line-height: 1;
   color: var(--dflb-pop);
 }
 .countdown-box .label {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 0.6875rem;
-  letter-spacing: 0.12em;
+  font-size: 0.5625rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--dflb-text);
-  margin-top: 0.5rem;
+  margin-top: 0.375rem;
 }
 
 @media (min-width: 576px) {
   .countdown-box {
     min-width: 7rem;
+    flex: 0 0 auto;
     padding: 1.5rem 1.25rem;
   }
   .countdown-box .number {
     font-size: 3.5rem;
+  }
+  .countdown-box .label {
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    margin-top: 0.5rem;
   }
 }
 
