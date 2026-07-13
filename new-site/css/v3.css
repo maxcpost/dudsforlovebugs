@@ -121,15 +121,18 @@
   to { transform: translateX(-50%); }
 }
 
-/* ─── SECTIONS: candy color blocking ─── */
-.section-cream { background-color: var(--dflb-pop-light); }
-.section-cream + .section-cream { background-color: var(--v3-aqua-light); }
+/* ─── SECTIONS: candy color blocking — each hue used once ───
+   pathways pink tint, how-it-works aqua tint, VIP tangerine,
+   Natalie white, community yellow tint, CTA ink, footer magenta. */
+main > section:nth-of-type(2) { background-color: var(--dflb-pop-light); }
+main > section:nth-of-type(3) { background-color: var(--v3-aqua-light); }
+main > section:nth-of-type(5) { background-color: white; }
+main > section:nth-of-type(6) { background-color: var(--v3-sun-light); }
 .section-tan { background-color: var(--v3-tangerine); }
 .section-tan h2, .section-tan h3, .section-tan p, .section-tan .text-muted-dflb { color: var(--v3-ink) !important; }
 .section-tan .text-eyebrow { color: var(--v3-ink) !important; }
 .section-tan .btn-gold { background: white; color: var(--v3-ink); }
 .section-tan .btn-gold:hover { background: var(--v3-sun-light); color: var(--v3-ink); }
-.section-cool { background-color: var(--v3-sun-light); }
 
 /* Pathway cards: sticker cards, one candy color each, tilted */
 .card-dflb {

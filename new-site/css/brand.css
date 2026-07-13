@@ -274,10 +274,10 @@ h1, h2, h3, h4, h5, h6,
 
 /* ─── SECTIONS ─── */
 .section-cream { background-color: var(--dflb-grey-50); }
-.section-cool { background-color: var(--dflb-teal-light); }
-.section-tan { background-color: var(--dflb-teal); color: white; }
+.section-cool { background-color: var(--dflb-pop-light); }
+.section-tan { background-color: var(--dflb-pop); color: white; }
 .section-tan h2, .section-tan h3, .section-tan p, .section-tan .text-muted-dflb { color: white !important; }
-.section-tan .text-eyebrow { color: rgba(255,255,255,0.7) !important; }
+.section-tan .text-eyebrow { color: white !important; }
 .section-tan .btn-gold { background-color: white; color: var(--dflb-charcoal); border-color: white; }
 .section-tan .btn-gold:hover { background-color: var(--dflb-grey-50); border-color: var(--dflb-grey-50); }
 .section-tan .btn-outline-gold { border-color: white; color: white; }
@@ -356,7 +356,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* ─── FOOTER ─── */
 .footer-dflb {
-  background-color: var(--dflb-teal);
+  background-color: var(--dflb-dark);
   color: white;
 }
 .footer-dflb a {
@@ -397,7 +397,7 @@ h1, h2, h3, h4, h5, h6,
 }
 .social-icon:hover {
   background: white;
-  color: var(--dflb-teal-dark);
+  color: var(--dflb-pop);
 }
 
 /* ─── TEXT HELPERS ─── */
@@ -427,11 +427,11 @@ h1, h2, h3, h4, h5, h6,
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background: var(--dflb-teal);
+  background: var(--dflb-pop);
   border-radius: 2px;
 }
 .link-gold {
-  color: var(--dflb-pop);
+  color: var(--dflb-pop-deep);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s;

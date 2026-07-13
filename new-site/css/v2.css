@@ -83,10 +83,10 @@
 .col-md-4:nth-child(2) .card-dflb:hover { border-color: var(--v2-aqua); box-shadow: 0 8px 24px rgba(127, 216, 207, 0.35); }
 .col-md-4:nth-child(3) .card-dflb:hover { border-color: var(--v2-sun); box-shadow: 0 8px 24px rgba(255, 201, 60, 0.35); }
 
-/* Alternate section tints so no stretch reads plain white */
-.section-cream { background-color: var(--dflb-pop-light); }
-.section-cream + .section-cream { background-color: var(--v2-sun-light); }
-.section-cool { background-color: var(--v2-aqua-light); }
+/* Section rhythm: white -> pink tint -> SUN band -> white -> yellow tint.
+   (Community section gets the yellow tint; sun-light never touches the
+   solid sun VIP band so no tone-on-tone adjacency.) */
+main > section:nth-of-type(6) { background-color: var(--v2-sun-light); }
 
 /* Step numbers pick up the two accents */
 .step-number-gold { background: var(--dflb-teal-dark); }
