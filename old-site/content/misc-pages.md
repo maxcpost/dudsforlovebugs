@@ -2,7 +2,7 @@
 
 ## Gallery
 **URL:** https://dudsforlovebugs.com/gallery/
-Currently broken (WordPress critical error). Contains ~24 event photos. See `assets/image-inventory.md` for full list.
+The photo grid renders with all 24 event photos (a broken slider widget embeds a "critical error" notice on the page, but the gallery itself works). See `assets/image-inventory.md` for full list — all 24 are archived in `assets/gallery/`.
 
 ## Printable Flyers
 **URL:** https://dudsforlovebugs.com/printable-flyers/
@@ -25,3 +25,4 @@ Broken — shows "There is nothing to show here!" and "Slider with alias slider-
 ## VIP/Valet Application
 **URL:** https://dudsforlovebugs.com/vip-valet-application/
 Contains a form (Name, Phone, Email, VIP or Valet choice, item count, discount/donate preference, message). Consider replacing with direct link to Google Form or rebuilding as a simple HTML form.
+Exact form options: service choice "VIP (you drop off)" / "VALET VIP (we pick up)"; item count "less than 50" / "50-100" / "100 -250" / "250-500"; preference "Discount" / "Discount/Donate" / "Neither".

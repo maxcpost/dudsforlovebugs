@@ -8,9 +8,11 @@
 ## Event Banner
 
 1200 Edgewood Ave. Rochester, NY 14618
-AUGUST 15-17, 2025
+MAY 8 -10, 2026
 LOCATION: Jewish Community Center (JCC)
 OUR NEXT EVENT
+
+*(Banner as of the 2026-07-13 re-crawl. When first archived it read "AUGUST 15-17, 2025" — this date changes each season.)*
 
 ## SELL
 
