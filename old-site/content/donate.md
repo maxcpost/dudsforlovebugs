@@ -15,6 +15,8 @@ Our charity of choice is... **Crisis Nursery**
 
 All diapers and unsold-donated merchandise will be gifted to the Crisis Nursery.
 
-## Military Appreciation
+## Gratitude.
+
+*(Live heading is "Gratitude." — content is military appreciation.)*
 
 We also wanted to give a special thanks to all of our Military brothers and sisters by allowing 1 hour early entrance (9 a.m. Friday) to shop the opening day of sale! *(Proper Military I.D. required).

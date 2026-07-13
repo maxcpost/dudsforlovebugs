@@ -5,6 +5,7 @@ All assets currently hosted at `dudsforlovebugs.com/wp-content/uploads/`
 ## Branding
 
 - Logo: `/2020/02/LOGO.png`
+- Favicon / apple-touch-icon (site-wide): `/2020/02/BUG.png` — archived as `assets/BUG.png`
 
 ## Homepage Images
 
