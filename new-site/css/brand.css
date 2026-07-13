@@ -3,10 +3,13 @@
 :root {
   /* ─── TWO accent colors, disciplined application ─── */
 
-  /* Pink — buttons, links, icons, interactive elements */
-  --dflb-pop: #EF9BAA;
-  --dflb-pop-hover: #E08494;
-  --dflb-pop-light: #FDF2F4;
+  /* Pink — buttons, links, icons, interactive elements.
+     Anchored to the logo's magenta (#E010B0), deepened slightly so
+     white button text passes WCAG AA (4.6:1). */
+  --dflb-pop: #D6219C;
+  --dflb-pop-hover: #B81585;
+  --dflb-pop-light: #FBE9F5;
+  --dflb-pop-deep: #C9128F; /* small text on tinted backgrounds (AA on cream/pink-light) */
 
   /* Soft Teal — section backgrounds, footer, decorative accents */
   --dflb-teal: #80CBC4;
@@ -125,7 +128,7 @@ h1, h2, h3, h4, h5, h6,
   border-color: var(--dflb-pop-hover);
   color: white;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(239, 155, 170, 0.4);
+  box-shadow: 0 4px 14px rgba(214, 33, 156, 0.35);
 }
 .btn-gold:focus-visible {
   outline: 2px solid var(--dflb-pop);
@@ -190,19 +193,20 @@ h1, h2, h3, h4, h5, h6,
 
 /* ─── HERO / COUNTDOWN ─── */
 .hero-countdown {
-  background-color: var(--dflb-white);
+  background: linear-gradient(180deg, var(--dflb-pop-light) 0%, var(--dflb-white) 78%);
   border-bottom: 1px solid var(--dflb-grey-200);
   color: var(--dflb-charcoal);
   padding: 4rem 0 3.5rem;
 }
 
 .countdown-box {
-  background: var(--dflb-pop-light);
+  background: var(--dflb-white);
   border: 2px solid var(--dflb-pop);
   border-radius: 0.75rem;
   padding: 1.25rem 1rem;
   min-width: 5.5rem;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(214, 33, 156, 0.12);
 }
 .countdown-box .number {
   font-family: var(--font-heading);
@@ -237,7 +241,7 @@ h1, h2, h3, h4, h5, h6,
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--dflb-pop);
+  color: var(--dflb-pop-deep);
 }
 
 .hero-title {
@@ -317,7 +321,7 @@ h1, h2, h3, h4, h5, h6,
 }
 .card-dflb:hover {
   border-color: var(--dflb-pop);
-  box-shadow: 0 8px 24px rgba(239, 155, 170, 0.18);
+  box-shadow: 0 8px 24px rgba(214, 33, 156, 0.14);
 }
 
 /* Icon circles */
@@ -407,7 +411,7 @@ h1, h2, h3, h4, h5, h6,
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--dflb-pop);
+  color: var(--dflb-pop-deep);
 }
 /* Section title with teal underline accent */
 .section-title-bar {
