@@ -1,0 +1,231 @@
+/* ─── OPTION 3 — "Candy Carnival" (loads after brand.css) ───
+   Maximum color: animated candy gradient hero, sticker-style
+   countdown tiles in four candy colors, scrolling ticker,
+   hard offset shadows everywhere. Pure CSS — no extra assets. */
+
+:root {
+  --v3-magenta: #D6219C;
+  --v3-sun: #FFC93C;
+  --v3-aqua: #7FD8CF;
+  --v3-tangerine: #FF8A3C;
+  --v3-ink: #2B2D42;
+  --v3-sun-light: #FFF6DE;
+  --v3-aqua-light: #E6F8F6;
+  --v3-tang-light: #FFEFE2;
+}
+
+/* Navbar: candy rainbow underline */
+.navbar { border-bottom: 0; position: sticky; }
+.navbar::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 6px;
+  background: linear-gradient(90deg,
+    var(--v3-magenta) 0 25%, var(--v3-sun) 25% 50%,
+    var(--v3-aqua) 50% 75%, var(--v3-tangerine) 75% 100%);
+}
+
+/* ─── HERO: animated candy gradient + confetti dots ─── */
+.hero-countdown {
+  background:
+    radial-gradient(rgba(255, 255, 255, 0.16) 2.5px, transparent 3px),
+    radial-gradient(rgba(43, 45, 66, 0.10) 2px, transparent 2.5px),
+    linear-gradient(120deg, #D6219C, #B81585 34%, #D6219C 55%, #E4571F 100%);
+  background-size: 36px 36px, 26px 26px, 300% 300%;
+  border-bottom: 0;
+  color: white;
+  animation: v3-candy-pan 14s ease-in-out infinite alternate;
+}
+@keyframes v3-candy-pan {
+  from { background-position: 0 0, 13px 13px, 0% 50%; }
+  to   { background-position: 0 0, 13px 13px, 100% 50%; }
+}
+.hero-countdown .hero-eyebrow { color: white; font-weight: 700; }
+.hero-countdown .hero-subtitle { color: white; font-weight: 500; font-size: clamp(1.0625rem, 2.5vw, 1.25rem); }
+.hero-countdown .hero-meta { color: rgba(255, 255, 255, 0.95); }
+
+/* Logo sticker: white blob, thick ink border, hard shadow, gentle float */
+.hero-countdown img[src$="logo.png"] {
+  background: white;
+  padding: 1.25rem 2rem;
+  border: 3px solid var(--v3-ink);
+  border-radius: 1.75rem;
+  transform: rotate(-3deg);
+  box-shadow: 8px 8px 0 var(--v3-ink);
+  animation: v3-float 5s ease-in-out infinite;
+}
+@keyframes v3-float {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  50% { transform: rotate(-3deg) translateY(-8px); }
+}
+
+/* Countdown: four candy tiles, sticker-style */
+.countdown-box {
+  border: 3px solid var(--v3-ink);
+  box-shadow: 6px 6px 0 var(--v3-ink);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.countdown-box:hover { transform: rotate(0deg) translate(-2px, -2px); box-shadow: 8px 8px 0 var(--v3-ink); }
+.countdown-box:nth-child(1) { background: white; transform: rotate(-3deg); }
+.countdown-box:nth-child(1) .number { color: var(--v3-magenta); }
+.countdown-box:nth-child(1) .label { color: var(--v3-ink); }
+.countdown-box:nth-child(2) { background: var(--v3-sun); transform: rotate(2deg); }
+.countdown-box:nth-child(2) .number, .countdown-box:nth-child(2) .label { color: var(--v3-ink); }
+.countdown-box:nth-child(3) { background: var(--v3-aqua); transform: rotate(-2deg); }
+.countdown-box:nth-child(3) .number, .countdown-box:nth-child(3) .label { color: var(--v3-ink); }
+.countdown-box:nth-child(4) { background: var(--v3-tangerine); transform: rotate(3deg); }
+.countdown-box:nth-child(4) .number, .countdown-box:nth-child(4) .label { color: var(--v3-ink); }
+
+/* Sticker buttons: chunky ink borders + hard shadows, bouncy hover */
+.btn-gold, .btn-outline-gold, .btn-dark-gold, .btn-white {
+  border: 3px solid var(--v3-ink);
+  box-shadow: 4px 4px 0 var(--v3-ink);
+  border-radius: 2rem;
+  font-weight: 700;
+}
+.btn-gold:hover, .btn-outline-gold:hover, .btn-dark-gold:hover, .btn-white:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--v3-ink);
+}
+.hero-countdown .btn-gold { background: var(--v3-sun); border-color: var(--v3-ink); color: var(--v3-ink); }
+.hero-countdown .btn-gold:hover { background: #F5B916; color: var(--v3-ink); }
+.hero-countdown .btn-outline-gold { background: white; color: var(--v3-ink); }
+.hero-countdown .btn-outline-gold:hover { background: var(--v3-aqua); color: var(--v3-ink); }
+
+/* ─── TICKER: scrolling strip under the hero ─── */
+.v3-ticker {
+  background: var(--v3-sun);
+  border-top: 3px solid var(--v3-ink);
+  border-bottom: 3px solid var(--v3-ink);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0.6rem 0;
+}
+.v3-ticker .track {
+  display: inline-block;
+  animation: v3-marquee 22s linear infinite;
+}
+.v3-ticker span {
+  color: var(--v3-ink);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0 1.25rem;
+}
+@keyframes v3-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ─── SECTIONS: candy color blocking — each hue used once ───
+   pathways pink tint, how-it-works aqua tint, VIP tangerine,
+   Natalie white, community yellow tint, CTA ink, footer magenta. */
+main > section:nth-of-type(2) { background-color: var(--dflb-pop-light); }
+main > section:nth-of-type(3) { background-color: var(--v3-aqua-light); }
+main > section:nth-of-type(5) { background-color: white; }
+main > section:nth-of-type(6) { background-color: var(--v3-sun-light); }
+.section-tan { background-color: var(--v3-tangerine); }
+.section-tan h2, .section-tan h3, .section-tan p, .section-tan .text-muted-dflb { color: var(--v3-ink) !important; }
+.section-tan .text-eyebrow { color: var(--v3-ink) !important; }
+.section-tan .btn-gold { background: white; color: var(--v3-ink); }
+.section-tan .btn-gold:hover { background: var(--v3-sun-light); color: var(--v3-ink); }
+
+/* Pathway cards: sticker cards, one candy color each, tilted */
+.card-dflb {
+  border: 3px solid var(--v3-ink);
+  border-radius: 1.25rem;
+  box-shadow: 6px 6px 0 var(--v3-ink);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-dflb:hover {
+  border-color: var(--v3-ink);
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--v3-ink);
+}
+.col-md-4:nth-child(1) .card-dflb { background: white; transform: rotate(-1deg); border-top: 3px solid var(--v3-ink); }
+.col-md-4:nth-child(2) .card-dflb { background: var(--v3-aqua-light); transform: rotate(1deg); border-top: 3px solid var(--v3-ink); }
+.col-md-4:nth-child(3) .card-dflb { background: var(--v3-sun-light); transform: rotate(-1deg); border-top: 3px solid var(--v3-ink); }
+.col-md-4:nth-child(1) .card-dflb:hover,
+.col-md-4:nth-child(2) .card-dflb:hover,
+.col-md-4:nth-child(3) .card-dflb:hover { transform: translate(-2px, -2px) rotate(0deg); }
+.icon-circle { border: 3px solid var(--v3-ink); }
+.col-md-4:nth-child(1) .icon-circle { background: var(--v3-magenta); color: white; }
+.col-md-4:nth-child(2) .icon-circle { background: var(--v3-aqua); color: var(--v3-ink); }
+.col-md-4:nth-child(3) .icon-circle { background: var(--v3-sun); color: var(--v3-ink); }
+
+/* Step numbers: candy alternating, ink ring */
+.step-number { border: 2px solid var(--v3-ink); }
+.step-number-gold { background: var(--v3-aqua); color: var(--v3-ink); }
+.step-number-terracotta { background: var(--v3-magenta); color: white; }
+
+/* Photo frame: rotate harder, candy tint */
+.photo-frame::before { background: var(--v3-sun); transform: rotate(-3deg); border: 3px solid var(--v3-ink); }
+.photo-frame img { border: 3px solid var(--v3-ink); }
+
+/* Dark CTA: keep ink, add confetti */
+.section-dark {
+  background:
+    radial-gradient(rgba(214, 33, 156, 0.35) 2px, transparent 2.5px),
+    radial-gradient(rgba(255, 201, 60, 0.30) 2px, transparent 2.5px),
+    var(--v3-ink);
+  background-size: 42px 42px, 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+.section-dark .text-gold { color: var(--v3-sun) !important; }
+.section-dark .hero-eyebrow { color: var(--v3-aqua); }
+
+/* Footer: magenta finale */
+.footer-dflb { background-color: var(--dflb-pop-hover); border-top: 6px solid var(--v3-sun); }
+.social-icon:hover { color: var(--dflb-pop-hover); }
+
+/* ─── Variant switcher pill ─── */
+.variant-switch {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3000;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  background: rgba(43, 45, 66, 0.92);
+  backdrop-filter: blur(6px);
+  border-radius: 2rem;
+  padding: 0.35rem 0.6rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+.variant-switch span {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 0.4rem;
+}
+.variant-switch a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.variant-switch a:hover { background: rgba(255, 255, 255, 0.2); }
+.variant-switch a[aria-current="page"] { background: var(--dflb-pop); }
+
+/* Reduced motion: brand.css already zeroes animation durations globally;
+   belt-and-suspenders for the infinite loops here. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-countdown, .hero-countdown img[src$="logo.png"], .v3-ticker .track {
+    animation: none !important;
+  }
+}

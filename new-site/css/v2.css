@@ -1,0 +1,143 @@
+/* ─── OPTION 2 — "Bubblegum Pop" (loads after brand.css) ───
+   Brighter, more eccentric: full magenta hero with polka dots,
+   logo on a white sticker, sunny-yellow primary CTAs. */
+
+:root {
+  --v2-sun: #FFC93C;
+  --v2-sun-hover: #F5B916;
+  --v2-aqua: #7FD8CF;
+  --v2-aqua-light: #E6F8F6;
+  --v2-sun-light: #FFF6DE;
+}
+
+/* Navbar: white, but with a bold brand underline */
+.navbar {
+  border-bottom: 4px solid var(--dflb-pop);
+}
+
+/* ─── HERO: full bubblegum ─── */
+.hero-countdown {
+  background:
+    radial-gradient(rgba(255, 255, 255, 0.14) 2.5px, transparent 3px),
+    radial-gradient(rgba(255, 255, 255, 0.10) 2px, transparent 2.5px),
+    linear-gradient(165deg, #D6219C 0%, #B81585 100%);
+  background-size: 34px 34px, 22px 22px, 100% 100%;
+  background-position: 0 0, 11px 11px, 0 0;
+  border-bottom: 0;
+  color: white;
+}
+.hero-countdown .hero-eyebrow { color: white; font-weight: 700; }
+.hero-countdown .hero-subtitle { color: rgba(255, 255, 255, 0.95); }
+.hero-countdown .hero-meta { color: rgba(255, 255, 255, 0.92); }
+.hero-countdown .hero-meta svg { opacity: 0.9; }
+
+/* Logo rides a white sticker so the magenta mark pops on magenta */
+.hero-countdown img[src$="logo.png"] {
+  background: white;
+  padding: 1.25rem 2rem;
+  border-radius: 1.5rem;
+  transform: rotate(-2deg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Countdown boxes: white tiles, playfully tilted */
+.countdown-box {
+  background: white;
+  border: 0;
+  border-top: 6px solid var(--v2-sun);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+.countdown-box:nth-child(odd) { transform: rotate(-2deg); }
+.countdown-box:nth-child(even) { transform: rotate(2deg); }
+.countdown-box .number { color: var(--dflb-pop); }
+.countdown-box .label { color: var(--dflb-charcoal); }
+
+/* Hero CTAs: sunny yellow primary, white outline secondary */
+.hero-countdown .btn-gold {
+  background-color: var(--v2-sun);
+  border-color: var(--v2-sun);
+  color: var(--dflb-charcoal);
+}
+.hero-countdown .btn-gold:hover {
+  background-color: var(--v2-sun-hover);
+  border-color: var(--v2-sun-hover);
+  color: var(--dflb-charcoal);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+.hero-countdown .btn-outline-gold {
+  border-color: white;
+  color: white;
+}
+.hero-countdown .btn-outline-gold:hover {
+  background: white;
+  color: var(--dflb-pop);
+}
+
+/* ─── PATHWAY CARDS: one accent color each ─── */
+.card-dflb { border-width: 2px; }
+.col-md-4:nth-child(1) .card-dflb { border-top: 6px solid var(--dflb-pop); }
+.col-md-4:nth-child(2) .card-dflb { border-top: 6px solid var(--v2-aqua); }
+.col-md-4:nth-child(3) .card-dflb { border-top: 6px solid var(--v2-sun); }
+.col-md-4:nth-child(2) .icon-circle { background: var(--v2-aqua-light); color: #2E7D76; }
+.col-md-4:nth-child(3) .icon-circle { background: var(--v2-sun-light); color: #8A6400; }
+.col-md-4:nth-child(2) .card-dflb:hover { border-color: var(--v2-aqua); box-shadow: 0 8px 24px rgba(127, 216, 207, 0.35); }
+.col-md-4:nth-child(3) .card-dflb:hover { border-color: var(--v2-sun); box-shadow: 0 8px 24px rgba(255, 201, 60, 0.35); }
+
+/* Section rhythm: white -> pink tint -> SUN band -> white -> yellow tint.
+   (Community section gets the yellow tint; sun-light never touches the
+   solid sun VIP band so no tone-on-tone adjacency.) */
+main > section:nth-of-type(6) { background-color: var(--v2-sun-light); }
+
+/* Step numbers pick up the two accents */
+.step-number-gold { background: var(--dflb-teal-dark); }
+
+/* VIP band: sunnier */
+.section-tan { background-color: var(--v2-sun); }
+.section-tan h2, .section-tan h3, .section-tan p, .section-tan .text-muted-dflb { color: var(--dflb-charcoal) !important; }
+.section-tan .text-eyebrow { color: #2B2D42 !important; }
+.section-tan .btn-gold { background-color: var(--dflb-pop); border-color: var(--dflb-pop); color: white; }
+.section-tan .btn-gold:hover { background-color: var(--dflb-pop-hover); border-color: var(--dflb-pop-hover); color: white; }
+
+/* Footer: magenta to bookend the hero */
+.footer-dflb { background-color: var(--dflb-pop-hover); }
+.social-icon:hover { color: var(--dflb-pop-hover); }
+
+/* ─── Variant switcher pill ─── */
+.variant-switch {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3000;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  background: rgba(43, 45, 66, 0.92);
+  backdrop-filter: blur(6px);
+  border-radius: 2rem;
+  padding: 0.35rem 0.6rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+.variant-switch span {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 0.4rem;
+}
+.variant-switch a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.variant-switch a:hover { background: rgba(255, 255, 255, 0.2); }
+.variant-switch a[aria-current="page"] { background: var(--dflb-pop); }
