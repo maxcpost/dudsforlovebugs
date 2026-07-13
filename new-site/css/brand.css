@@ -193,7 +193,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* ─── HERO / COUNTDOWN ─── */
 .hero-countdown {
-  background: linear-gradient(180deg, var(--dflb-pop-light) 0%, var(--dflb-white) 78%);
+  background-color: var(--dflb-white);
   border-bottom: 1px solid var(--dflb-grey-200);
   color: var(--dflb-charcoal);
   padding: 4rem 0 3.5rem;
@@ -273,16 +273,20 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* ─── SECTIONS ─── */
+/* Neutral system: content sections are white or grey-50 only.
+   Dark ink is the single contrast register (mid-page callout band,
+   closing CTA, footer). Brand pink lives in elements, not backgrounds. */
 .section-cream { background-color: var(--dflb-grey-50); }
-.section-cool { background-color: var(--dflb-pop-light); }
-.section-tan { background-color: var(--dflb-pop); color: white; }
+.section-cool { background-color: var(--dflb-grey-50); }
+.section-tan { background-color: var(--dflb-dark); color: white; }
 .section-tan h2, .section-tan h3, .section-tan p, .section-tan .text-muted-dflb { color: white !important; }
-.section-tan .text-eyebrow { color: white !important; }
-.section-tan .btn-gold { background-color: white; color: var(--dflb-charcoal); border-color: white; }
-.section-tan .btn-gold:hover { background-color: var(--dflb-grey-50); border-color: var(--dflb-grey-50); }
+.section-tan .text-eyebrow { color: #F2A9DC !important; }
+.section-tan .btn-gold { background-color: var(--dflb-pop); color: white; border-color: var(--dflb-pop); }
+.section-tan .btn-gold:hover { background-color: var(--dflb-pop-hover); border-color: var(--dflb-pop-hover); }
 .section-tan .btn-outline-gold { border-color: white; color: white; }
 .section-tan .btn-outline-gold:hover { background-color: white; color: var(--dflb-charcoal); }
 .section-dark { background-color: var(--dflb-dark); color: white; }
+.section-dark .hero-eyebrow { color: #F2A9DC; }
 .section-white { background-color: var(--dflb-white); }
 
 .section-padding {
