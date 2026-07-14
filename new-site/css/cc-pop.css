@@ -9,15 +9,14 @@
     radial-gradient(circle, rgba(255,255,255,0.65) 3.5px, transparent 4px),
     radial-gradient(circle, rgba(255,255,255,0.45) 2.5px, transparent 3px),
     linear-gradient(120deg,
-      #FF4C97 0%, #FF77B7 20%, #C084F5 42%, #46B6F2 64%, #3FD6A8 84%, #FFD23F 100%);
+      #FF5FA2 0%, #FF77B7 20%, #C084F5 42%, #46B6F2 64%, #3FD6A8 84%, #FFD23F 100%);
   background-size: 100% 100%, 38px 38px, 24px 24px, 100% 100%;
   background-position: center, 0 0, 12px 12px, center;
 }
 .cc-hero::before  { width: 240px; height: 240px; }
 .cc-hero::after   { width: 300px; height: 300px; }
 
-/* Slightly stronger eyebrow + bolder countdown borders */
-.cc-hero .hero-eyebrow { color: #9E0C62; }
+/* Bolder countdown borders (eyebrow stays ink from the base for AA) */
 .cc-hero .countdown-box { border-top-width: 6px; box-shadow: 0 12px 30px rgba(43,45,66,0.22); }
 
 /* Denser candy underline on the nav */
