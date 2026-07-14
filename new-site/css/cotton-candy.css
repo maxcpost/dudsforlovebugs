@@ -238,17 +238,28 @@ body:not([class*="theme-"]) .card-accent-terracotta { border-top-color: #9B2FFF 
    live site is a white canvas with NO coloured section fills, so keep the
    colour in the banners + accents, not in big background bands. */
 
-/* Homepage restraint: the home has no per-page theme, so its accents were
-   ALL defaulting to magenta. Keep magenta as the signature (logo, buttons,
-   countdown) but spread the decorative trio + steps into the confetti's
-   other colours so pink is the accent, not the whole page. */
-body:not([class*="theme-"]) .icon-circle-cream { background:#FBE9F5 !important; color:#C9128F !important; } /* magenta */
-body:not([class*="theme-"]) .icon-circle-tan   { background:#F1E9FB !important; color:#7A35CC !important; } /* purple  */
-body:not([class*="theme-"]) .icon-circle-gold  { background:#E6F4FC !important; color:#0C6FA8 !important; } /* blue    */
-body:not([class*="theme-"]) .step-number-gold        { background:#19BEF5 !important; color:var(--cc-ink) !important; } /* shoppers: blue */
-body:not([class*="theme-"]) .step-number-terracotta  { background:#FF5FA2 !important; color:var(--cc-ink) !important; } /* consignors: magenta */
-body:not([class*="theme-"]) .card-accent-top       { border-top-color:#FF1F9C !important; } /* magenta */
-body:not([class*="theme-"]) .card-accent-terracotta{ border-top-color:#9B2FFF !important; } /* purple  */
+/* Homepage: no per-page theme, so accents were defaulting to magenta.
+   Coordinate each pathway card fully in ONE hue (icon circle + top-border
+   + CTA link), and unify 'How It Works' under a single non-pink blue.
+   Magenta stays the signature on the logo, buttons, and countdown. */
+
+/* Pathway trio — each card monochrome: Shop=magenta, Consign=purple, Volunteer=blue */
+body:not([class*="theme-"]) .icon-circle-cream { background:#FBE9F5 !important; color:#C9128F !important; }
+body:not([class*="theme-"]) .icon-circle-tan   { background:#F1E9FB !important; color:#7A35CC !important; }
+body:not([class*="theme-"]) .icon-circle-gold  { background:#E6F4FC !important; color:#0C6FA8 !important; }
+body:not([class*="theme-"]) .card-dflb:has(.icon-circle-cream) { border-top-color:#FF1F9C !important; }
+body:not([class*="theme-"]) .card-dflb:has(.icon-circle-cream) .link-gold { color:#C9128F !important; }
+body:not([class*="theme-"]) .card-dflb:has(.icon-circle-tan)  { border-top-color:#9B2FFF !important; }
+body:not([class*="theme-"]) .card-dflb:has(.icon-circle-tan) .link-gold { color:#7A35CC !important; }
+body:not([class*="theme-"]) .card-dflb:has(.icon-circle-gold) { border-top-color:#0A96E0 !important; }
+body:not([class*="theme-"]) .card-dflb:has(.icon-circle-gold) .link-gold { color:#0C6FA8 !important; }
+
+/* 'How It Works' — unified in one blue (was pink+purple+blue scatter) */
+.hiw .text-eyebrow { color:#0C6FA8 !important; }
+.hiw .step-number-gold, .hiw .step-number-terracotta { background:#19BEF5 !important; color:var(--cc-ink) !important; }
+.hiw .link-gold { color:#0C6FA8 !important; }
+.hiw .btn-gold { background:#0C6FA8 !important; border-color:#0C6FA8 !important; color:#fff !important; }
+.hiw .btn-gold:hover { background:#0A5C8C !important; border-color:#0A5C8C !important; }
 
 /* Footer stays dark (white link text needs the contrast) but gains a
    neon quartet top edge + candy-filled social icons. */
