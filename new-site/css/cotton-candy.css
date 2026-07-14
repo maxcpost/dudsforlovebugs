@@ -13,6 +13,9 @@
   --cc-mint:      #3FD6A8;   /* ink 7.32 */
   --cc-lavender:  #B98CF0;   /* ink 5.19 */
   --cc-sun:       #FFD23F;   /* ink 9.34 */
+  --cc-tangerine: #FF8A4C;   /* ink 5.78 */
+  --cc-periwinkle:#7C9EF0;   /* ink 5.14 */
+  --cc-coral:     #FF7A7A;   /* ink 5.34 */
   --cc-ink:       #2B2D42;
 }
 
@@ -30,14 +33,15 @@
   border-bottom: 0 !important;
   color: var(--cc-ink);
   background:
-    /* cloud glow behind the text column */
-    radial-gradient(ellipse 60% 55% at 50% 46%,
-      rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.55) 34%, rgba(255,255,255,0) 62%),
+    /* soft cloud glow — kept gentle so saturated color reads through
+       the centre (dark ink text clears AA on every stop regardless) */
+    radial-gradient(ellipse 52% 46% at 50% 47%,
+      rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.34) 40%, rgba(255,255,255,0) 68%),
     /* fine scattered polka field */
-    radial-gradient(circle, rgba(255,255,255,0.55) 3px, transparent 3.5px),
-    radial-gradient(circle, rgba(255,255,255,0.40) 2px, transparent 2.5px),
-    /* candy gradient base */
-    linear-gradient(135deg, #FF7DB4 0%, #C79BF2 34%, #62C9F1 66%, #57D9B4 100%);
+    radial-gradient(circle, rgba(255,255,255,0.60) 3px, transparent 3.5px),
+    radial-gradient(circle, rgba(255,255,255,0.42) 2px, transparent 2.5px),
+    /* vibrant candy gradient (true saturated palette, not tints) */
+    linear-gradient(135deg, var(--cc-pink) 0%, var(--cc-lavender) 34%, var(--cc-sky) 66%, var(--cc-mint) 100%);
   background-size: 100% 100%, 46px 46px, 30px 30px, 100% 100%;
   background-position: center, 0 0, 15px 15px, center;
 }
@@ -93,6 +97,11 @@
 .cc-hero .countdown-box:nth-child(4) { border-top-color: var(--cc-lavender); }
 .cc-hero .countdown-box .number { color: var(--dflb-pop); }
 
+/* Countdown: clean 2x2 grid on phones (avoids a lopsided 3+1 wrap) */
+@media (max-width: 575.98px) {
+  .cc-hero .countdown-box { min-width: 0; flex: 0 0 calc(50% - 0.5rem); }
+}
+
 /* Hero buttons: magenta primary pops; white outline secondary */
 .cc-hero .btn-outline-gold { border-color: #fff; color: var(--cc-ink); background: rgba(255,255,255,0.6); }
 .cc-hero .btn-outline-gold:hover { background: #fff; color: var(--dflb-pop); }
@@ -116,11 +125,13 @@
   object-fit: cover;
   display: block;
 }
+/* Visible dot is 10px, but a transparent border grows the tap target
+   to ~26px (WCAG 2.5.8 target-size). background-clip keeps the dot small. */
 .cc-carousel .carousel-indicators [data-bs-target] {
-  width: 9px; height: 9px; border-radius: 50%;
-  border: 0; background: #fff; opacity: 0.6;
+  width: 10px; height: 10px; border-radius: 50%; box-sizing: content-box;
+  border: 8px solid transparent; background: #fff; background-clip: padding-box; opacity: 0.7;
 }
-.cc-carousel .carousel-indicators .active { opacity: 1; background: var(--cc-pink); }
+.cc-carousel .carousel-indicators .active { opacity: 1; background: var(--cc-pink); background-clip: padding-box; }
 .cc-carousel .carousel-control-prev, .cc-carousel .carousel-control-next { width: 12%; opacity: 0.85; }
 @media (max-width: 575.98px) {
   .cc-carousel .carousel-item img { aspect-ratio: 4 / 3; }
@@ -137,8 +148,8 @@
   color: var(--cc-ink);
   background-color: var(--cc-pink);           /* default; modifier overrides */
   background-image:
-    radial-gradient(circle, rgba(255,255,255,0.60) 3px, transparent 3.5px),
-    radial-gradient(circle, rgba(255,255,255,0.35) 2px, transparent 2.5px);
+    radial-gradient(circle, rgba(255,255,255,0.75) 3.5px, transparent 4px),
+    radial-gradient(circle, rgba(255,255,255,0.50) 2.5px, transparent 3px);
   background-size: 44px 44px, 28px 28px;
   background-position: 0 0, 14px 14px;
 }
@@ -160,22 +171,26 @@
 .page-banner .btn-outline-gold { border-color: var(--cc-ink); color: var(--cc-ink); }
 .page-banner .btn-outline-gold:hover { background: var(--cc-ink); color: #fff; }
 
-/* Per-page color modifiers (all AA-body with ink) */
-.banner-pink      { background-color: var(--cc-pink); }
-.banner-bubblegum { background-color: var(--cc-bubblegum); }
-.banner-sky       { background-color: var(--cc-sky); }
-.banner-mint      { background-color: var(--cc-mint); }
-.banner-lavender  { background-color: var(--cc-lavender); }
-.banner-sun       { background-color: var(--cc-sun); }
+/* Per-page color modifiers (all AA-body ≥4.76 with ink) */
+.banner-pink       { background-color: var(--cc-pink); }
+.banner-bubblegum  { background-color: var(--cc-bubblegum); }
+.banner-sky        { background-color: var(--cc-sky); }
+.banner-mint       { background-color: var(--cc-mint); }
+.banner-lavender   { background-color: var(--cc-lavender); }
+.banner-sun        { background-color: var(--cc-sun); }
+.banner-tangerine  { background-color: var(--cc-tangerine); }
+.banner-periwinkle { background-color: var(--cc-periwinkle); }
+.banner-coral      { background-color: var(--cc-coral); }
 
 /* ─────────────────────────────────────────────────────────────────
    VARIANT SWITCHER (shared with the loud options)
    ───────────────────────────────────────────────────────────────── */
 .variant-switch {
   position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%);
-  z-index: 3000; display: flex; gap: 0.25rem; align-items: center;
+  z-index: 3000; display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 0.25rem; align-items: center; max-width: calc(100vw - 1.5rem);
   background: rgba(43,45,66,0.92); backdrop-filter: blur(6px);
-  border-radius: 2rem; padding: 0.35rem 0.6rem; box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  border-radius: 1.4rem; padding: 0.35rem 0.6rem; box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 .variant-switch span {
   color: rgba(255,255,255,0.75); font-size: 0.625rem; font-weight: 600;
