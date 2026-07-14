@@ -45,7 +45,7 @@
   background-image:
     radial-gradient(ellipse 48% 72% at 50% 48%,
       #fff 0%, #fff 40%, rgba(255,255,255,0) 74%),
-    url("/images/confetti-hero.svg");
+    url("../images/confetti-hero.svg");
   background-position: center, center;
   background-size: cover, cover;
   background-repeat: no-repeat, no-repeat;
@@ -54,7 +54,7 @@
   background-image:
     radial-gradient(ellipse 48% 72% at 50% 48%,
       #fff 0%, #fff 40%, rgba(255,255,255,0) 74%),
-    url("/images/confetti-hero-bold.svg");
+    url("../images/confetti-hero-bold.svg");
 }
 .cc-hero > .container { position: relative; z-index: 1; }
 
