@@ -14,17 +14,18 @@
   --cc-c-yellow:  #FFD400;
 
   /* Banner fills (all AA ≥4.76 with ink) */
-  --cc-pink:      #FF5FA2;   /* ink 4.76 */
+  --cc-pink:      #FF5FA2;   /* ink 4.76 (near floor) */
   --cc-bubblegum: #FF77B7;   /* ink 5.51 */
-  --cc-sky:       #3FC5F0;   /* ink 6.72 */
-  --cc-mint:      #3FD6A8;   /* ink 7.32 */
-  --cc-lavender:  #B98CF0;   /* ink 5.19 */
-  --cc-sun:       #FFD23F;   /* ink 9.34 */
-  --cc-tangerine: #FF8A4C;   /* ink 5.78 */
-  --cc-periwinkle:#7C9EF0;   /* ink 5.14 */
-  --cc-coral:     #FF7A7A;   /* ink 5.34 */
+  --cc-sky:       #19BEF5;   /* ink 6.25 — punchier */
+  --cc-mint:      #1FD69E;   /* ink 7.18 — punchier */
+  --cc-lavender:  #B98CF0;   /* ink 5.19 (near floor) */
+  --cc-sun:       #FFC800;   /* ink 8.68 — punchier */
+  --cc-tangerine: #FF7A33;   /* ink 5.19 — punchier */
+  --cc-periwinkle:#7C9EF0;   /* ink 5.14 (near floor) */
+  --cc-coral:     #FF6363;   /* ink 4.64 — punchier */
   --cc-ink:       #2B2D42;
-  --cc-vivid:     #FF5FA2;   /* bright fill for date tiles/badges; overridden per theme */
+  --cc-vivid:     #FF5FA2;   /* bright FILL for chips (date tiles/badges/step#) + ink text */
+  --cc-pop-lg:    #FF1F9C;   /* vivid colour for LARGE text/graphics on white (≥3:1) */
 }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -41,14 +42,14 @@
    --cc-vivid  = BRIGHT candy shade for FILLED decorative elements
                  (date tiles, badges, icon circles) which carry dark INK
                  text — this is where the vibrancy lives. */
-.theme-pink, .theme-bubblegum { --dflb-pop:#C9128F; --dflb-pop-hover:#A50F75; --dflb-pop-deep:#C9128F; --dflb-pop-light:#FBE9F5; --cc-vivid:#FF5FA2; }
-.theme-sky        { --dflb-pop:#0C6FA8; --dflb-pop-hover:#0A5C8C; --dflb-pop-deep:#0C6FA8; --dflb-pop-light:#E6F4FC; --cc-vivid:#3FC5F0; }
-.theme-mint       { --dflb-pop:#147D5C; --dflb-pop-hover:#0F6A4E; --dflb-pop-deep:#147D5C; --dflb-pop-light:#E6F7F1; --cc-vivid:#3FD6A8; }
-.theme-lavender   { --dflb-pop:#7A35CC; --dflb-pop-hover:#652BAA; --dflb-pop-deep:#7A35CC; --dflb-pop-light:#F1E9FB; --cc-vivid:#B98CF0; }
-.theme-sun        { --dflb-pop:#8A6A00; --dflb-pop-hover:#6F5500; --dflb-pop-deep:#8A6A00; --dflb-pop-light:#FFF6DE; --cc-vivid:#FFD23F; }
-.theme-tangerine  { --dflb-pop:#C2560F; --dflb-pop-hover:#A5480A; --dflb-pop-deep:#C2560F; --dflb-pop-light:#FFEEE2; --cc-vivid:#FF8A4C; }
-.theme-coral      { --dflb-pop:#C83C3C; --dflb-pop-hover:#A83030; --dflb-pop-deep:#C83C3C; --dflb-pop-light:#FDEBEB; --cc-vivid:#FF7A7A; }
-.theme-periwinkle { --dflb-pop:#3A5BD0; --dflb-pop-hover:#2E49B0; --dflb-pop-deep:#3A5BD0; --dflb-pop-light:#EAEFFD; --cc-vivid:#7C9EF0; }
+.theme-pink, .theme-bubblegum { --dflb-pop:#C9128F; --dflb-pop-hover:#A50F75; --dflb-pop-deep:#C9128F; --dflb-pop-light:#FBE9F5; --cc-vivid:var(--cc-pink);       --cc-pop-lg:#FF1F9C; }
+.theme-sky        { --dflb-pop:#0C6FA8; --dflb-pop-hover:#0A5C8C; --dflb-pop-deep:#0C6FA8; --dflb-pop-light:#E6F4FC; --cc-vivid:var(--cc-sky);        --cc-pop-lg:#0A96E0; }
+.theme-mint       { --dflb-pop:#147D5C; --dflb-pop-hover:#0F6A4E; --dflb-pop-deep:#147D5C; --dflb-pop-light:#E6F7F1; --cc-vivid:var(--cc-mint);       --cc-pop-lg:#009E6E; }
+.theme-lavender   { --dflb-pop:#7A35CC; --dflb-pop-hover:#652BAA; --dflb-pop-deep:#7A35CC; --dflb-pop-light:#F1E9FB; --cc-vivid:var(--cc-lavender);   --cc-pop-lg:#9B2FFF; }
+.theme-sun        { --dflb-pop:#8A6A00; --dflb-pop-hover:#6F5500; --dflb-pop-deep:#8A6A00; --dflb-pop-light:#FFF6DE; --cc-vivid:var(--cc-sun);        --cc-pop-lg:#B88600; }
+.theme-tangerine  { --dflb-pop:#C2560F; --dflb-pop-hover:#A5480A; --dflb-pop-deep:#C2560F; --dflb-pop-light:#FFEEE2; --cc-vivid:var(--cc-tangerine);  --cc-pop-lg:#F05C0A; }
+.theme-coral      { --dflb-pop:#C83C3C; --dflb-pop-hover:#A83030; --dflb-pop-deep:#C83C3C; --dflb-pop-light:#FDEBEB; --cc-vivid:var(--cc-coral);      --cc-pop-lg:#F23B3B; }
+.theme-periwinkle { --dflb-pop:#3A5BD0; --dflb-pop-hover:#2E49B0; --dflb-pop-deep:#3A5BD0; --dflb-pop-light:#EAEFFD; --cc-vivid:var(--cc-periwinkle); --cc-pop-lg:#4A6BF5; }
 
 /* ─────────────────────────────────────────────────────────────────
    HERO — clean white with scattered multi-colour confetti dots
@@ -196,3 +197,48 @@
 @media (prefers-reduced-motion: reduce) {
   .cc-carousel .carousel-item { transition: none; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   VIBRANCY (bold only). Push the neon register onto every LARGE /
+   graphical element (3:1 threshold); small text keeps the deep AA shade.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Large coloured text + graphical accents (big % numbers, checkmarks,
+   icons, section underbar) -> vivid. Small .text-gold text stays deep. */
+.text-gold, .text-terracotta { color: var(--cc-pop-lg) !important; }
+.small.text-gold, .text-gold.small { color: var(--dflb-pop-deep) !important; }
+.section-title-bar::after { background: var(--cc-pop-lg); }
+
+/* On dark bands, accents go neon magenta (also fixes the old 2.9:1
+   'Next Sale' date -> 3.8:1). */
+.section-dark .text-gold, .section-tan .text-gold,
+.section-dark .text-terracotta, .section-tan .text-terracotta,
+.section-dark .display-4, .section-dark .display-3 { color: #FF1F9C !important; }
+
+/* Filled circles/tiles -> vivid candy fill + ink (icon circles, step #). */
+.icon-circle-cream, .icon-circle-tan, .icon-circle-gold { background: var(--cc-vivid) !important; color: var(--cc-ink) !important; }
+.step-number-gold, .step-number-terracotta { background: var(--cc-vivid) !important; color: var(--cc-ink) !important; }
+
+/* Card top-accents -> vivid. Home (no theme) = neon magenta; the middle
+   pathway card gets neon purple for chromatic variety. */
+.card-accent-top, .card-accent-terracotta { border-top-color: var(--cc-pop-lg) !important; }
+body:not([class*="theme-"]) .card-accent-terracotta { border-top-color: #9B2FFF !important; }
+
+/* Home countdown numbers -> neon magenta (join the neon top-borders). */
+.cc-hero .countdown-box .number { color: #FF1F9C; }
+
+/* Secondary button: candy border at rest, not invisible grey. */
+.btn-outline-gold { border-color: var(--cc-pop-lg); color: var(--dflb-pop-deep); }
+
+/* Navbar links: de-grey to ink (hover keeps the accent). */
+.navbar .nav-link { color: var(--cc-ink) !important; }
+.navbar .nav-link:hover, .navbar .nav-link.active { color: var(--dflb-pop) !important; }
+
+/* Secondary sections: soft per-page accent tint instead of ~white grey. */
+.section-cream, .section-cool { background-color: var(--dflb-pop-light) !important; }
+
+/* Footer stays dark (white link text needs the contrast) but gains a
+   neon quartet top edge + candy-filled social icons. */
+.footer-dflb { border-top: 5px solid transparent; border-image: linear-gradient(90deg,#FF1F9C 0 25%,#FFD400 25% 50%,#10B4F5 50% 75%,#9B2FFF 75% 100%) 1; }
+.footer-dflb .social-icon { background: #FF1F9C; color: #fff; }
+.footer-dflb .social-icon:hover { background: #fff; color: #FF1F9C; }
