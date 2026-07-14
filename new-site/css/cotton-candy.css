@@ -7,11 +7,11 @@
    ═══════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* Hero confetti quartet (sampled from the owner's reference) */
-  --cc-c-magenta: #D01C86;
-  --cc-c-blue:    #2E97DC;
-  --cc-c-purple:  #674C97;
-  --cc-c-yellow:  #F6C731;
+  /* Hero confetti quartet — neon / "on the cusp of neon" (Bold) */
+  --cc-c-magenta: #FF1F9C;
+  --cc-c-blue:    #10B4F5;
+  --cc-c-purple:  #9B2FFF;
+  --cc-c-yellow:  #FFD400;
 
   /* Banner fills (all AA ≥4.76 with ink) */
   --cc-pink:      #FF5FA2;   /* ink 4.76 */
@@ -49,12 +49,6 @@
   background-position: center, center;
   background-size: cover, cover;
   background-repeat: no-repeat, no-repeat;
-}
-.cc-hero.cc-bold {
-  background-image:
-    radial-gradient(ellipse 48% 72% at 50% 48%,
-      #fff 0%, #fff 40%, rgba(255,255,255,0) 74%),
-    url("../images/confetti-hero-bold.svg");
 }
 .cc-hero > .container { position: relative; z-index: 1; }
 
@@ -118,25 +112,16 @@
    Just the banner; the rest of the page stays neutral/white.
    Usage: <section class="page-banner banner-pink"> ... </section>
    ───────────────────────────────────────────────────────────────── */
+/* Inverted hero: solid candy colour + scattered white polka dots of
+   varied sizes (a seamless tile). The mirror of the white+colour hero. */
 .page-banner {
   position: relative;
   overflow: hidden;
   color: var(--cc-ink);
   background-color: var(--cc-pink);           /* default; modifier overrides */
-  background-image:
-    radial-gradient(circle, rgba(255,255,255,0.75) 3.5px, transparent 4px),
-    radial-gradient(circle, rgba(255,255,255,0.50) 2.5px, transparent 3px);
-  background-size: 44px 44px, 28px 28px;
-  background-position: 0 0, 14px 14px;
-}
-.page-banner::after {           /* one big soft blotch, top-right */
-  content: "";
-  position: absolute;
-  top: -60px; right: -40px;
-  width: 220px; height: 220px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 70%);
-  pointer-events: none;
+  background-image: url("../images/banner-dots.svg");
+  background-size: 300px 300px;
+  background-repeat: repeat;
 }
 .page-banner > .container { position: relative; z-index: 1; }
 .page-banner h1 { color: var(--cc-ink); }
