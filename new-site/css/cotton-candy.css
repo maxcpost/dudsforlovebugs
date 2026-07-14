@@ -234,8 +234,21 @@ body:not([class*="theme-"]) .card-accent-terracotta { border-top-color: #9B2FFF 
 .navbar .nav-link { color: var(--cc-ink) !important; }
 .navbar .nav-link:hover, .navbar .nav-link.active { color: var(--dflb-pop) !important; }
 
-/* Secondary sections: soft per-page accent tint instead of ~white grey. */
-.section-cream, .section-cool { background-color: var(--dflb-pop-light) !important; }
+/* Secondary sections stay a near-white neutral (brand.css default): her
+   live site is a white canvas with NO coloured section fills, so keep the
+   colour in the banners + accents, not in big background bands. */
+
+/* Homepage restraint: the home has no per-page theme, so its accents were
+   ALL defaulting to magenta. Keep magenta as the signature (logo, buttons,
+   countdown) but spread the decorative trio + steps into the confetti's
+   other colours so pink is the accent, not the whole page. */
+body:not([class*="theme-"]) .icon-circle-cream { background:#FBE9F5 !important; color:#C9128F !important; } /* magenta */
+body:not([class*="theme-"]) .icon-circle-tan   { background:#F1E9FB !important; color:#7A35CC !important; } /* purple  */
+body:not([class*="theme-"]) .icon-circle-gold  { background:#E6F4FC !important; color:#0C6FA8 !important; } /* blue    */
+body:not([class*="theme-"]) .step-number-gold        { background:#19BEF5 !important; color:var(--cc-ink) !important; } /* shoppers: blue */
+body:not([class*="theme-"]) .step-number-terracotta  { background:#FF5FA2 !important; color:var(--cc-ink) !important; } /* consignors: magenta */
+body:not([class*="theme-"]) .card-accent-top       { border-top-color:#FF1F9C !important; } /* magenta */
+body:not([class*="theme-"]) .card-accent-terracotta{ border-top-color:#9B2FFF !important; } /* purple  */
 
 /* Footer stays dark (white link text needs the contrast) but gains a
    neon quartet top edge + candy-filled social icons. */
