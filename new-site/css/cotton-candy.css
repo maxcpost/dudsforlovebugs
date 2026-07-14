@@ -26,8 +26,22 @@
   --cc-ink:       #2B2D42;
 }
 
-/* Navbar: clean white bar with a candy underline */
-.navbar { border-bottom: 3px solid var(--cc-c-magenta); }
+/* ─────────────────────────────────────────────────────────────────
+   PER-PAGE ACCENT THEMES
+   Each sub-page's banner sets a colour; this retones the whole page's
+   accents (buttons, %, checkmarks, badge, links, borders) to a deep,
+   AA-verified (≥4.5:1 on white) shade of that same hue — so the accent
+   matches the banner instead of clashing with it. Applied via a class
+   on <body>; the homepage stays brand magenta (no theme class).
+   ───────────────────────────────────────────────────────────────── */
+.theme-pink, .theme-bubblegum { --dflb-pop:#C9128F; --dflb-pop-hover:#A50F75; --dflb-pop-deep:#C9128F; --dflb-pop-light:#FBE9F5; }
+.theme-sky        { --dflb-pop:#0C6FA8; --dflb-pop-hover:#0A5C8C; --dflb-pop-deep:#0C6FA8; --dflb-pop-light:#E6F4FC; }
+.theme-mint       { --dflb-pop:#147D5C; --dflb-pop-hover:#0F6A4E; --dflb-pop-deep:#147D5C; --dflb-pop-light:#E6F7F1; }
+.theme-lavender   { --dflb-pop:#7A35CC; --dflb-pop-hover:#652BAA; --dflb-pop-deep:#7A35CC; --dflb-pop-light:#F1E9FB; }
+.theme-sun        { --dflb-pop:#8A6A00; --dflb-pop-hover:#6F5500; --dflb-pop-deep:#8A6A00; --dflb-pop-light:#FFF6DE; }
+.theme-tangerine  { --dflb-pop:#C2560F; --dflb-pop-hover:#A5480A; --dflb-pop-deep:#C2560F; --dflb-pop-light:#FFEEE2; }
+.theme-coral      { --dflb-pop:#C83C3C; --dflb-pop-hover:#A83030; --dflb-pop-deep:#C83C3C; --dflb-pop-light:#FDEBEB; }
+.theme-periwinkle { --dflb-pop:#3A5BD0; --dflb-pop-hover:#2E49B0; --dflb-pop-deep:#3A5BD0; --dflb-pop-light:#EAEFFD; }
 
 /* ─────────────────────────────────────────────────────────────────
    HERO — clean white with scattered multi-colour confetti dots
