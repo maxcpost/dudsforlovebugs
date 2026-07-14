@@ -1,12 +1,19 @@
 /* ═══════════════════════════════════════════════════════════════════
    COTTON CANDY — shared foundation (loads after brand.css)
-   Vibrant, non-gender-specific candy palette: pink · sky · mint ·
-   lavender · sun. Gradient + white-polka hero; solid-color polka
-   banners for interior pages. Dark ink text everywhere (all candy
-   colors verified AA ≥4.5:1 with ink). Pure CSS — no new assets.
+   Landing hero: clean WHITE with scattered multi-colour confetti dots
+   (magenta · blue · purple · yellow), per the owner's reference.
+   Interior pages: solid-colour polka-dot banners. Dark ink text
+   everywhere (all fills verified AA ≥4.5:1 with ink). No JS; one SVG.
    ═══════════════════════════════════════════════════════════════════ */
 
 :root {
+  /* Hero confetti quartet (sampled from the owner's reference) */
+  --cc-c-magenta: #D01C86;
+  --cc-c-blue:    #2E97DC;
+  --cc-c-purple:  #674C97;
+  --cc-c-yellow:  #F6C731;
+
+  /* Banner fills (all AA ≥4.76 with ink) */
   --cc-pink:      #FF5FA2;   /* ink 4.76 */
   --cc-bubblegum: #FF77B7;   /* ink 5.51 */
   --cc-sky:       #3FC5F0;   /* ink 6.72 */
@@ -19,92 +26,61 @@
   --cc-ink:       #2B2D42;
 }
 
-/* Navbar keeps the clean white bar, gains a candy underline */
-.navbar { border-bottom: 3px solid var(--cc-pink); }
+/* Navbar: clean white bar with a candy underline */
+.navbar { border-bottom: 3px solid var(--cc-c-magenta); }
 
 /* ─────────────────────────────────────────────────────────────────
-   HERO — candy gradient + white polka dots + soft cloud glow
-   All layered in the background, so the existing hero markup is
-   untouched. Dark ink text sits on the central white glow.
+   HERO — clean white with scattered multi-colour confetti dots
+   (magenta · blue · purple · yellow), matching the owner's reference.
+   The SVG keeps a clear centre so the logo + tagline + countdown stay
+   crisp and legible on white. Cover-scaling keeps the circles round.
    ───────────────────────────────────────────────────────────────── */
 .cc-hero {
   position: relative;
-  overflow: hidden;
   border-bottom: 0 !important;
   color: var(--cc-ink);
-  background:
-    /* soft cloud glow — kept gentle so saturated color reads through
-       the centre (dark ink text clears AA on every stop regardless) */
-    radial-gradient(ellipse 52% 46% at 50% 47%,
-      rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.34) 40%, rgba(255,255,255,0) 68%),
-    /* fine scattered polka field */
-    radial-gradient(circle, rgba(255,255,255,0.60) 3px, transparent 3.5px),
-    radial-gradient(circle, rgba(255,255,255,0.42) 2px, transparent 2.5px),
-    /* vibrant candy gradient (true saturated palette, not tints) */
-    linear-gradient(135deg, var(--cc-pink) 0%, var(--cc-lavender) 34%, var(--cc-sky) 66%, var(--cc-mint) 100%);
-  background-size: 100% 100%, 46px 46px, 30px 30px, 100% 100%;
-  background-position: center, 0 0, 15px 15px, center;
+  background-color: #fff;
+  /* top layer: soft white glow clears the centre so text stays crisp;
+     bottom layer: the confetti field. Bold variant swaps only the SVG. */
+  background-image:
+    radial-gradient(ellipse 48% 72% at 50% 48%,
+      #fff 0%, #fff 40%, rgba(255,255,255,0) 74%),
+    url("/images/confetti-hero.svg");
+  background-position: center, center;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
 }
-/* Big soft polka "blotches" scattered sporadically around the text */
-.cc-hero::before,
-.cc-hero::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 70%);
-  pointer-events: none;
-  z-index: 0;
+.cc-hero.cc-bold {
+  background-image:
+    radial-gradient(ellipse 48% 72% at 50% 48%,
+      #fff 0%, #fff 40%, rgba(255,255,255,0) 74%),
+    url("/images/confetti-hero-bold.svg");
 }
-.cc-hero::before { width: 200px; height: 200px; top: 6%;  left: 4%; }
-.cc-hero::after  { width: 260px; height: 260px; bottom: 2%; right: 3%; }
 .cc-hero > .container { position: relative; z-index: 1; }
 
-/* Extra decorative dot-blotches (added in markup) */
-.cc-blob {
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* Hero text tuned for the gradient. Eyebrow is dark ink: small
-   uppercase text can land on a bare gradient region where the cloud
-   glow has faded, and ink clears AA (>=5.6:1) over every stop; a dark
-   pink would not. Brand pink still leads via the logo + buttons. */
-.cc-hero .hero-eyebrow  { color: var(--cc-ink); font-weight: 700; }
+/* Hero text on white */
+.cc-hero .hero-eyebrow  { color: #C9128F; font-weight: 700; }
 .cc-hero .hero-subtitle { color: var(--cc-ink); font-weight: 500; }
-.cc-hero .hero-meta     { color: var(--cc-ink); opacity: 0.85; }
-.cc-hero .hero-meta svg { opacity: 0.7; }
+.cc-hero .hero-meta     { color: var(--cc-ink); opacity: 0.7; }
+.cc-hero .hero-meta svg { opacity: 0.6; }
 .cc-hero h1, .cc-hero .display-4 { color: var(--cc-ink); }
 
-/* Logo rides a soft white sticker so the magenta mark never clashes */
-.cc-hero img[src$="logo.png"] {
-  background: rgba(255,255,255,0.72);
-  padding: 0.75rem 1.5rem;
-  border-radius: 1.5rem;
-}
-
-/* Countdown tiles: crisp white with candy top-borders */
+/* Countdown tiles: crisp white with confetti-colour top-borders */
 .cc-hero .countdown-box {
   background: #fff;
-  border: 0;
-  border-top: 5px solid var(--cc-pink);
-  box-shadow: 0 10px 26px rgba(43,45,66,0.16);
+  border: 1px solid var(--dflb-grey-200);
+  border-top: 5px solid var(--cc-c-magenta);
+  box-shadow: 0 10px 26px rgba(43,45,66,0.12);
 }
-.cc-hero .countdown-box:nth-child(2) { border-top-color: var(--cc-sky); }
-.cc-hero .countdown-box:nth-child(3) { border-top-color: var(--cc-mint); }
-.cc-hero .countdown-box:nth-child(4) { border-top-color: var(--cc-lavender); }
+.cc-hero .countdown-box:nth-child(2) { border-top-color: var(--cc-c-blue); }
+.cc-hero .countdown-box:nth-child(3) { border-top-color: var(--cc-c-purple); }
+.cc-hero .countdown-box:nth-child(4) { border-top-color: var(--cc-c-yellow); }
 .cc-hero .countdown-box .number { color: var(--dflb-pop); }
 
 /* Countdown: clean 2x2 grid on phones (avoids a lopsided 3+1 wrap) */
 @media (max-width: 575.98px) {
   .cc-hero .countdown-box { min-width: 0; flex: 0 0 calc(50% - 0.5rem); }
 }
-
-/* Hero buttons: magenta primary pops; white outline secondary */
-.cc-hero .btn-outline-gold { border-color: #fff; color: var(--cc-ink); background: rgba(255,255,255,0.6); }
-.cc-hero .btn-outline-gold:hover { background: #fff; color: var(--dflb-pop); }
 
 /* ─────────────────────────────────────────────────────────────────
    IMAGE CAROUSEL (Showcase option)

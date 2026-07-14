@@ -11,69 +11,78 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Nunito:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --pink:#FF5FA2; --sky:#3FC5F0; --mint:#3FD6A8; --lav:#B98CF0; --sun:#FFD23F;
+      --magenta:#D01C86; --blue:#2E97DC; --purple:#674C97; --yellow:#F6C731;
       --ink:#2B2D42; --text:#555;
     }
     * { box-sizing: border-box; margin: 0; }
-    body { font-family:'DM Sans',sans-serif; background:#FBF7FB; color:var(--ink); padding:2.5rem 1rem 4rem; }
+    body { font-family:'DM Sans',sans-serif; background:#fff; color:var(--ink); padding:2.5rem 1rem 4rem;
+      background-image:
+        radial-gradient(var(--magenta) 6px, transparent 6.5px),
+        radial-gradient(var(--blue) 5px, transparent 5.5px),
+        radial-gradient(var(--yellow) 5px, transparent 5.5px),
+        radial-gradient(var(--purple) 4px, transparent 4.5px);
+      background-size: 220px 220px, 260px 260px, 300px 300px, 190px 190px;
+      background-position: 12px 40px, 150px 160px, 40px 260px, 210px 90px;
+      background-repeat: repeat;
+    }
     .wrap { max-width: 30rem; margin: 0 auto; }
-    h1 { font-family:'Nunito',sans-serif; font-size:1.6rem; margin-bottom:0.4rem; text-align:center; }
-    .sub { color:var(--text); font-size:0.9375rem; margin-bottom:2rem; text-align:center; }
-    .kicker { font-size:0.7rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--pink); margin:2rem 0 0.75rem; }
+    .card0 { background:#fff; border-radius:1.25rem; box-shadow:0 10px 40px rgba(43,45,66,0.12); padding:1.5rem 1.35rem 1.75rem; }
+    h1 { font-family:'Nunito',sans-serif; font-size:1.55rem; margin-bottom:0.4rem; text-align:center; }
+    .sub { color:var(--text); font-size:0.9rem; margin-bottom:1.5rem; text-align:center; }
+    .kicker { font-size:0.7rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--magenta); margin:1.5rem 0 0.75rem; }
     a.opt {
-      display:block; background:#fff; border:3px solid var(--ink); border-radius:1.1rem;
-      box-shadow:5px 5px 0 var(--ink); padding:1.1rem 1.35rem; margin-bottom:1.1rem;
+      display:block; background:#fff; border:2px solid var(--ink); border-radius:1rem;
+      box-shadow:4px 4px 0 var(--ink); padding:1rem 1.2rem; margin-bottom:1rem;
       text-decoration:none; color:var(--ink); transition:transform .15s ease, box-shadow .15s ease;
     }
-    a.opt:hover, a.opt:focus-visible { transform:translate(-2px,-2px); box-shadow:7px 7px 0 var(--ink); }
-    a.opt .name { font-family:'Nunito',sans-serif; font-weight:700; font-size:1.1rem; display:flex; align-items:center; gap:.6rem; }
-    a.opt .desc { color:var(--text); font-size:0.85rem; margin-top:0.25rem; }
-    .swatch { width:1.6rem; height:1.6rem; border-radius:.5rem; border:2px solid var(--ink); flex-shrink:0; }
-    .grad { background:linear-gradient(135deg,var(--pink),var(--lav) 40%,var(--sky) 70%,var(--mint)); }
-    .grad-bold { background:linear-gradient(120deg,var(--pink),var(--lav) 42%,var(--sky) 66%,var(--mint) 84%,var(--sun)); }
-    .rail { display:flex; gap:3px; }
-    .rail span { width:.5rem; height:1.6rem; border-radius:2px; border:1px solid var(--ink); }
-    .archived a.opt { box-shadow:none; border-style:dashed; border-width:2px; opacity:.9; }
+    a.opt:hover, a.opt:focus-visible { transform:translate(-2px,-2px); box-shadow:6px 6px 0 var(--ink); }
+    a.opt .name { font-family:'Nunito',sans-serif; font-weight:700; font-size:1.05rem; display:flex; align-items:center; gap:.55rem; }
+    a.opt .desc { color:var(--text); font-size:0.83rem; margin-top:0.25rem; }
+    .dots { display:inline-flex; gap:3px; flex-shrink:0; }
+    .dots i { width:.6rem; height:.6rem; border-radius:50%; display:block; }
+    .archived a.opt { box-shadow:none; border-style:dashed; opacity:.85; }
     .archived a.opt:hover { transform:none; box-shadow:none; }
-    .note { color:var(--text); font-size:0.8rem; margin-bottom:0.75rem; }
+    .note { color:var(--text); font-size:0.78rem; margin-bottom:0.6rem; }
     @media (prefers-reduced-motion: reduce) { a.opt { transition:none; } }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <h1>DFLB Landing Page Options</h1>
-    <p class="sub">Vibrant cotton-candy direction — pink, blue &amp; green, gender-neutral. Open on your phone; a switcher pill at the bottom hops between them.</p>
+    <div class="card0">
+      <h1>DFLB Landing Page Options</h1>
+      <p class="sub">Clean white with scattered confetti dots — magenta, blue, purple &amp; yellow. Open on your phone; the pill at the bottom hops between them.</p>
 
-    <p class="kicker">Cotton Candy — iterations on the layout you liked</p>
+      <p class="kicker">Confetti — matched to your reference</p>
 
-    <a class="opt" href="/cc-sky/">
-      <span class="name"><span class="swatch grad"></span> 1 · Sky</span>
-      <span class="desc">Soft, airy gradient hero (pink→lavender→sky→mint) with white polka-dot blotches around the text. Keeps the countdown. The gentlest take.</span>
-    </a>
-    <a class="opt" href="/cc-pop/">
-      <span class="name"><span class="swatch grad-bold"></span> 2 · Pop</span>
-      <span class="desc">Fuller rainbow sweep with a sunny finish, denser polka dots, punchier tiles. Same layout, turned up.</span>
-    </a>
-    <a class="opt" href="/cc-showcase/">
-      <span class="name"><span class="swatch grad"></span> 3 · Showcase</span>
-      <span class="desc">Sky, plus a tidy image carousel in the hero (fixed aspect, rounded, subtle controls) — the “nicer version” of the old slider. Compare directly against Sky to judge the carousel.</span>
-    </a>
-    <a class="opt" href="/cc-banners/">
-      <span class="name"><span class="rail"><span style="background:var(--pink)"></span><span style="background:var(--sky)"></span><span style="background:var(--mint)"></span><span style="background:var(--sun)"></span></span> Page Banners</span>
-      <span class="desc">All 12 interior page banners in one scroll — each a solid candy color with polka dots, white body below. See the per-page color assignment.</span>
-    </a>
+      <a class="opt" href="/cc-confetti/">
+        <span class="name"><span class="dots"><i style="background:var(--magenta)"></i><i style="background:var(--blue)"></i><i style="background:var(--yellow)"></i></span> 1 · Confetti</span>
+        <span class="desc">White hero with multi-color dots scattered around the logo and text, various sizes. Clean and legible — the layout you liked, made playful.</span>
+      </a>
+      <a class="opt" href="/cc-confetti-bold/">
+        <span class="name"><span class="dots"><i style="background:var(--purple)"></i><i style="background:var(--magenta)"></i><i style="background:var(--yellow)"></i><i style="background:var(--blue)"></i></span> 2 · Bold</span>
+        <span class="desc">Same idea, more and bigger dots — busier and more festive.</span>
+      </a>
+      <a class="opt" href="/cc-carousel/">
+        <span class="name"><span class="dots"><i style="background:var(--blue)"></i><i style="background:var(--magenta)"></i></span> 3 · Carousel</span>
+        <span class="desc">Confetti, plus a tidy photo carousel in the hero (fixed size, subtle controls) — the clean replacement for the old slider. Compare against Confetti to judge it.</span>
+      </a>
+      <a class="opt" href="/cc-banners/">
+        <span class="name"><span class="dots"><i style="background:var(--magenta)"></i><i style="background:var(--blue)"></i><i style="background:var(--purple)"></i><i style="background:var(--yellow)"></i></span> Page Banners</span>
+        <span class="desc">All 12 interior banners in one scroll — each a solid color with polka dots, white body below. (You liked these.)</span>
+      </a>
 
-    <p class="kicker">Reference</p>
-    <a class="opt" href="/">
-      <span class="name"><span class="swatch" style="background:#fff"></span> Safe (current)</span>
-      <span class="desc">The clean neutral version you liked — shown here for before/after. The cotton-candy options keep this exact layout.</span>
-    </a>
+      <p class="kicker">Reference</p>
+      <a class="opt" href="/">
+        <span class="name">Safe (current)</span>
+        <span class="desc">The clean neutral version, for before/after. The confetti options keep this exact layout.</span>
+      </a>
 
-    <p class="kicker">Earlier explorations (archived)</p>
-    <p class="note">Kept for reference; not part of the cotton-candy direction.</p>
-    <div class="archived">
-      <a class="opt" href="/v2/"><span class="name">Bubblegum Pop (v2)</span></a>
-      <a class="opt" href="/v3/"><span class="name">Candy Carnival (v3)</span></a>
+      <p class="kicker">Earlier explorations (archived)</p>
+      <p class="note">Kept for reference only.</p>
+      <div class="archived">
+        <a class="opt" href="/v2/"><span class="name">Bubblegum Pop (v2)</span></a>
+        <a class="opt" href="/v3/"><span class="name">Candy Carnival (v3)</span></a>
+      </div>
     </div>
   </main>
 </body>
