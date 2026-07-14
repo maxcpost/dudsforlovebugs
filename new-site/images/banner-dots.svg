@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="presentation">
-  <circle cx="76.6" cy="107.6" r="16" fill="#ffffff" fill-opacity="0.9"/>
-  <circle cx="-17.3" cy="222.0" r="19" fill="#ffffff" fill-opacity="0.9"/>
-  <circle cx="282.7" cy="222.0" r="19" fill="#ffffff" fill-opacity="0.9"/>
-  <circle cx="194.7" cy="270.3" r="9" fill="#ffffff" fill-opacity="0.9"/>
-  <circle cx="111.5" cy="260.5" r="7" fill="#ffffff" fill-opacity="0.9"/>
-  <circle cx="163.1" cy="172.2" r="13" fill="#ffffff" fill-opacity="0.9"/>
-  <circle cx="219.4" cy="122.4" r="7" fill="#ffffff" fill-opacity="0.9"/>
-  <circle cx="291.7" cy="1.6" r="7" fill="#ffffff" fill-opacity="0.9"/>
-  <circle cx="291.7" cy="301.6" r="7" fill="#ffffff" fill-opacity="0.9"/>
-  <circle cx="54.5" cy="290.6" r="9" fill="#ffffff" fill-opacity="0.9"/>
+  <circle cx="184.0" cy="80.1" r="12" fill="#ffffff" fill-opacity="0.85"/>
+  <circle cx="260.0" cy="1.9" r="8" fill="#ffffff" fill-opacity="0.85"/>
+  <circle cx="260.0" cy="301.9" r="8" fill="#ffffff" fill-opacity="0.85"/>
+  <circle cx="139.1" cy="181.4" r="14" fill="#ffffff" fill-opacity="0.85"/>
+  <circle cx="285.4" cy="126.8" r="12" fill="#ffffff" fill-opacity="0.85"/>
+  <circle cx="71.4" cy="33.3" r="8" fill="#ffffff" fill-opacity="0.85"/>
+  <circle cx="202.3" cy="217.7" r="8" fill="#ffffff" fill-opacity="0.85"/>
+  <circle cx="266.9" cy="231.8" r="12" fill="#ffffff" fill-opacity="0.85"/>
+  <circle cx="119.0" cy="102.5" r="8" fill="#ffffff" fill-opacity="0.85"/>
+  <circle cx="59.8" cy="265.9" r="6" fill="#ffffff" fill-opacity="0.85"/>
 </svg>
