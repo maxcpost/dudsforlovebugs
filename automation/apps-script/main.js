@@ -24,12 +24,18 @@ function readContent() {
   for (var i = 0; i < infoRows.length; i++) {
     var key = String(infoRows[i][0]).trim(); if (key) info[key] = infoRows[i][1];
   }
-  function iso(v) { // Date cell -> 'YYYY-MM-DD'
+  function iso(v) {
+    if (v === '' || v === null || v === undefined) return '';
     var d = (v instanceof Date) ? v : new Date(v);
+    if (isNaN(d.getTime())) return '';
     return Utilities.formatDate(d, 'America/New_York', 'yyyy-MM-dd');
   }
-  function isoDT(v) { var d = (v instanceof Date) ? v : new Date(v);
-    return Utilities.formatDate(d, 'America/New_York', "yyyy-MM-dd'T'HH:mm:ss") + '-04:00'; }
+  function isoDT(v) {
+    if (v === '' || v === null || v === undefined) return '';
+    var d = (v instanceof Date) ? v : new Date(v);
+    if (isNaN(d.getTime())) return '';
+    return Utilities.formatDate(d, 'America/New_York', "yyyy-MM-dd'T'HH:mm:ss") + '-04:00';
+  }
 
   var schedule = [], rows = ss.getSheetByName('Schedule').getDataRange().getValues();
   for (var r = 1; r < rows.length; r++) { // row 0 = headers
@@ -93,7 +99,7 @@ function run() {
     files[DFLB_SCHEDULES[s]] = sh;
   }
   // countdown target
-  files['new-site/js/sale-date.js'] = saleDateFileContents(c.countdownISO);
+  if (c.countdownISO) files['new-site/js/sale-date.js'] = saleDateFileContents(c.countdownISO);
 
   commitAll(files, flyer);
 }
@@ -101,7 +107,7 @@ function run() {
 function _ghGetText(path) {
   var p = _props();
   var res = _gh('/contents/' + path + '?ref=' + p.getProperty('GITHUB_BRANCH'), 'get');
-  return Utilities.newBlob(Utilities.base64Decode(res.content)).getDataAsString();
+  return Utilities.newBlob(Utilities.base64Decode(res.content.replace(/\n/g, ''))).getDataAsString();
 }
 
 function commitAll(textFiles, flyer) {
@@ -119,6 +125,7 @@ function commitAll(textFiles, flyer) {
     tree.push({ path: 'new-site/images/flyer.' + flyer.ext, mode: '100644', type: 'blob', sha: fblob.sha });
   }
   var newTree = _gh('/git/trees', 'post', { base_tree: baseCommit.tree.sha, tree: tree });
+  if (newTree.sha === baseCommit.tree.sha) { Logger.log('No changes; skipping commit.'); return; }
   var commit = _gh('/git/commits', 'post', {
     message: 'chore(content): sync dates/schedule/flyer from Google', tree: newTree.sha, parents: [baseSha] });
   _gh('/git/refs/heads/' + branch, 'patch', { sha: commit.sha });
