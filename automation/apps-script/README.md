@@ -22,14 +22,15 @@ Create a Sheet named **DFLB Site Content** with two tabs.
 
 | A | B |
 |---|---|
-| Sale name | Fall 2026 Sale |
 | Sale start date | 8/15/2026 |
 | Sale end date | 8/17/2026 |
 | Countdown to | 8/15/2026 10:00:00 |
 | Location name | Jewish Community Center (JCC) |
-| Address | 1200 Edgewood Ave, Rochester, NY 14618 |
 
-Apply **Data → Data validation → "is valid date"** to the three date cells (B2–B4).
+Apply **Data → Data validation → "is valid date"** to the three date cells
+(Sale start date, Sale end date, Countdown to). These four labels are the only
+ones the site reads — "Location name" feeds the search-engine event data;
+the dates drive the hero, countdown, and schedule.
 
 **Tab "Schedule"** — header row `Date | Time | Event | Details | Tag`, one row per event:
 

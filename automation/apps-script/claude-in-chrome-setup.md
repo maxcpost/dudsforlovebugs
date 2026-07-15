@@ -22,13 +22,11 @@ PART 1 — Google Sheet
 1. Open sheets.new to create a new spreadsheet; rename it "DFLB Site Content".
 2. Rename the first tab to "Sale Info". Fill column A (labels) and column B
    (values):
-     A1 Sale name            B1 Fall 2026 Sale
-     A2 Sale start date      B2 8/15/2026
-     A3 Sale end date        B3 8/17/2026
-     A4 Countdown to         B4 8/15/2026 10:00:00
-     A5 Location name        B5 Jewish Community Center (JCC)
-     A6 Address              B6 1200 Edgewood Ave, Rochester, NY 14618
-   Then select B2:B4 and apply Data > Data validation > Criteria: "is valid date".
+     A1 Sale start date      B1 8/15/2026
+     A2 Sale end date        B2 8/17/2026
+     A3 Countdown to         B3 8/15/2026 10:00:00
+     A4 Location name        B4 Jewish Community Center (JCC)
+   Then select B1:B3 and apply Data > Data validation > Criteria: "is valid date".
 3. Add a second tab named "Schedule". Put this header in row 1:
      A1 Date | B1 Time | C1 Event | D1 Details | E1 Tag
    Add these rows (2 onward):
