@@ -1,0 +1,53 @@
+/* ═══════════════════════════════════════════════════════════════════
+   BOLD 4 — "Showcase" (loads after cotton-candy.css)
+   The homepage hero is a full-bleed, auto-rotating CAROUSEL of real event
+   photos, with the logo / tagline / countdown / CTAs overlaid on a dark
+   scrim — per Natalie's "carousel of images = a pop at the beginning, so
+   people can see what the place is really like." Uses both .cc-hero (for
+   the countdown-tile styling) and .cc-hero-carousel; only the hero changes,
+   everything else inherits Bold.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.cc-hero-carousel {
+  position: relative;
+  overflow: hidden;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background: var(--cc-ink) !important;   /* override the .cc-hero dotted bg */
+  border-bottom: 0 !important;
+}
+
+/* Background carousel (decorative, behind the content) */
+.hero-bg-carousel { position: absolute; inset: 0; z-index: 0; }
+.hero-bg-carousel .carousel,
+.hero-bg-carousel .carousel-inner,
+.hero-bg-carousel .carousel-item { height: 100%; }
+.hero-bg-carousel img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Dark scrim so the photos stay vivid but the text reads */
+.hero-scrim {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg,
+    rgba(43,45,66,0.58) 0%, rgba(43,45,66,0.38) 42%, rgba(43,45,66,0.74) 100%);
+}
+
+/* Overlaid hero content sits above the carousel + scrim */
+.cc-hero-carousel > .container { position: relative; z-index: 2; width: 100%; }
+
+/* Text -> white on the photos */
+.cc-hero-carousel .hero-eyebrow { color: #fff !important; }
+.cc-hero-carousel .hero-subtitle { color: rgba(255,255,255,0.96); font-weight: 500; }
+.cc-hero-carousel .hero-meta { color: rgba(255,255,255,0.92); }
+.cc-hero-carousel .hero-meta svg { opacity: 0.9; }
+.cc-hero-carousel h1, .cc-hero-carousel .display-4 { color: #fff; }
+
+/* Logo on a white sticker so the pink mark reads on any photo */
+.cc-hero-carousel img[src$="logo.png"] {
+  background: #fff; padding: 1rem 1.75rem; border-radius: 1.25rem;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.35);
+}
+
+/* Secondary CTA: white outline on the photos */
+.cc-hero-carousel .btn-outline-gold { border-color: #fff; color: #fff; }
+.cc-hero-carousel .btn-outline-gold:hover { background: #fff; color: var(--dflb-pop); }
