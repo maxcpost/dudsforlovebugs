@@ -1,6 +1,6 @@
 // Countdown to sale date: August 15, 2026 at 10:00 AM EDT
 (function () {
-  var saleDate = new Date('2026-08-15T10:00:00-04:00').getTime();
+  var saleDate = new Date(window.DFLB_SALE_TARGET || '2026-08-15T10:00:00-04:00').getTime();
 
   var daysEl = document.getElementById('countdown-days');
   var hoursEl = document.getElementById('countdown-hours');

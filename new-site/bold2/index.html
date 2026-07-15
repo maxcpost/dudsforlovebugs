@@ -33,10 +33,10 @@
   {"@context":"https://schema.org","@graph":[
     {"@type":"WebSite","@id":"https://dudsforlovebugs.com/#website","url":"https://dudsforlovebugs.com/","name":"Duds for Love Bugs","publisher":{"@id":"https://dudsforlovebugs.com/#org"}},
     {"@type":"Organization","@id":"https://dudsforlovebugs.com/#org","name":"Duds for Love Bugs","url":"https://dudsforlovebugs.com/","logo":"https://dudsforlovebugs.com/images/logo.png","email":"dudsforlovebugs@gmail.com","sameAs":["https://www.facebook.com/dudsforlovebugs","https://www.instagram.com/dudsforlovebugs/"]},
-    {"@type":"LocalBusiness","@id":"https://dudsforlovebugs.com/#business","name":"Duds for Love Bugs","url":"https://dudsforlovebugs.com/","email":"dudsforlovebugs@gmail.com","description":"Children's consignment sale in Rochester, NY offering gently used kids' clothing, toys, and gear at 50-90% off retail.","address":{"@type":"PostalAddress","streetAddress":"1200 Edgewood Ave","addressLocality":"Rochester","addressRegion":"NY","postalCode":"14618","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":43.11565,"longitude":-77.55498},"sameAs":["https://www.facebook.com/dudsforlovebugs","https://www.instagram.com/dudsforlovebugs/"]},
-    {"@type":"Event","name":"Duds for Love Bugs Consignment Sale","startDate":"2026-08-15T10:00:00-04:00","endDate":"2026-08-17T14:00:00-04:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Jewish Community Center (JCC)","address":{"@type":"PostalAddress","streetAddress":"1200 Edgewood Ave","addressLocality":"Rochester","addressRegion":"NY","postalCode":"14618","addressCountry":"US"}},"description":"Semi-annual children's consignment sale featuring gently used clothing, toys, books, and baby gear at 50-90% off retail. Free admission.","organizer":{"@id":"https://dudsforlovebugs.com/#org"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://dudsforlovebugs.com/schedule/"}}
+    {"@type":"LocalBusiness","@id":"https://dudsforlovebugs.com/#business","name":"Duds for Love Bugs","url":"https://dudsforlovebugs.com/","email":"dudsforlovebugs@gmail.com","description":"Children's consignment sale in Rochester, NY offering gently used kids' clothing, toys, and gear at 50-90% off retail.","address":{"@type":"PostalAddress","streetAddress":"1200 Edgewood Ave","addressLocality":"Rochester","addressRegion":"NY","postalCode":"14618","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":43.11565,"longitude":-77.55498},"sameAs":["https://www.facebook.com/dudsforlovebugs","https://www.instagram.com/dudsforlovebugs/"]}
   ]}
   </script>
+<!-- dflb:event-jsonld --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"Duds for Love Bugs Consignment Sale","startDate":"2026-08-15T10:00:00-04:00","endDate":"2026-08-17T14:00:00-04:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"Jewish Community Center (JCC)","address":{"@type":"PostalAddress","streetAddress":"1200 Edgewood Ave","addressLocality":"Rochester","addressRegion":"NY","postalCode":"14618","addressCountry":"US"}},"description":"Semi-annual children's consignment sale featuring gently used clothing, toys, books, and baby gear at 50-90% off retail. Free admission.","organizer":{"@id":"https://dudsforlovebugs.com/#org"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://dudsforlovebugs.com/schedule/"}}</script><!-- /dflb:event-jsonld -->
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -90,7 +90,7 @@
         <div class="d-flex flex-wrap justify-content-center gap-4 mb-5 hero-meta" data-aos="fade-up" data-aos-delay="150">
           <span class="d-flex align-items-center gap-2">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            August 15–17, 2026
+            <!-- dflb:sale-dates -->August 15–17, 2026<!-- /dflb:sale-dates -->
           </span>
           <span class="d-flex align-items-center gap-2">
             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
@@ -228,7 +228,7 @@
     <section class="section-padding section-dark">
       <div class="container text-center">
         <p class="hero-eyebrow mb-2">Our Next Sale</p>
-        <p class="display-4 fw-bold text-gold mb-2" style="font-family: var(--font-heading);">August 15–17, 2026</p>
+        <p class="display-4 fw-bold text-gold mb-2" style="font-family: var(--font-heading);"><!-- dflb:sale-dates2 -->August 15–17, 2026<!-- /dflb:sale-dates2 --></p>
         <p class="mb-4" style="color: rgba(255,255,255,0.5);">Jewish Community Center (JCC) &middot; 1200 Edgewood Ave, Rochester, NY</p>
         <div class="d-flex flex-wrap justify-content-center gap-3">
           <a href="/bold2/schedule/" class="btn btn-gold btn-lg">View Full Schedule</a>
@@ -277,6 +277,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+  <script src="/js/sale-date.js" defer></script>
   <script src="/js/countdown.js" defer></script>
   <script>document.addEventListener('DOMContentLoaded', function () { if (typeof AOS !== 'undefined') { AOS.init({ duration: 700, easing: 'ease-out', once: true, offset: 80 }); } else { document.querySelectorAll('[data-aos]').forEach(function(el){ el.style.opacity=1; el.style.transform='none'; }); } });</script>
 </body>
