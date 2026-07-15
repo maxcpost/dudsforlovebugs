@@ -2,13 +2,14 @@
 // Reads Sheet + Drive natively; commits regenerated files to GitHub in one commit.
 
 function _props() { return PropertiesService.getScriptProperties(); }
+function _token() { return String(_props().getProperty('GITHUB_TOKEN') || '').trim(); }
 function _gh(path, method, payload) {
   var p = _props();
   var url = 'https://api.github.com/repos/' + p.getProperty('GITHUB_REPO') + path;
   var res = UrlFetchApp.fetch(url, {
     method: method || 'get',
     contentType: 'application/json',
-    headers: { Authorization: 'token ' + p.getProperty('GITHUB_TOKEN'),
+    headers: { Authorization: 'token ' + _token(),
                Accept: 'application/vnd.github+json', 'User-Agent': 'dflb-appsscript' },
     payload: payload ? JSON.stringify(payload) : undefined,
     muteHttpExceptions: true
@@ -74,6 +75,9 @@ var DFLB_HOMES = ['new-site/index.html', 'new-site/bold/index.html', 'new-site/b
 var DFLB_SCHEDULES = ['new-site/schedule/index.html', 'new-site/bold/schedule/index.html', 'new-site/bold2/schedule/index.html'];
 
 function run() {
+  var _t = String(_props().getProperty('GITHUB_TOKEN') || '');
+  Logger.log('GITHUB_TOKEN check: rawLength=' + _t.length + ' trimmedLength=' + _t.trim().length +
+             ' fineGrained=' + (_t.trim().indexOf('github_pat_') === 0 || _t.trim().indexOf('ghp_') === 0));
   var c = readContent();
   if (!c.startISO || !c.endISO) { Logger.log('Core dates blank; skipping.'); return; } // safety guard
   var range = formatDateRange(c.startISO, c.endISO);
