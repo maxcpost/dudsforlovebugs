@@ -1,0 +1,30 @@
+/* ═══════════════════════════════════════════════════════════════════
+   BOLD 3 — "Spectrum" (loads after cotton-candy.css)
+   Homepage hero is an OMBRE gradient of the full brand spectrum
+   (pink → purple → blue → green → yellow → orange) with WHITE polka
+   dots on the same 18° angled grid as Bold 2 — per Natalie's "ombre of
+   all the colors with white polka dots" idea. A soft white centre scrim
+   keeps the logo, tagline, and countdown fully legible (Max's "the text
+   has to come through" note). Only the hero changes; everything else
+   inherits Bold's palette, layout, and legibility rules.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.cc-hero {
+  /* Layers, top → bottom:
+     1) centre white scrim   — clears a legible zone for logo/text
+     2) white angled-grid dots
+     3) full-spectrum ombre gradient */
+  background-image:
+    radial-gradient(ellipse 56% 80% at 50% 50%,
+      rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 30%, rgba(255,255,255,0) 66%),
+    url("../images/confetti-hero-grid-white.svg"),
+    linear-gradient(125deg,
+      #FF1F9C 0%, #9B2FFF 20%, #10B4F5 40%, #1FD69E 60%, #FFE500 80%, #FF7A33 100%);
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+}
+
+/* Countdown tiles stay crisp white on the colourful field (already the
+   Bold default) — restate the border quartet so they pop on the gradient. */
+.cc-hero .countdown-box { box-shadow: 0 10px 26px rgba(43,45,66,0.22); }

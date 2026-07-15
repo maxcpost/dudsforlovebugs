@@ -275,3 +275,31 @@ body:not([class*="theme-"]) .card-dflb:has(.icon-circle-gold) .link-gold { color
 .footer-dflb { border-top: 5px solid transparent; border-image: linear-gradient(90deg,#FF1F9C 0 25%,#FFD400 25% 50%,#10B4F5 50% 75%,#9B2FFF 75% 100%) 1; }
 .footer-dflb .social-icon { background: #FF1F9C; color: #fff; }
 .footer-dflb .social-icon:hover { background: #fff; color: #FF1F9C; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   VIBRANT INTERIOR CTA BANDS (themed sub-pages only)
+   The owner wants a vibrant site — the interior "Ready to…?" CTA band
+   (.section-tan) defaulted to a heavy DARK-NAVY band with a deep, dark
+   themed button. On themed pages, recolor it to the page's BRIGHT candy
+   hue with dark-ink text and legible white / ink buttons. Homepage keeps
+   its own dark closing band (it has no theme-* class).
+   ═══════════════════════════════════════════════════════════════════ */
+body[class*="theme-"] .section-tan { background-color: var(--cc-vivid) !important; }
+body[class*="theme-"] .section-tan h2,
+body[class*="theme-"] .section-tan h3,
+body[class*="theme-"] .section-tan p,
+body[class*="theme-"] .section-tan .text-muted-dflb,
+body[class*="theme-"] .section-tan .text-eyebrow,
+body[class*="theme-"] .section-tan .text-gold { color: var(--cc-ink) !important; }
+body[class*="theme-"] .section-tan .btn-gold {
+  background: #fff !important; color: var(--dflb-pop) !important; border-color: #fff !important;
+}
+body[class*="theme-"] .section-tan .btn-gold:hover {
+  background: var(--dflb-pop) !important; color: #fff !important; border-color: var(--dflb-pop) !important;
+}
+body[class*="theme-"] .section-tan .btn-outline-gold {
+  background: transparent !important; border-color: var(--cc-ink) !important; color: var(--cc-ink) !important;
+}
+body[class*="theme-"] .section-tan .btn-outline-gold:hover {
+  background: var(--cc-ink) !important; color: #fff !important;
+}
