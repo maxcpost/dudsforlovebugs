@@ -1,0 +1,18 @@
+/* ═══════════════════════════════════════════════════════════════════
+   BOLD 2 — uniform dots on an ANGLED GRID (loads after cotton-candy.css)
+   Same bold palette, layout, and legibility rules as Bold. The only
+   change is the dot field: every dot is ONE uniform size, laid out on a
+   rotated (18°) square lattice in the four confetti colors — instead of
+   the scattered, varied-size confetti. Overrides only the background
+   image layer; the white centre glow, cover-scaling, and text styling
+   all carry over from cotton-candy.css.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Hero: keep the centre-clearing white glow, swap the confetti field for
+   the uniform angled-grid dot field. */
+.cc-hero {
+  background-image:
+    radial-gradient(ellipse 48% 72% at 50% 48%,
+      #fff 0%, #fff 40%, rgba(255, 255, 255, 0) 74%),
+    url("../images/confetti-hero-grid.svg");
+}

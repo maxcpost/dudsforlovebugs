@@ -3,70 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page Options — Duds for Love Bugs</title>
+  <title>Design Versions — Duds for Love Bugs</title>
   <meta name="robots" content="noindex">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Nunito:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --magenta: #D6219C; --magenta-dark: #B81585; --sun: #FFC93C;
-      --aqua: #7FD8CF; --ink: #2B2D42; --text: #555;
+    :root { --magenta:#FF1F9C; --blue:#10B4F5; --purple:#9B2FFF; --yellow:#FFE500; --ink:#2B2D42; --text:#555; }
+    * { box-sizing:border-box; margin:0; }
+    body { font-family:'DM Sans',sans-serif; background:#fff; color:var(--ink); min-height:100vh;
+      display:flex; align-items:center; justify-content:center; padding:2.5rem 1rem;
+      background-image:
+        radial-gradient(var(--magenta) 7px, transparent 7.5px),
+        radial-gradient(var(--blue) 6px, transparent 6.5px),
+        radial-gradient(var(--yellow) 6px, transparent 6.5px),
+        radial-gradient(var(--purple) 5px, transparent 5.5px);
+      background-size:230px 230px, 270px 270px, 310px 310px, 200px 200px;
+      background-position:14px 40px, 150px 170px, 44px 270px, 210px 96px;
     }
-    * { box-sizing: border-box; margin: 0; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: #FBE9F5;
-      color: var(--ink);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1rem;
-    }
-    .wrap { max-width: 26rem; width: 100%; text-align: center; }
-    h1 { font-family: 'Nunito', sans-serif; font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .sub { color: var(--text); font-size: 0.9375rem; margin-bottom: 2rem; }
-    a.opt {
-      display: block;
-      background: white;
-      border: 3px solid var(--ink);
-      border-radius: 1.25rem;
-      box-shadow: 5px 5px 0 var(--ink);
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1.25rem;
-      text-decoration: none;
-      color: var(--ink);
-      text-align: left;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    a.opt:hover, a.opt:focus-visible { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
-    a.opt .name { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 1.125rem; display: flex; align-items: center; gap: 0.6rem; }
-    a.opt .desc { color: var(--text); font-size: 0.875rem; margin-top: 0.25rem; }
-    .dot { width: 1.75rem; height: 1.75rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: white; font-size: 0.875rem; font-weight: 700; flex-shrink: 0; }
-    .o1 .dot { background: var(--magenta); }
-    .o2 .dot { background: linear-gradient(135deg, var(--magenta), var(--magenta-dark)); }
-    .o3 .dot { background: linear-gradient(135deg, var(--magenta) 0 33%, var(--sun) 33% 66%, var(--aqua) 66% 100%); color: var(--ink); }
-    @media (prefers-reduced-motion: reduce) { a.opt { transition: none; } }
+    .wrap { max-width:30rem; width:100%; }
+    .card0 { background:#fff; border:3px solid var(--ink); border-radius:1.4rem; box-shadow:7px 7px 0 var(--ink); padding:1.6rem 1.4rem 1.9rem; }
+    h1 { font-family:'Nunito',sans-serif; font-weight:800; font-size:1.55rem; text-align:center; margin-bottom:0.4rem; }
+    .sub { color:var(--text); font-size:0.9rem; text-align:center; margin-bottom:1.75rem; }
+    a.opt { display:block; border:2px solid var(--ink); border-radius:1rem; box-shadow:4px 4px 0 var(--ink);
+      padding:1.15rem 1.3rem; margin-bottom:1.1rem; text-decoration:none; color:var(--ink);
+      transition:transform .15s ease, box-shadow .15s ease; }
+    a.opt:hover, a.opt:focus-visible { transform:translate(-2px,-2px); box-shadow:6px 6px 0 var(--ink); }
+    a.opt .name { font-family:'Nunito',sans-serif; font-weight:800; font-size:1.15rem; display:flex; align-items:center; gap:.55rem; }
+    a.opt .desc { color:var(--text); font-size:0.85rem; margin-top:0.25rem; }
+    .dots { display:inline-flex; gap:3px; flex-shrink:0; }
+    .dots i { width:.65rem; height:.65rem; border-radius:50%; display:block; }
+    .bold-opt { background:#fff; }
+    @media (prefers-reduced-motion: reduce) { a.opt { transition:none; } }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <h1>DFLB Landing Page Options</h1>
-    <p class="sub">Three directions, from safe to full candy store. Open each on your phone — a switcher pill at the bottom of options 2 &amp; 3 hops between them.</p>
-    <a class="opt o1" href="/">
-      <span class="name"><span class="dot">1</span> Safe &amp; Polished</span>
-      <span class="desc">Current design: logo-matched magenta, soft pink hero wash, white space.</span>
-    </a>
-    <a class="opt o2" href="/v2/">
-      <span class="name"><span class="dot">2</span> Bubblegum Pop</span>
-      <span class="desc">Full magenta polka-dot hero, logo on a white sticker, sunny-yellow buttons, tilted countdown tiles.</span>
-    </a>
-    <a class="opt o3" href="/v3/">
-      <span class="name"><span class="dot">3</span> Candy Carnival</span>
-      <span class="desc">Animated candy gradient, four-color countdown stickers, scrolling ticker, hard shadows, color-blocked sections.</span>
-    </a>
+    <div class="card0">
+      <h1>Duds for Love Bugs — Design</h1>
+      <p class="sub">Three versions to compare. A Version pill at the bottom of every Bold page hops between them.</p>
+      <a class="opt bold-opt" href="/bold/">
+        <span class="name"><span class="dots"><i style="background:var(--magenta)"></i><i style="background:var(--blue)"></i><i style="background:var(--purple)"></i><i style="background:var(--yellow)"></i></span> Bold</span>
+        <span class="desc">Vibrant, near-neon. White hero with a dense confetti-dot field; every sub-page gets a solid-color banner with scattered white polka dots.</span>
+      </a>
+      <a class="opt bold-opt" href="/bold2/">
+        <span class="name"><span class="dots"><i style="background:var(--magenta)"></i><i style="background:var(--blue)"></i><i style="background:var(--purple)"></i><i style="background:var(--yellow)"></i></span> Bold 2</span>
+        <span class="desc">Same vibrant palette as Bold, but the hero dots are one uniform size laid out in an angled grid instead of scattered confetti.</span>
+      </a>
+      <a class="opt" href="/">
+        <span class="name">Safe</span>
+        <span class="desc">The clean, neutral version — white and charcoal with pink accents. Same layout and content.</span>
+      </a>
+    </div>
   </main>
 </body>
 </html>
