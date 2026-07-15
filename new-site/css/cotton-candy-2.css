@@ -16,3 +16,10 @@
       #fff 0%, #fff 40%, rgba(255, 255, 255, 0) 74%),
     url("../images/confetti-hero-grid.svg");
 }
+
+/* Interior page banners: uniform white dots on the same slanted grid,
+   seamlessly tiled so every banner matches the homepage's dot treatment. */
+.page-banner {
+  background-image: url("../images/banner-dots-grid.svg");
+  background-size: 150px 150px;
+}
