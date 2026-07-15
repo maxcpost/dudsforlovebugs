@@ -1,0 +1,37 @@
+name: Deploy preview to gh-pages
+on:
+  push:
+    branches: [main]
+    paths: ['new-site/**']
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build subpath-prefixed site
+        run: |
+          set -euo pipefail
+          PREFIX="/dudsforlovebugs"
+          rm -rf _site && mkdir _site
+          cp -R new-site/. _site/
+          rm -rf _site/node_modules _site/package.json _site/package-lock.json
+          touch _site/.nojekyll
+          find _site -name '*.html' -print0 | xargs -0 sed -i -E \
+            -e "s|(href=\")/([a-z0-9])|\1${PREFIX}/\2|g" \
+            -e "s|(src=\")/([a-z0-9])|\1${PREFIX}/\2|g" \
+            -e "s|href=\"/\"|href=\"${PREFIX}/\"|g"
+      - name: Publish
+        run: |
+          set -euo pipefail
+          cd _site
+          git init -q && git checkout -qb gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "Deploy ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" gh-pages
