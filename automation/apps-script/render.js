@@ -31,6 +31,86 @@ function saleDateFileContents(targetISO) {
   return 'window.DFLB_SALE_TARGET = "' + targetISO + '";\n';
 }
 
+function escapeHtml(s) {
+  return String(s == null ? '' : s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+var DFLB_DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+function _dayParts(dateISO) {
+  var p = _ymd(dateISO);
+  // Zeller-free DOW via UTC Date (calendar parts only; safe, no TZ drift for the label).
+  var dow = new Date(Date.UTC(p.y, p.m - 1, p.d)).getUTCDay();
+  return { dow: DFLB_DOW[dow], d: p.d, mon: DFLB_MONTHS[p.m - 1].slice(0, 3) };
+}
+
+function renderScheduleTimeline(rows) {
+  // group preserving first-seen order
+  var order = [], byDay = {};
+  for (var i = 0; i < rows.length; i++) {
+    var k = rows[i].dateISO;
+    if (!byDay[k]) { byDay[k] = []; order.push(k); }
+    byDay[k].push(rows[i]);
+  }
+  var out = [];
+  for (var o = 0; o < order.length; o++) {
+    var k2 = order[o], parts = _dayParts(k2), evs = byDay[k2];
+    var chip = '<div class="flex-shrink-0 text-center rounded-3 p-2 p-sm-3" '
+      + 'style="background:var(--dflb-pop);color:white;min-width:5rem;">'
+      + '<p class="small fw-semibold text-uppercase mb-0" style="letter-spacing:0.08em;">' + parts.dow + '</p>'
+      + '<p class="h3 fw-bold mb-0">' + parts.d + '</p>'
+      + '<p class="small fw-semibold text-uppercase mb-0" style="letter-spacing:0.08em;">' + parts.mon + '</p></div>';
+    var body = [];
+    for (var e = 0; e < evs.length; e++) {
+      var ev = evs[e];
+      if (e > 0) body.push('<hr class="my-3" style="border-color:var(--dflb-grey-200);">');
+      if (ev.tag) {
+        var badges = String(ev.tag).split('·');
+        for (var b = 0; b < badges.length; b++) {
+          var t = badges[b].trim(); if (!t) continue;
+          body.push('<span class="badge rounded-pill mb-2 me-1" style="background:var(--dflb-pop);'
+            + 'font-size:0.6875rem;letter-spacing:0.08em;text-transform:uppercase;">' + escapeHtml(t) + '</span>');
+        }
+      }
+      body.push('<p class="fw-bold mb-1">' + escapeHtml(ev.event) + '</p>');
+      var line = ev.time ? '<strong>' + escapeHtml(ev.time) + '</strong> &mdash; ' + escapeHtml(ev.details)
+                         : escapeHtml(ev.details);
+      body.push('<p class="text-muted-dflb small mb-0">' + line + '</p>');
+    }
+    out.push('<div class="d-flex gap-3 gap-sm-4 mb-4" data-dflb-day="' + k2 + '" data-aos="fade-up">'
+      + chip + '<div class="section-cream rounded-3 p-3 p-sm-4 flex-grow-1">' + body.join('') + '</div></div>');
+  }
+  return out.join('\n');
+}
+
+function renderEventJsonLd(c) {
+  var ev = {
+    '@type': 'Event',
+    name: 'Duds for Love Bugs Consignment Sale',
+    startDate: c.startISO + 'T10:00:00-04:00',
+    endDate: c.endISO + 'T14:00:00-04:00',
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    location: { '@type': 'Place', name: c.locationName,
+      address: { '@type': 'PostalAddress', streetAddress: '1200 Edgewood Ave',
+        addressLocality: 'Rochester', addressRegion: 'NY', postalCode: '14618', addressCountry: 'US' } },
+    description: 'Semi-annual children’s consignment sale featuring gently used clothing, toys, books, and baby gear at 50-90% off retail. Free admission.',
+    organizer: { '@id': 'https://dudsforlovebugs.com/#org' },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock', url: 'https://dudsforlovebugs.com/schedule/' }
+  };
+  ev['@context'] = 'https://schema.org';
+  return '<script type="application/ld+json">' + JSON.stringify(ev) + '<\/script>';
+}
+
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { formatDateRange: formatDateRange, replaceRegion: replaceRegion, saleDateFileContents: saleDateFileContents };
+  module.exports = {
+    formatDateRange: formatDateRange,
+    replaceRegion: replaceRegion,
+    saleDateFileContents: saleDateFileContents,
+    escapeHtml: escapeHtml,
+    renderScheduleTimeline: renderScheduleTimeline,
+    renderEventJsonLd: renderEventJsonLd
+  };
 }

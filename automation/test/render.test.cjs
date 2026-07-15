@@ -26,3 +26,32 @@ test('saleDateFileContents', () => {
   assert.strictEqual(R.saleDateFileContents('2026-08-15T10:00:00-04:00'),
     'window.DFLB_SALE_TARGET = "2026-08-15T10:00:00-04:00";\n');
 });
+
+const CONTENT = {
+  saleName: 'Fall 2026', startISO: '2026-08-15', endISO: '2026-08-17',
+  countdownISO: '2026-08-15T10:00:00-04:00',
+  locationName: 'Jewish Community Center (JCC)',
+  address: '1200 Edgewood Ave, Rochester, NY 14618',
+  schedule: [
+    { dateISO: '2026-08-13', time: '1 PM – 7 PM', event: 'Drop-Off', details: 'Bring tagged items.', tag: '' },
+    { dateISO: '2026-08-15', time: '10 AM – 6 PM', event: 'Public Shopping', details: 'Doors open.', tag: 'Sale Day 1' },
+    { dateISO: '2026-08-15', time: '9 – 10 AM', event: 'Early Access', details: 'Military & diapers.', tag: '' }
+  ]
+};
+test('escapeHtml', () => {
+  assert.strictEqual(R.escapeHtml('a & <b> "c"'), 'a &amp; &lt;b&gt; &quot;c&quot;');
+});
+test('timeline groups by day and renders each event', () => {
+  const html = R.renderScheduleTimeline(CONTENT.schedule);
+  assert.match(html, /Aug/);
+  assert.match(html, /Public Shopping/);
+  assert.match(html, /Early Access/);       // second event on Aug 15 present
+  assert.strictEqual((html.match(/data-dflb-day/g) || []).length, 2); // two day cards
+  assert.match(html, /Sale Day 1/);         // badge from tag
+});
+test('event json-ld carries the dates', () => {
+  const s = R.renderEventJsonLd(CONTENT);
+  assert.match(s, /"startDate":"2026-08-15T10:00:00-04:00"/);
+  assert.match(s, /"endDate":"2026-08-17T14:00:00-04:00"/);
+  assert.match(s, /application\/ld\+json/);
+});
