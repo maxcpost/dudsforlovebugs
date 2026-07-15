@@ -71,8 +71,8 @@ function renderFlyerAnchor(ext) {
     + 'Download Printable Flyer</a>';
 }
 
-var DFLB_HOMES = ['new-site/index.html', 'new-site/bold/index.html', 'new-site/bold2/index.html'];
-var DFLB_SCHEDULES = ['new-site/schedule/index.html', 'new-site/bold/schedule/index.html', 'new-site/bold2/schedule/index.html'];
+var DFLB_HOMES = ['new-site/index.html', 'new-site/bold/index.html', 'new-site/bold2/index.html', 'new-site/bold3/index.html', 'new-site/bold4/index.html'];
+var DFLB_SCHEDULES = ['new-site/schedule/index.html', 'new-site/bold/schedule/index.html', 'new-site/bold2/schedule/index.html', 'new-site/bold3/schedule/index.html', 'new-site/bold4/schedule/index.html'];
 
 function run() {
   var _t = String(_props().getProperty('GITHUB_TOKEN') || '');
