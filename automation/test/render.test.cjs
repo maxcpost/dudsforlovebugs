@@ -14,3 +14,15 @@ test('formatDateRange: cross year', () => {
 test('formatDateRange: single day', () => {
   assert.strictEqual(R.formatDateRange('2026-08-15', '2026-08-15'), 'August 15, 2026');
 });
+
+test('replaceRegion swaps only inner content, keeps markers', () => {
+  const html = 'A<!-- dflb:x -->OLD<!-- /dflb:x -->B';
+  assert.strictEqual(R.replaceRegion(html, 'x', 'NEW'), 'A<!-- dflb:x -->NEW<!-- /dflb:x -->B');
+});
+test('replaceRegion throws on missing markers', () => {
+  assert.throws(() => R.replaceRegion('nope', 'x', 'NEW'), /marker/);
+});
+test('saleDateFileContents', () => {
+  assert.strictEqual(R.saleDateFileContents('2026-08-15T10:00:00-04:00'),
+    'window.DFLB_SALE_TARGET = "2026-08-15T10:00:00-04:00";\n');
+});

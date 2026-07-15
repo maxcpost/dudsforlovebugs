@@ -19,6 +19,18 @@ function formatDateRange(startISO, endISO) {
   return sMon + ' ' + s.d + '–' + e.d + ', ' + s.y;
 }
 
+function replaceRegion(html, name, inner) {
+  var open = '<!-- dflb:' + name + ' -->';
+  var close = '<!-- /dflb:' + name + ' -->';
+  var i = html.indexOf(open), j = html.indexOf(close);
+  if (i === -1 || j === -1 || j < i) throw new Error('missing marker pair: ' + name);
+  return html.slice(0, i + open.length) + inner + html.slice(j);
+}
+
+function saleDateFileContents(targetISO) {
+  return 'window.DFLB_SALE_TARGET = "' + targetISO + '";\n';
+}
+
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { formatDateRange: formatDateRange };
+  module.exports = { formatDateRange: formatDateRange, replaceRegion: replaceRegion, saleDateFileContents: saleDateFileContents };
 }
