@@ -463,6 +463,62 @@ h1, h2, h3, h4, h5, h6,
   border-radius: 0.75rem;
 }
 
+/* ─── MOBILE: FULL-SCREEN MENU OVERLAY ───
+   When the hamburger opens the nav, it fills the whole screen (not a
+   half-screen dropdown). The sticky navbar (z-index 1020) stays above the
+   overlay (z-index 1010) so the toggler remains tappable to close. */
+@media (max-width: 991.98px) {
+  .navbar-collapse#mainNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 1010;
+    background: #fff;
+    padding: 5rem 1.5rem 2.5rem;
+    overflow-y: auto;
+  }
+  .navbar-collapse#mainNav .navbar-nav {
+    min-height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .navbar-collapse#mainNav .nav-item { width: 100%; text-align: center; }
+  .navbar-collapse#mainNav .nav-link {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    padding: 0.55rem 1rem !important;
+  }
+  .navbar-collapse#mainNav .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    text-align: center;
+    padding: 0.25rem 0 0.5rem;
+  }
+  .navbar-collapse#mainNav .dropdown-item { font-size: 1.0625rem; padding: 0.4rem; }
+  .navbar-collapse#mainNav .btn-gold {
+    margin-top: 1.25rem;
+    font-size: 0.9375rem;
+    padding: 0.9rem 2.75rem;
+  }
+  /* Hamburger becomes an X while the full-screen menu is open. */
+  .navbar-toggler[aria-expanded="true"] { z-index: 1030; position: relative; }
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon { background-image: none; position: relative; }
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    content: ''; position: absolute; left: 15%; right: 15%; top: 50%; height: 2px;
+    background: var(--dflb-charcoal);
+  }
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before { transform: rotate(45deg); }
+  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after { transform: rotate(-45deg); }
+}
+
 /* ─── REDUCED MOTION ─── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
