@@ -62,24 +62,34 @@ function renderScheduleTimeline(rows) {
       + '<p class="h3 fw-bold mb-0">' + parts.d + '</p>'
       + '<p class="small fw-semibold text-uppercase mb-0" style="letter-spacing:0.08em;">' + parts.mon + '</p></div>';
     var body = [];
+    var hasTag = false;
     for (var e = 0; e < evs.length; e++) {
       var ev = evs[e];
       if (e > 0) body.push('<hr class="my-3" style="border-color:var(--dflb-grey-200);">');
       if (ev.tag) {
+        hasTag = true;
         var badges = String(ev.tag).split('·');
+        var k = 0;
         for (var b = 0; b < badges.length; b++) {
           var t = badges[b].trim(); if (!t) continue;
-          body.push('<span class="badge rounded-pill mb-2 me-1" style="background:var(--dflb-pop);'
+          var cls = 'badge rounded-pill mb-2' + (k > 0 ? ' ms-1' : '');
+          var bg = /off/i.test(t) ? 'var(--dflb-charcoal)' : 'var(--dflb-pop)';
+          body.push('<span class="' + cls + '" style="background:' + bg + ';'
             + 'font-size:0.6875rem;letter-spacing:0.08em;text-transform:uppercase;">' + escapeHtml(t) + '</span>');
+          k++;
         }
       }
       body.push('<p class="fw-bold mb-1">' + escapeHtml(ev.event) + '</p>');
       var line = ev.time ? '<strong>' + escapeHtml(ev.time) + '</strong> &mdash; ' + escapeHtml(ev.details)
                          : escapeHtml(ev.details);
-      body.push('<p class="text-muted-dflb small mb-0">' + line + '</p>');
+      var pCls = 'text-muted-dflb small ' + (e === evs.length - 1 ? 'mb-0' : 'mb-2');
+      body.push('<p class="' + pCls + '">' + line + '</p>');
     }
-    out.push('<div class="d-flex gap-3 gap-sm-4 mb-4" data-dflb-day="' + k2 + '" data-aos="fade-up">'
-      + chip + '<div class="section-cream rounded-3 p-3 p-sm-4 flex-grow-1">' + body.join('') + '</div></div>');
+    var contentDivOpen = hasTag
+      ? '<div class="section-cream rounded-3 p-3 p-sm-4 flex-grow-1" style="border-left:4px solid var(--dflb-pop);">'
+      : '<div class="section-cream rounded-3 p-3 p-sm-4 flex-grow-1">';
+    out.push('<div class="d-flex gap-3 gap-sm-4 mb-4" data-dflb-day="' + escapeHtml(k2) + '" data-aos="fade-up">'
+      + chip + contentDivOpen + body.join('') + '</div></div>');
   }
   return out.join('\n');
 }
@@ -101,7 +111,8 @@ function renderEventJsonLd(c) {
       availability: 'https://schema.org/InStock', url: 'https://dudsforlovebugs.com/schedule/' }
   };
   ev['@context'] = 'https://schema.org';
-  return '<script type="application/ld+json">' + JSON.stringify(ev) + '<\/script>';
+  var json = JSON.stringify(ev).replace(/<\//g, '<\\/');
+  return '<script type="application/ld+json">' + json + '<\/script>';
 }
 
 if (typeof module !== 'undefined' && module.exports) {
