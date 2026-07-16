@@ -19,10 +19,14 @@
 
 /* Interior page banners: same 18° angled-grid orientation as the
    Bold 2 homepage (white dots on candy). Uses the identical lattice
-   SVG as the hero — only the fill is white. */
+   SVG as the hero — only the fill is white. Text scrim lives in
+   cotton-candy.css (::before) so headlines stay readable. */
 .page-banner {
   background-image: url("../images/confetti-hero-grid-white.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+@media (max-width: 767.98px) {
+  .page-banner { background-size: 160% auto; }
 }

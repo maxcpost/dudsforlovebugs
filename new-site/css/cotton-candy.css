@@ -138,14 +138,57 @@
    field as the homepage hero (white dots), so subpage orientation
    matches Bold home. Cover-scaling keeps circles round. */
 .page-banner {
+  --cc-banner-fill: var(--cc-pink);
   position: relative;
   overflow: hidden;
   color: var(--cc-ink);
-  background-color: var(--cc-pink);           /* default; modifier overrides */
+  background-color: var(--cc-banner-fill);
   background-image: url("../images/confetti-hero-white.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+/* Soft candy scrim over the dots (same idea as the homepage hero glow).
+   Clears a readable zone under the headline without removing the pattern.
+   Stronger / more centred on mobile where text fills the banner. */
+.page-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 78% 88% at 28% 42%,
+    var(--cc-banner-fill) 0%,
+    var(--cc-banner-fill) 32%,
+    color-mix(in srgb, var(--cc-banner-fill) 78%, transparent) 52%,
+    transparent 72%
+  );
+}
+.page-banner.text-center::before {
+  background: radial-gradient(
+    ellipse 72% 82% at 50% 44%,
+    var(--cc-banner-fill) 0%,
+    var(--cc-banner-fill) 34%,
+    color-mix(in srgb, var(--cc-banner-fill) 78%, transparent) 54%,
+    transparent 74%
+  );
+}
+@media (max-width: 767.98px) {
+  .page-banner::before,
+  .page-banner.text-center::before {
+    background: radial-gradient(
+      ellipse 125% 105% at 50% 42%,
+      var(--cc-banner-fill) 0%,
+      var(--cc-banner-fill) 42%,
+      color-mix(in srgb, var(--cc-banner-fill) 82%, transparent) 60%,
+      transparent 78%
+    );
+  }
+  /* Slightly soften remaining dots that peek past the scrim on small screens */
+  .page-banner {
+    background-size: 160% auto;
+  }
 }
 .page-banner > .container { position: relative; z-index: 1; }
 .page-banner h1 { color: var(--cc-ink); }
@@ -164,15 +207,15 @@
 .page-banner .btn-outline-gold:hover { background: var(--cc-ink); color: #fff; }
 
 /* Per-page color modifiers (all AA-body ≥4.76 with ink) */
-.banner-pink       { background-color: var(--cc-pink); }
-.banner-bubblegum  { background-color: var(--cc-bubblegum); }
-.banner-sky        { background-color: var(--cc-sky); }
-.banner-mint       { background-color: var(--cc-mint); }
-.banner-lavender   { background-color: var(--cc-lavender); }
-.banner-sun        { background-color: var(--cc-sun); }
-.banner-tangerine  { background-color: var(--cc-tangerine); }
-.banner-periwinkle { background-color: var(--cc-periwinkle); }
-.banner-coral      { background-color: var(--cc-coral); }
+.banner-pink       { --cc-banner-fill: var(--cc-pink);       background-color: var(--cc-pink); }
+.banner-bubblegum  { --cc-banner-fill: var(--cc-bubblegum);  background-color: var(--cc-bubblegum); }
+.banner-sky        { --cc-banner-fill: var(--cc-sky);        background-color: var(--cc-sky); }
+.banner-mint       { --cc-banner-fill: var(--cc-mint);       background-color: var(--cc-mint); }
+.banner-lavender   { --cc-banner-fill: var(--cc-lavender);   background-color: var(--cc-lavender); }
+.banner-sun        { --cc-banner-fill: var(--cc-sun);        background-color: var(--cc-sun); }
+.banner-tangerine  { --cc-banner-fill: var(--cc-tangerine);  background-color: var(--cc-tangerine); }
+.banner-periwinkle { --cc-banner-fill: var(--cc-periwinkle); background-color: var(--cc-periwinkle); }
+.banner-coral      { --cc-banner-fill: var(--cc-coral);      background-color: var(--cc-coral); }
 
 /* ─────────────────────────────────────────────────────────────────
    VARIANT SWITCHER (shared with the loud options)
