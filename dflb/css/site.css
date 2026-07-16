@@ -442,6 +442,33 @@ a.candy-card:hover h3 { color: var(--deep-pink); }
   background-size: 0.65rem; background-position: center; background-repeat: no-repeat;
 }
 
+/* agreement accordion (native details) */
+.agreement details {
+  background: var(--white);
+  border: 1px solid rgba(35, 31, 46, 0.1);
+  border-radius: 0.9rem;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+.agreement summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 1rem 1.25rem;
+  font-family: var(--font-display); font-weight: 800; color: var(--ink);
+}
+.agreement summary::-webkit-details-marker { display: none; }
+.agreement summary::after {
+  content: ""; margin-left: auto;
+  width: 0.6rem; height: 0.6rem;
+  border-right: 2.5px solid var(--deep-pink);
+  border-bottom: 2.5px solid var(--deep-pink);
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+.agreement details[open] summary::after { transform: rotate(225deg); }
+.agreement .details-body { padding: 0 1.25rem 1.25rem; }
+
 /* info tables */
 .candy-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
 .candy-table th {
@@ -451,6 +478,26 @@ a.candy-card:hover h3 { color: var(--deep-pink); }
 }
 .candy-table td { padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--line); vertical-align: top; }
 .table-scroll { overflow-x: auto; }
+
+/* forms */
+.form-label { display: block; font-weight: 600; font-size: 0.875rem; color: var(--ink); margin-bottom: 0.35rem; }
+.form-control {
+  width: 100%;
+  font: inherit; color: var(--ink);
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  border-radius: 0.7rem;
+  padding: 0.65rem 0.9rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.form-control:focus {
+  outline: none;
+  border-color: var(--deep-pink);
+  box-shadow: 0 0 0 3px rgba(199, 37, 110, 0.15);
+}
+.form-row { display: grid; gap: 1rem; margin-bottom: 1rem; }
+@media (min-width: 36rem) { .form-row--2 { grid-template-columns: 1fr 1fr; } }
+.req { color: var(--deep-pink); }
 
 /* gallery grid */
 .gallery-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, 1fr); }
