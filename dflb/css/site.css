@@ -120,13 +120,13 @@ hr { border: 0; border-top: 1px solid var(--line); }
   align-items: center; gap: 0.25rem;
   list-style: none; padding: 0;
 }
-.nav-links a, .nav-links button {
+.nav-links a:not(.btn-candy), .nav-links button {
   font-family: var(--font-display); font-weight: 700; font-size: 0.95rem;
   color: var(--ink); text-decoration: none;
   padding: 0.5rem 0.75rem; border-radius: 999px;
   background: none; border: 0; cursor: pointer;
 }
-.nav-links a:hover, .nav-links button:hover { background: rgba(244, 114, 182, 0.14); color: var(--ink); }
+.nav-links a:not(.btn-candy):hover, .nav-links button:hover { background: rgba(244, 114, 182, 0.14); color: var(--ink); }
 .nav-links a[aria-current="page"] { background: rgba(56, 189, 248, 0.16); }
 .nav-cta { margin-left: 0.5rem; }
 @media (min-width: 64rem) {
@@ -408,6 +408,15 @@ body.menu-open { overflow: hidden; }
 .banner--purple { background: var(--candy-purple); }
 .banner--mint { background: var(--candy-mint); }
 .banner--sunshine { background: var(--candy-sunshine); }
+
+.page-banner .eyebrow { color: var(--ink); opacity: 0.75; justify-content: center; }
+
+/* breadcrumbs */
+.crumbs { font-size: 0.85rem; padding: 0.9rem 0 0; }
+.crumbs ol { list-style: none; display: flex; gap: 0.5rem; padding: 0; margin: 0; }
+.crumbs li + li::before { content: "/"; margin-right: 0.5rem; color: var(--line); }
+.crumbs a { text-decoration: none; font-weight: 600; }
+.crumbs [aria-current="page"] { color: var(--ink); font-weight: 700; }
 
 /* ---------- 10. Content helpers for subpages ---------- */
 .prose { max-width: 46rem; }
