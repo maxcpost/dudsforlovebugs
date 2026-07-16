@@ -17,9 +17,12 @@
     url("../images/confetti-hero-grid.svg");
 }
 
-/* Interior page banners: uniform white dots on the same slanted grid,
-   seamlessly tiled so every banner matches the homepage's dot treatment. */
+/* Interior page banners: same 18° angled-grid orientation as the
+   Bold 2 homepage (white dots on candy). Uses the identical lattice
+   SVG as the hero — only the fill is white. */
 .page-banner {
-  background-image: url("../images/banner-dots-grid.svg");
-  background-size: 150px 150px;
+  background-image: url("../images/confetti-hero-grid-white.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

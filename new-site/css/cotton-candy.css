@@ -134,16 +134,18 @@
    Just the banner; the rest of the page stays neutral/white.
    Usage: <section class="page-banner banner-pink"> ... </section>
    ───────────────────────────────────────────────────────────────── */
-/* Inverted hero: solid candy colour + scattered white polka dots of
-   varied sizes (a seamless tile). The mirror of the white+colour hero. */
+/* Inverted hero: solid candy colour + the SAME scattered polka-dot
+   field as the homepage hero (white dots), so subpage orientation
+   matches Bold home. Cover-scaling keeps circles round. */
 .page-banner {
   position: relative;
   overflow: hidden;
   color: var(--cc-ink);
   background-color: var(--cc-pink);           /* default; modifier overrides */
-  background-image: url("../images/banner-dots.svg");
-  background-size: 300px 300px;
-  background-repeat: repeat;
+  background-image: url("../images/confetti-hero-white.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .page-banner > .container { position: relative; z-index: 1; }
 .page-banner h1 { color: var(--cc-ink); }

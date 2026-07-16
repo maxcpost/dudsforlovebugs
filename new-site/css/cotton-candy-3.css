@@ -29,10 +29,12 @@
    Bold default) — restate the border quartet so they pop on the gradient. */
 .cc-hero .countdown-box { box-shadow: 0 10px 26px rgba(43,45,66,0.22); }
 
-/* Interior page banners: same uniform white dots on the 18° slanted grid
-   as the homepage hero (Bold 2 / Spectrum), so subpages match the home
-   polka-dot layout instead of the scattered Bold-1 confetti tile. */
+/* Interior page banners: identical white angled-grid field as the
+   Bold 3 homepage hero (same SVG, same cover orientation). Homepage
+   .cc-hero is untouched. */
 .page-banner {
-  background-image: url("../images/banner-dots-grid.svg");
-  background-size: 150px 150px;
+  background-image: url("../images/confetti-hero-grid-white.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
