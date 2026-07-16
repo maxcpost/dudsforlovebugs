@@ -148,9 +148,14 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-/* Soft candy scrim over the dots (same idea as the homepage hero glow).
-   Clears a readable zone under the headline without removing the pattern.
-   Stronger / more centred on mobile where text fills the banner. */
+/* Taller banners give the polka field room above/below the copy, so a
+   tight text fog can keep headlines readable without blanking the pattern. */
+.page-banner.section-padding {
+  padding-top: 5.25rem;
+  padding-bottom: 5.25rem;
+}
+/* Soft candy fog — tight around the type, dots stay vivid at the edges.
+   Paired with a matching text glow so a few dots can peek through. */
 .page-banner::before {
   content: "";
   position: absolute;
@@ -158,41 +163,54 @@
   z-index: 0;
   pointer-events: none;
   background: radial-gradient(
-    ellipse 78% 88% at 28% 42%,
+    ellipse 70% 58% at 30% 48%,
     var(--cc-banner-fill) 0%,
-    var(--cc-banner-fill) 32%,
-    color-mix(in srgb, var(--cc-banner-fill) 78%, transparent) 52%,
-    transparent 72%
+    color-mix(in srgb, var(--cc-banner-fill) 88%, transparent) 38%,
+    color-mix(in srgb, var(--cc-banner-fill) 45%, transparent) 62%,
+    transparent 78%
   );
 }
 .page-banner.text-center::before {
   background: radial-gradient(
-    ellipse 72% 82% at 50% 44%,
+    ellipse 64% 56% at 50% 48%,
     var(--cc-banner-fill) 0%,
-    var(--cc-banner-fill) 34%,
-    color-mix(in srgb, var(--cc-banner-fill) 78%, transparent) 54%,
-    transparent 74%
+    color-mix(in srgb, var(--cc-banner-fill) 88%, transparent) 38%,
+    color-mix(in srgb, var(--cc-banner-fill) 45%, transparent) 62%,
+    transparent 78%
   );
 }
 @media (max-width: 767.98px) {
+  .page-banner.section-padding {
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+    min-height: 26rem;
+  }
+  /* Narrower vertical fog on mobile — clears the type band, leaves
+     polka bands above and below once the banner is taller. */
   .page-banner::before,
   .page-banner.text-center::before {
     background: radial-gradient(
-      ellipse 125% 105% at 50% 42%,
+      ellipse 108% 52% at 50% 48%,
       var(--cc-banner-fill) 0%,
-      var(--cc-banner-fill) 42%,
-      color-mix(in srgb, var(--cc-banner-fill) 82%, transparent) 60%,
-      transparent 78%
+      color-mix(in srgb, var(--cc-banner-fill) 90%, transparent) 36%,
+      color-mix(in srgb, var(--cc-banner-fill) 48%, transparent) 58%,
+      transparent 76%
     );
-  }
-  /* Slightly soften remaining dots that peek past the scrim on small screens */
-  .page-banner {
-    background-size: 160% auto;
   }
 }
 .page-banner > .container { position: relative; z-index: 1; }
-.page-banner h1 { color: var(--cc-ink); }
-.page-banner p, .page-banner .text-muted-dflb { color: var(--cc-ink) !important; }
+.page-banner h1 {
+  color: var(--cc-ink);
+  text-shadow:
+    0 0 1.1rem var(--cc-banner-fill),
+    0 0 2.25rem var(--cc-banner-fill);
+}
+.page-banner p, .page-banner .text-muted-dflb {
+  color: var(--cc-ink) !important;
+  text-shadow:
+    0 0 0.85rem var(--cc-banner-fill),
+    0 0 1.6rem var(--cc-banner-fill);
+}
 /* On the banner itself, keep decorative accents (eyebrow, icons, links)
    dark ink — a page's own accent hue is low-contrast on its matching
    banner (e.g. deep green on mint = 2.8:1). The themed accent is reserved

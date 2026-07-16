@@ -27,6 +27,3 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-@media (max-width: 767.98px) {
-  .page-banner { background-size: 160% auto; }
-}
