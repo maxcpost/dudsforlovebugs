@@ -318,6 +318,12 @@ body.menu-open { overflow: hidden; }
 .card-grid { display: grid; gap: 1.5rem; }
 @media (min-width: 48rem) { .card-grid--3 { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 48rem) { .card-grid--2 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 36rem) and (max-width: 59.99rem) { .card-grid--4 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 60rem) { .card-grid--4 { grid-template-columns: repeat(4, 1fr); } }
+
+a.candy-card { display: block; text-decoration: none; color: var(--body); }
+a.candy-card h3 { color: var(--ink); }
+a.candy-card:hover h3 { color: var(--deep-pink); }
 
 .candy-card {
   position: relative;
