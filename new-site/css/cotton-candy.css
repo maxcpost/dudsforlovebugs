@@ -219,6 +219,24 @@
 .icon-circle-cream, .icon-circle-tan, .icon-circle-gold { background: var(--cc-vivid) !important; color: var(--cc-ink) !important; }
 .step-number-gold, .step-number-terracotta { background: var(--cc-vivid) !important; color: var(--cc-ink) !important; }
 
+/* Schedule date tiles + candy badges: bright candy fill + dark ink.
+   Inline HTML used deep --dflb-pop + white (forest green on mint, etc.)
+   which reads muddy next to the vivid banners. --cc-vivid keeps them
+   matching the page's candy hue while staying AA with ink text. */
+body[class*="theme-"] [data-dflb-day] > .flex-shrink-0 {
+  background: var(--cc-vivid) !important;
+  color: var(--cc-ink) !important;
+}
+body[class*="theme-"] .badge[style*="--dflb-pop"] {
+  background: var(--cc-vivid) !important;
+  color: var(--cc-ink) !important;
+}
+/* Decorative accent borders on cream cards — use the vivid candy edge */
+body[class*="theme-"] [style*="border-left:4px solid var(--dflb-pop)"],
+body[class*="theme-"] [style*="border-left: 4px solid var(--dflb-pop)"] {
+  border-left-color: var(--cc-vivid) !important;
+}
+
 /* Card top-accents -> vivid. Home (no theme) = neon magenta; the middle
    pathway card gets neon purple for chromatic variety. */
 .card-accent-top, .card-accent-terracotta { border-top-color: var(--cc-pop-lg) !important; }
