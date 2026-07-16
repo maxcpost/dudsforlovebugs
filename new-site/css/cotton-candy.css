@@ -260,15 +260,16 @@ body:not([class*="theme-"]) .card-dflb:has(.icon-circle-tan) .link-gold { color:
 body:not([class*="theme-"]) .card-dflb:has(.icon-circle-gold) { border-top-color:#0A96E0 !important; }
 body:not([class*="theme-"]) .card-dflb:has(.icon-circle-gold) .link-gold { color:#0C6FA8 !important; }
 
-/* 'How It Works' — unified in one blue (was pink+purple+blue scatter) */
+/* 'How It Works' — unified in one blue (eyebrow, steps, links, CTA).
+   Magenta CTAs stay sitewide elsewhere; here the section is a blue
+   micro-theme, so a pink fill reads as a leftover clash. Keep a solid
+   fill (outline would demote the only action) in the same vivid sky as
+   the step chips, with dark ink text for AA (≥4.5:1). */
 .hiw .text-eyebrow { color:#0C6FA8 !important; }
 .hiw .step-number-gold, .hiw .step-number-terracotta { background:#19BEF5 !important; color:var(--cc-ink) !important; }
 .hiw .link-gold { color:#0C6FA8 !important; }
-/* Primary CTA stays the vibrant brand magenta (not a dark blue) so it
-   matches every other button; the blue accents live in the eyebrow,
-   step numbers, and links above. */
-.hiw .btn-gold { background:#FF1F9C !important; border-color:#FF1F9C !important; color:#fff !important; }
-.hiw .btn-gold:hover { background:#E60F91 !important; border-color:#E60F91 !important; }
+.hiw .btn-gold { background:#19BEF5 !important; border-color:#19BEF5 !important; color:var(--cc-ink) !important; }
+.hiw .btn-gold:hover { background:#0C6FA8 !important; border-color:#0C6FA8 !important; color:#fff !important; }
 
 /* Footer stays dark (white link text needs the contrast) but gains a
    neon quartet top edge + candy-filled social icons. */
