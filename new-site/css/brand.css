@@ -32,12 +32,16 @@
 }
 
 /* Base */
+html {
+  overflow-x: clip;
+}
 body {
   font-family: var(--font-body);
   color: var(--dflb-charcoal);
   background-color: var(--dflb-white);
   font-weight: 400;
   line-height: 1.7;
+  overflow-x: clip;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -461,6 +465,47 @@ h1, h2, h3, h4, h5, h6,
   position: relative;
   z-index: 1;
   border-radius: 0.75rem;
+}
+
+/* ─── MOBILE: TIGHTEN TYPE + KILL AOS HORIZONTAL BLEED ───
+   fade-left / fade-right park elements off-screen and expand scrollWidth
+   on phones. Prefer instant, in-place content on small viewports. */
+@media (max-width: 767.98px) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-countdown { padding: 2.25rem 0 2.5rem; }
+  .hero-eyebrow {
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    line-height: 1.45;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+  .hero-meta {
+    font-size: 0.875rem;
+    color: var(--dflb-charcoal);
+    flex-direction: column;
+    gap: 0.4rem !important;
+  }
+  .hero-meta svg { opacity: 0.75; }
+  .countdown-box {
+    min-width: 0;
+    padding: 1rem 0.65rem;
+  }
+  .countdown-box .number { font-size: 2.25rem; }
+  .countdown-box .label { font-size: 0.625rem; }
+  .section-padding { padding: 2.75rem 0; }
+  .btn-lg {
+    font-size: 0.9375rem;
+    padding: 0.8rem 1.35rem;
+  }
+  /* Hide the design-version pill on phones — it covered CTAs and copy */
+  .variant-switch { display: none !important; }
 }
 
 /* ─── MOBILE: FULL-SCREEN MENU OVERLAY ───
