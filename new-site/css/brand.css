@@ -519,6 +519,54 @@ h1, h2, h3, h4, h5, h6,
   .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after { transform: rotate(-45deg); }
 }
 
+/* ─── VARIANT SWITCHER (design version toggle) ─── */
+.variant-switch {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  align-items: center;
+  max-width: calc(100vw - 1.5rem);
+  background: rgba(43, 45, 66, 0.92);
+  backdrop-filter: blur(6px);
+  border-radius: 1.4rem;
+  padding: 0.35rem 0.6rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+.variant-switch span {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0 0.35rem;
+}
+.variant-switch a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.9rem;
+  padding: 0 0.7rem;
+  border-radius: 1rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.variant-switch a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.variant-switch a[aria-current="page"] {
+  background: var(--dflb-pop);
+  color: #fff;
+}
+
 /* ─── REDUCED MOTION ─── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
