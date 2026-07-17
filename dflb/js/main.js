@@ -117,13 +117,26 @@ document.addEventListener('DOMContentLoaded', function () {
     start();
   }
 
-  // Initialize AOS
-  if (typeof AOS !== 'undefined') {
-    AOS.init({
-      duration: 700,
-      easing: 'ease-out',
-      once: true,
-      offset: 80
-    });
+  // Scroll reveal — progressive enhancement. Content is visible by default;
+  // we only enable the hide/reveal styling once the observer is guaranteed.
+  var reduceMotionReveal = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduceMotionReveal) {
+    var targets = Array.prototype.slice.call(document.querySelectorAll('[data-aos]'));
+    if (targets.length) {
+      document.documentElement.classList.add('js-anim');
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+      targets.forEach(function (el) { io.observe(el); });
+      // Failsafe: nothing may stay hidden for long, no matter what.
+      setTimeout(function () {
+        targets.forEach(function (el) { el.classList.add('revealed'); });
+      }, 4000);
+    }
   }
 });

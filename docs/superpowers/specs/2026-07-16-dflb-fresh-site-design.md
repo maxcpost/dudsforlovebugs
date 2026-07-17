@@ -70,11 +70,15 @@ Direction per the 07-13 consultation: vibrant cotton-candy multicolor, **not** a
 
 - **Type:** Nunito 800/900 for display/headings, Open Sans 400/600 body
   (Google Fonts, preconnect, `font-display: swap`). Sizes in `rem`.
-- **Palette (CSS custom properties, AA-validated before ship):**
-  bright: pink `#F472B6`, sky `#38BDF8`, purple `#A78BFA`, mint `#34D399`,
-  sunshine `#FBBF24`; deep (white-text-safe): pink `#C7256E`, sky `#0273AE`,
-  purple `#6D28D9`, green `#047857`, amber `#92600A`; ink `#231F2E`,
-  body `#4A4458`, cream `#FFFBF7`, white. `--dflb-pop` maps to deep pink.
+- **Palette (CSS custom properties, validated by contrast.test.cjs):**
+  bright candy surfaces carry INK text (vibrancy + AA ≥4.5): pink `#FF3DAE`,
+  sky `#18C1FF`, purple `#AB84FF`, mint `#1FE39F`, sunshine `#FFD60A`;
+  neon pop `#FF1F9C` (white text, large/bold only — injected chips/badges,
+  ~3.5:1, owner's vibrancy-over-AA call); deep shades (pink `#C7256E`,
+  sky `#0273AE`, purple `#6D28D9`, green `#047857`, amber `#92600A`) are
+  TEXT-only on white (links, eyebrows); ink `#231F2E`, body `#4A4458`,
+  cream `#FFFBF7`, white. `--dflb-pop` maps to neon pop. Hero + CTA bands
+  use the full vibrant ombre (`--ombre`); dark ink is reserved for the footer.
 - **Homepage:** glassy sticky nav (white blur, pink "Consignor Login" pill);
   soft multi-color **ombre hero, no polka dots on main**; huge visible H1
   “Rochester's Favorite Children's Consignment Sale” (fixes buried-H1 gap);
