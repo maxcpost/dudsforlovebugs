@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     toggle.setAttribute('aria-expanded', 'false');
     menu.classList.add('hidden');
     body.classList.remove('menu-open');
+    menu.querySelectorAll('details[open]').forEach(function (d) { d.open = false; });
     var iconOpen = toggle.querySelector('.icon-open');
     var iconClose = toggle.querySelector('.icon-close');
     if (iconOpen && iconClose) {

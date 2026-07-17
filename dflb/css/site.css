@@ -178,24 +178,43 @@ hr { border: 0; border-top: 1px solid var(--line); }
   height: 100dvh;
   background: var(--white);
   display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 0.4rem;
-  padding: 5rem 1.5rem 2rem;
+  align-items: center; justify-content: flex-start;
+  gap: 0.35rem;
+  padding: 5.5rem 1.5rem calc(1.5rem + env(safe-area-inset-bottom, 0px));
   overflow-y: auto;
 }
-.mobile-menu::before {
-  content: ""; position: absolute; top: 0; left: 0; right: 0;
-  height: 0.375rem; background: var(--ribbon);
-}
-.mobile-menu a {
+/* center vertically when everything fits, scroll cleanly when it doesn't */
+.mobile-menu > :first-child { margin-top: auto; }
+.mobile-menu > :last-child { margin-bottom: auto; }
+.mobile-menu a, .menu-group summary {
   font-family: var(--font-display); font-weight: 800;
-  font-size: 1.35rem; color: var(--ink); text-decoration: none;
-  padding: 0.45rem 1.25rem; border-radius: 999px;
+  font-size: 1.3rem; color: var(--ink); text-decoration: none;
+  padding: 0.4rem 1.25rem; border-radius: 999px;
 }
-.mobile-menu a:hover { background: rgba(24, 193, 255, 0.18); }
-.mobile-menu .menu-sub { font-size: 1rem; font-weight: 700; color: var(--body); }
+.mobile-menu a:hover, .menu-group summary:hover { background: rgba(24, 193, 255, 0.18); }
+.mobile-menu .menu-sub { font-size: 1rem; font-weight: 700; color: var(--body); padding-block: 0.3rem; }
 .mobile-menu .btn-candy { margin-top: 0.75rem; }
 body.menu-open { overflow: hidden; }
+
+/* collapsible Consign group inside the mobile menu */
+.menu-group { text-align: center; }
+.menu-group summary {
+  list-style: none; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.menu-group summary::-webkit-details-marker { display: none; }
+.menu-group summary::after {
+  content: ""; width: 0.55rem; height: 0.55rem;
+  border-right: 3px solid var(--deep-pink);
+  border-bottom: 3px solid var(--deep-pink);
+  transform: rotate(45deg) translateY(-0.1rem);
+  transition: transform 0.2s;
+}
+.menu-group[open] summary::after { transform: rotate(225deg) translateY(-0.1rem); }
+.menu-group-links {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0.1rem; padding-top: 0.2rem;
+}
 
 /* ---------- 5. Buttons ---------- */
 .btn-candy, .btn-ghost {
