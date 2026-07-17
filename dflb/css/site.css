@@ -42,6 +42,10 @@
   --ombre: linear-gradient(115deg,
     var(--candy-pink) 0%, var(--candy-purple) 26%, var(--candy-sky) 52%,
     var(--candy-mint) 76%, var(--candy-sunshine) 100%);
+  /* white polka dots, staggered grid (pair with size 9.5rem, offset 4.75rem, rotate -8deg) */
+  --dot-grid:
+    radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 1.4rem, transparent calc(1.4rem + 1px)),
+    radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 1.4rem, transparent calc(1.4rem + 1px));
   --radius-card: 1.25rem;
   --shadow-card: 0 14px 40px -22px rgba(35, 31, 46, 0.35);
   --shadow-pop: 0 18px 44px -20px rgba(255, 31, 156, 0.45);
@@ -222,13 +226,20 @@ body.menu-open { overflow: hidden; }
   text-align: center;
   padding: clamp(3.5rem, 7vw, 5.5rem) 0 clamp(3rem, 6vw, 5rem);
 }
-.hero::before { /* soft white glow behind the text so ink type shines through */
+.hero::before { /* tilted staggered dot grid, matching the subpage banners */
+  content: ""; position: absolute; inset: -40%; pointer-events: none;
+  background-image: var(--dot-grid);
+  background-size: 9.5rem 9.5rem, 9.5rem 9.5rem;
+  background-position: 0 0, 4.75rem 4.75rem;
+  transform: rotate(-8deg);
+}
+.hero::after { /* soft white glow behind the text so ink type shines through */
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(closest-side at 50% 34%,
     rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.62) 62%,
     rgba(255, 255, 255, 0.18) 100%);
 }
-.hero > .container { position: relative; }
+.hero > .container { position: relative; z-index: 1; }
 .hero .eyebrow { justify-content: center; color: var(--ink); }
 .hero h1 { max-width: 56rem; margin-inline: auto; }
 .hero .hero-dates {
@@ -428,9 +439,7 @@ a.candy-card:hover h3 { color: var(--deep-pink); }
 }
 .page-banner::before { /* big white polka dots on a slightly tilted staggered grid */
   content: ""; position: absolute; inset: -40%; pointer-events: none;
-  background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 1.4rem, transparent calc(1.4rem + 1px)),
-    radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 1.4rem, transparent calc(1.4rem + 1px));
+  background-image: var(--dot-grid);
   background-size: 9.5rem 9.5rem, 9.5rem 9.5rem;
   background-position: 0 0, 4.75rem 4.75rem;
   transform: rotate(-8deg);
