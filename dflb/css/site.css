@@ -425,13 +425,14 @@ a.candy-card:hover h3 { color: var(--deep-pink); }
   padding: clamp(3.5rem, 7vw, 5.5rem) 0;
   text-align: center;
 }
-.page-banner::before { /* big soft white polka dots, two offset layers */
-  content: ""; position: absolute; inset: 0; pointer-events: none;
+.page-banner::before { /* big white polka dots on a slightly tilted staggered grid */
+  content: ""; position: absolute; inset: -40%; pointer-events: none;
   background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 1.6rem, transparent calc(1.6rem + 1px)),
-    radial-gradient(circle, rgba(255, 255, 255, 0.34) 0 1.1rem, transparent calc(1.1rem + 1px));
-  background-size: 11rem 11rem, 7.5rem 7.5rem;
-  background-position: 0 0, 4.4rem 3.2rem;
+    radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 1.4rem, transparent calc(1.4rem + 1px)),
+    radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 1.4rem, transparent calc(1.4rem + 1px));
+  background-size: 9.5rem 9.5rem, 9.5rem 9.5rem;
+  background-position: 0 0, 4.75rem 4.75rem;
+  transform: rotate(-8deg);
 }
 .page-banner > .container { position: relative; }
 .page-banner h1, .page-banner p { color: var(--ink); }
