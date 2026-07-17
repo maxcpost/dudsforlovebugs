@@ -76,6 +76,7 @@ ul, ol { padding-left: 1.4rem; margin: 0 0 1rem; }
 strong { color: var(--ink); }
 hr { border: 0; border-top: 1px solid var(--line); }
 :focus-visible { outline: 3px solid var(--deep-sky); outline-offset: 2px; border-radius: 4px; }
+::selection { background: var(--candy-pink); color: var(--ink); }
 .hidden { display: none !important; }
 .sr-only, .visually-hidden {
   position: absolute; width: 1px; height: 1px;
@@ -354,9 +355,25 @@ a.candy-card:hover h3 { color: var(--deep-pink); }
 .card--mint::before { background: var(--candy-mint); }
 .card--purple::before { background: var(--candy-purple); }
 .card--sunshine::before { background: var(--candy-sunshine); }
-.candy-card .card-icon {
+.candy-card .card-icon, .card-icon {
   display: inline-flex; align-items: center; justify-content: center;
   width: 3rem; height: 3rem; border-radius: 0.9rem; margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+/* icon tiles and date chips must never stretch to their flex row's height */
+.d-flex > .card-icon { align-self: flex-start; }
+[data-dflb-day] > .flex-shrink-0 { align-self: flex-start; }
+
+/* card link lines ("See sale dates →") read as designed actions */
+.candy-card p + a:not(.btn-candy):not(.btn-ghost) {
+  font-family: var(--font-display); font-weight: 800;
+  text-decoration: none;
+}
+.candy-card p + a:not(.btn-candy):not(.btn-ghost):hover { text-decoration: underline; }
+
+/* a lone trailing card in a 3-up grid sits centered, not stranded left */
+@media (min-width: 48rem) {
+  .card-grid--3 > :last-child:nth-child(3n+1):not(:first-child) { grid-column: 2; }
 }
 .icon-tile--sky { background: rgba(24, 193, 255, 0.22); color: var(--deep-sky); }
 .icon-tile--pink { background: rgba(255, 61, 174, 0.2); color: var(--deep-pink); }
@@ -411,8 +428,8 @@ a.candy-card:hover h3 { color: var(--deep-pink); }
 .page-banner::before { /* big soft white polka dots, two offset layers */
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.4) 0 1.6rem, transparent calc(1.6rem + 1px)),
-    radial-gradient(circle, rgba(255, 255, 255, 0.28) 0 1.1rem, transparent calc(1.1rem + 1px));
+    radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 1.6rem, transparent calc(1.6rem + 1px)),
+    radial-gradient(circle, rgba(255, 255, 255, 0.34) 0 1.1rem, transparent calc(1.1rem + 1px));
   background-size: 11rem 11rem, 7.5rem 7.5rem;
   background-position: 0 0, 4.4rem 3.2rem;
 }
@@ -515,7 +532,11 @@ a.candy-card:hover h3 { color: var(--deep-pink); }
 .gallery-grid a, .gallery-grid figure {
   margin: 0; border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow-card);
 }
-.gallery-grid img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+.gallery-grid img {
+  width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3;
+  transition: transform 0.35s ease;
+}
+.gallery-grid figure:hover img, .gallery-grid a:hover img { transform: scale(1.045); }
 
 /* ---------- 11. Footer ---------- */
 .site-footer { background: var(--ink); color: rgba(255, 255, 255, 0.82); margin-top: clamp(3rem, 7vw, 5rem); }
