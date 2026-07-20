@@ -71,8 +71,8 @@ function renderFlyerAnchor(ext) {
     + 'Download Printable Flyer</a>';
 }
 
-var DFLB_HOMES = ['new-site/index.html', 'new-site/bold/index.html', 'new-site/bold2/index.html', 'new-site/bold3/index.html', 'new-site/bold4/index.html', 'dflb/index.html'];
-var DFLB_SCHEDULES = ['new-site/schedule/index.html', 'new-site/bold/schedule/index.html', 'new-site/bold2/schedule/index.html', 'new-site/bold3/schedule/index.html', 'new-site/bold4/schedule/index.html', 'dflb/schedule/index.html'];
+var DFLB_HOMES = ['dflb/index.html'];
+var DFLB_SCHEDULES = ['dflb/schedule/index.html'];
 
 function run() {
   var _t = String(_props().getProperty('GITHUB_TOKEN') || '');
@@ -103,7 +103,6 @@ function run() {
     files[DFLB_SCHEDULES[s]] = sh;
   }
   // countdown target
-  if (c.countdownISO) files['new-site/js/sale-date.js'] = saleDateFileContents(c.countdownISO);
   if (c.countdownISO) files['dflb/js/sale-date.js'] = saleDateFileContents(c.countdownISO);
 
   commitAll(files, flyer);
@@ -127,7 +126,7 @@ function commitAll(textFiles, flyer) {
   }
   if (flyer) {
     var fblob = _gh('/git/blobs', 'post', { content: flyer.base64, encoding: 'base64' });
-    tree.push({ path: 'new-site/images/flyer.' + flyer.ext, mode: '100644', type: 'blob', sha: fblob.sha });
+    tree.push({ path: 'dflb/images/flyer.' + flyer.ext, mode: '100644', type: 'blob', sha: fblob.sha });
   }
   var newTree = _gh('/git/trees', 'post', { base_tree: baseCommit.tree.sha, tree: tree });
   if (newTree.sha === baseCommit.tree.sha) { Logger.log('No changes; skipping commit.'); return; }

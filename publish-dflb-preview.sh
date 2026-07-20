@@ -2,11 +2,9 @@
 # Publish dflb/ to the gh-pages branch of maxcpost/dflb-fresh, previewed at
 #   https://maxcpost.github.io/dflb-fresh/
 #
-# Like publish-preview.sh (which publishes new-site/ to this repo's own
-# gh-pages), this stages a copy with the /dflb-fresh/ subpath prefix
-# inserted into root-relative URLs. It also injects a noindex meta into
-# every page so the preview never competes with dudsforlovebugs.com in
-# search.
+# Stages a copy with the /dflb-fresh/ subpath prefix inserted into
+# root-relative URLs, and injects a noindex meta into every page so the
+# preview never competes with dudsforlovebugs.com in search.
 #
 # Usage: ./publish-dflb-preview.sh
 set -euo pipefail

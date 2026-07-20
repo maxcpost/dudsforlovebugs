@@ -13,7 +13,7 @@ Rebuilding **dudsforlovebugs.com** — a children's consignment sale business in
 ### Directory Structure
 
 - `/old-site/` — Archive of the current WordPress site (content, SEO audit, asset inventory)
-- `/new-site/` — The rebuilt site (code lives here)
+- `/dflb/` — The rebuilt site (code lives here; this is the final draft headed to production)
 - `/design-toolkit.md` — Full design reference (colors, fonts, icons, image strategy, copy framework, SEO templates)
 - `/tech-stack-options.md` — Architecture options document for the client
 
@@ -190,7 +190,7 @@ dudsforlovebugs.com/
 ├── /what-can-i-sell/      Accepted items list
 ├── /tagging-merchandise/  Tagging instructions
 ├── /vip-tagging/          VIP/Valet tagging service
-├── /purple-play-rack/     PPR discounted tier
+├── /purple-play-rack-ppr/ PPR discounted tier
 ├── /volunteering/         Volunteer benefits + signup
 ├── /donate/               Crisis Nursery partnership
 ├── /vendors/              Vendor info + agreement
