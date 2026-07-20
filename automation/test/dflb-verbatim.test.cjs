@@ -9,8 +9,11 @@ const SLUGS = ['', 'schedule', 'consign', 'registration', 'what-can-i-sell',
   'donate', 'vendors', 'gallery', 'contact'];
 
 // Old-page text that intentionally has no counterpart in the fresh site:
-// the Safe/Bold comparison switcher.
-const IGNORE_LINES = new Set(['Version', 'Safe', 'Bold', 'Bold 2', 'Bold 3', 'Bold 4']);
+// the Safe/Bold comparison switcher, plus the owner-approved homepage hero
+// trim (2026-07-20): shorter subheadline, countdown label dropped.
+const IGNORE_LINES = new Set(['Version', 'Safe', 'Bold', 'Bold 2', 'Bold 3', 'Bold 4',
+  "Shop incredible deals on kids' clothing, toys, and gear at 50–90% off retail — or earn money selling what your kids have outgrown.",
+  'Sale Starts In']);
 
 function visibleText(html) {
   return html

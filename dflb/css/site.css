@@ -46,6 +46,10 @@
   --dot-grid:
     radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 1.4rem, transparent calc(1.4rem + 1px)),
     radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 1.4rem, transparent calc(1.4rem + 1px));
+  /* softer variant — under running text (homepage hero) the full-strength dots fight the copy */
+  --dot-grid-soft:
+    radial-gradient(circle, rgba(255, 255, 255, 0.35) 0 1.4rem, transparent calc(1.4rem + 1px)),
+    radial-gradient(circle, rgba(255, 255, 255, 0.35) 0 1.4rem, transparent calc(1.4rem + 1px));
   --radius-card: 1.25rem;
   --shadow-card: 0 14px 40px -22px rgba(35, 31, 46, 0.35);
   --shadow-pop: 0 18px 44px -20px rgba(255, 31, 156, 0.45);
@@ -245,9 +249,9 @@ body.menu-open { overflow: hidden; }
   text-align: center;
   padding: clamp(3.5rem, 7vw, 5.5rem) 0 clamp(3rem, 6vw, 5rem);
 }
-.hero::before { /* tilted staggered dot grid, matching the subpage banners */
+.hero::before { /* tilted staggered dot grid, softened so it stays behind the copy */
   content: ""; position: absolute; inset: -40%; pointer-events: none;
-  background-image: var(--dot-grid);
+  background-image: var(--dot-grid-soft);
   background-size: 9.5rem 9.5rem, 9.5rem 9.5rem;
   background-position: 0 0, 4.75rem 4.75rem;
   transform: rotate(-8deg);
@@ -255,18 +259,30 @@ body.menu-open { overflow: hidden; }
 .hero::after { /* soft white glow behind the text so ink type shines through */
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(closest-side at 50% 34%,
-    rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.62) 62%,
-    rgba(255, 255, 255, 0.18) 100%);
+    rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.72) 62%,
+    rgba(255, 255, 255, 0.32) 100%);
 }
 .hero > .container { position: relative; z-index: 1; }
 .hero .eyebrow { justify-content: center; color: var(--ink); }
 .hero h1 { max-width: 56rem; margin-inline: auto; }
 .hero .hero-dates {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  column-gap: 1.4rem; row-gap: 0.1rem;
   font-family: var(--font-display); font-weight: 800;
   font-size: clamp(1.15rem, 2.4vw, 1.5rem); color: var(--ink);
-  margin: 0.25rem 0 0.5rem;
+  margin: 0.25rem 0 1.25rem;
 }
-.hero .hero-sub { max-width: 38rem; margin: 0 auto 1.5rem; }
+/* date + place as unbreakable units: narrow screens stack them cleanly
+   instead of wrapping mid-address */
+.hero-dates .date-part {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  white-space: nowrap;
+}
+.hero .hero-sub {
+  max-width: 42rem; margin: 0 auto 1.5rem;
+  font-size: 1.125rem; font-weight: 600; color: var(--ink);
+  text-wrap: balance;
+}
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 0.9rem; justify-content: center; margin-bottom: 2.25rem; }
 
 /* eyebrow labels */
@@ -307,6 +323,25 @@ body.menu-open { overflow: hidden; }
   display: block; font-size: 0.6875rem; font-weight: 700;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--body);
   margin-top: 0.3rem;
+}
+
+/* phones: everything the hero says, in one calm screenful — all four
+   countdown chips fit a single row (down to 320px) and the vertical
+   rhythm tightens so the sale photo isn't pushed far below the fold */
+@media (max-width: 35.99rem) {
+  .hero { padding-top: 2.75rem; }
+  .hero .hero-sub { margin-bottom: 1.25rem; }
+  .hero .countdown { gap: 0.5rem; margin-bottom: 1.75rem; }
+  .hero .hero-ctas { margin-bottom: 1.75rem; }
+  .tag-chip { min-width: 4rem; padding: 1.1rem 0.4rem 0.6rem; }
+  .tag-chip .num { font-size: 1.55rem; }
+  .tag-chip .lbl { font-size: 0.625rem; letter-spacing: 0.1em; }
+}
+/* the narrowest phones (≤359px) still get one row of four chips */
+@media (max-width: 22.49rem) {
+  .hero .countdown { gap: 0.4rem; }
+  .tag-chip { min-width: 3.7rem; padding-inline: 0.3rem; }
+  .tag-chip .lbl { font-size: 0.575rem; letter-spacing: 0.08em; }
 }
 
 /* ---------- 7. Carousel ---------- */
